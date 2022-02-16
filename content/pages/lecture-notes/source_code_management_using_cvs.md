@@ -1,6 +1,10 @@
 ---
 content_type: page
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Source Code Management Using CVS
 uid: 3848cf7f-d910-16a7-0e67-d39e21a63f50
@@ -118,7 +122,7 @@ Individual files may also be updated e.g.
 
 cvs up myfile.C
 
-The update command will not throw away any local changes that have been made. Instead it will attempt to merge them with the changes that were retrieved from the repository. In some cases, thr merge will fail and CVS will report a conflict. If this happens, the conflicts will have to be resolved by editing the portions of the source file that are in conflict. Conflicts can be detected by searching for the <<< sequence.
+The update command will not throw away any local changes that have been made. Instead it will attempt to merge them with the changes that were retrieved from the repository. In some cases, thr merge will fail and CVS will report a conflict. If this happens, the conflicts will have to be resolved by editing the portions of the source file that are in conflict. Conflicts can be detected by searching for the \<\<\< sequence.
 
 The -r option can also be used with the update command.
 
@@ -230,7 +234,7 @@ The changes on the branch can be merged back with the trunk as follows:
 cvs co Project/MyProject   
 cvs tag BeforeBigMerge   
 cvs up -jBigExperiment\_BRANCH   
-<Resolve any conflicts here.>   
+\<Resolve any conflicts here.>   
 cvs commit -m"Merged in the big experiment."
 
 The merging process should be handled with care, since it is easy to make mistakes. It is possible to do more complicated merges, such as merging just a portion of the branch with the trunk. For more details, visit one of the CVS resources listed above.

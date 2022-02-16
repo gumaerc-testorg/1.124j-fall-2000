@@ -1,6 +1,10 @@
 ---
 content_type: page
+learning_resource_types:
+- Recitations
+ocw_type: CourseSection
 parent_title: Recitations
+parent_type: CourseSection
 parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 title: Recitation 2
 uid: 6e443d7a-ea50-629d-198f-5b188cc78200
@@ -83,7 +87,7 @@ When passed-by-value is used, the parameter names are associated with the values
 
 e.g:     _void fun2(float x, double yy)_  
  _{_  
- _cout << "\\n x+y = " << x+yy;_  
+ _cout \<\< "\\n x+y = " \<\< x+yy;_  
  _}_  
  
 
@@ -96,8 +100,8 @@ If the data types of the arguments are not the same with the corresponding data 
 Functions work with copies of the arguments when they are called-by-value (i.e. without using references). Upon entering the function memory is temporarily allocated in order to store the passed values. After the function has been executed, the control returns to the calling function and the values of the local variables and parameters that are called-by-value are lost, since the corresponding memory is no longer reserved. The only exception is when we deal with a static local variable.
 
 **_/\* Example on functions \*/_**  
- _#include <iostream.h>_  
- _#include <stdio.h>_  
+ _#include \<iostream.h>_  
+ _#include \<stdio.h>_  
  _double get\_max(double x , double y);_  
  _void print\_max(double x , double y);_
 
@@ -105,7 +109,7 @@ Functions work with copies of the arguments when they are called-by-value (i.e. 
  _{_  
  _double x=11, y=22 ;_
 
- _cout << "\\n Max = " << get\_max(x,y) << endl;_  
+ _cout \<\< "\\n Max = " \<\< get\_max(x,y) \<\< endl;_  
  _print\_max(x,y);_  
  _}_
 
@@ -120,9 +124,9 @@ Functions work with copies of the arguments when they are called-by-value (i.e. 
  _void print\_max(double x , double y)_  
  _{_  
  _if(x>y)_  
- _cout << " Max = " << x << endl;_  
+ _cout \<\< " Max = " \<\< x \<\< endl;_  
  _else_  
- _cout << " Max = " << y << endl;_  
+ _cout \<\< " Max = " \<\< y \<\< endl;_  
  _}_
 
 **Output**  
@@ -152,7 +156,7 @@ Some, or all, arguments of a function can be specified and used in case only som
 
  _void fun(double a, int b, double c)_  
  _{_  
- _cout << " a = " << a << "   b = " << b <<"   c = " << c << endl;_  
+ _cout \<\< " a = " \<\< a \<\< "   b = " \<\< b \<\<"   c = " \<\< c \<\< endl;_  
  _}_
 
 **Output** _a = 11.1   b = 22   c = 7.6_  
@@ -198,15 +202,15 @@ The signature of a function is considered to be its name and parameters, specifi
  _int x,y,m;_  
  _x=3;_  
  _y=7;_  
- _cout << "\\n min(x,y) = " << min(x,y) << endl;_
+ _cout \<\< "\\n min(x,y) = " \<\< min(x,y) \<\< endl;_
 
  _double z=4.5, w=2.34 ;_  
- _cout << " min(z,w) = " <<  min(z,w) << endl;_  
+ _cout \<\< " min(z,w) = " \<\<  min(z,w) \<\< endl;_  
  _}_
 
  _int **min**(const int x1, const int x2)_  
  _{_  
- _if(x1<x2)_  
+ _if(x1\<x2)_  
  _return x1;_  
  _else_  
  _return x2;_  
@@ -214,7 +218,7 @@ The signature of a function is considered to be its name and parameters, specifi
 
  _double **min**(const double x1, const double x2)_  
  _{_  
- _if(x1<x2)_  
+ _if(x1\<x2)_  
  _return x1;_  
  _else_  
  _return x2;_  
@@ -297,7 +301,7 @@ Static global variables_**, or functions, are global variables, or functions, th
 If inside a function a local variable has the same name with a global variable, then the local variable hides the global. In C++ we can access the global variable using the _scope resolution operator_ _::var,_ access the global _var_ variable.
 
  **_/\* Example on scope and extent of variables \*/_**  
- _#include <iostream.h>_  
+ _#include \<iostream.h>_  
  _extern double  y;               //  external variable (defined in another file)_  
  _static double x=25.5;      //  static global variable_  
  _void fun(double x);_
@@ -315,8 +319,8 @@ If inside a function a local variable has the same name with a global variable, 
  _static int s=0;             //  static local variable_  
  _int n=0;                    //  automatic (dynamic local) variable_
 
- _cout << " n = " << n << "\\t s =" << s_  
- _<<  "\\t x = " << x << endl;_  
+ _cout \<\< " n = " \<\< n \<\< "\\t s =" \<\< s_  
+ _\<\<  "\\t x = " \<\< x \<\< endl;_  
  _}_
 
 **Output**  
@@ -358,16 +362,16 @@ A special pointer that can be used to store any type of pointer is called a _poi
       _double x=10.75, \*px=&x;_  
  _void \*vp = &x;_
 
- _cout << "\\n x = " << x ;_  
- _cout << "\\n \*px = " << \*px ;_  
- _//  cout << "\\n \*vp = " << \*vp ;_ //    <-------   Wrong!  
- _cout << "\\n \*vp = " << \*(static\_cast <double\*>(vp)) ;_ // ok
+ _cout \<\< "\\n x = " \<\< x ;_  
+ _cout \<\< "\\n \*px = " \<\< \*px ;_  
+ _//  cout \<\< "\\n \*vp = " \<\< \*vp ;_ //    \<-------   Wrong!  
+ _cout \<\< "\\n \*vp = " \<\< \*(static\_cast \<double\*>(vp)) ;_ // ok
 
 The following example demonstrates the use of both references and pointers:
 
  **_/\* Example on references and pointers\*/_**  
- _#include <iostream.h>_  
- _#include <stdlib.h>_
+ _#include \<iostream.h>_  
+ _#include \<stdlib.h>_
 
  _int main(void)_  
  _{_  
@@ -378,9 +382,9 @@ The following example demonstrates the use of both references and pointers:
  _\*px += 100;_  
  _\*rpx += 1000;_
 
- _cout << "\\n i = " << i << "\\t ri = " << ri;_  
- _cout << "\\n x = " << x << "\\t \*px = " << \*px_  
- _<< "\\t \*rpx = " << \*rpx  << endl;_
+ _cout \<\< "\\n i = " \<\< i \<\< "\\t ri = " \<\< ri;_  
+ _cout \<\< "\\n x = " \<\< x \<\< "\\t \*px = " \<\< \*px_  
+ _\<\< "\\t \*rpx = " \<\< \*rpx  \<\< endl;_
 
  _return EXIT\_SUCCESS;_  
  _}_  
@@ -406,15 +410,15 @@ An alternative way is to use**_pointers_** and pass the _address_ of the variabl
 The following example demonstrates the use of call by-value, by-reference and using pointers.
 
  **_/\* Example for call-by-value, call-by-reference and using pointers \*/_**  
- _#include <iostream.h>_  
+ _#include \<iostream.h>_  
  _void fun(double x, double &y, double \*z);_
 
  _int main()_  
  _{_  
  _double x=11.1, y=22.2, z=33.3;_  
  _fun(x,y,&z);_  
- _cout << "\\n x = " << x << "\\t y = "_  
- _<< y << "\\t z = " << z << endl;_  
+ _cout \<\< "\\n x = " \<\< x \<\< "\\t y = "_  
+ _\<\< y \<\< "\\t z = " \<\< z \<\< endl;_  
  _}_
 
  _void fun(double x, double &y, double \*z)_  
@@ -422,7 +426,7 @@ The following example demonstrates the use of call by-value, by-reference and us
  _x \*= 2;_  
  _y \*= 2;        // using call by reference_  
  _\*z \*= 2;       // using pointer to access the actual variable_  
- _cout << "\\n x = " << x << "\\t y = " << y << "\\t z = " << \*z << endl;_  
+ _cout \<\< "\\n x = " \<\< x \<\< "\\t y = " \<\< y \<\< "\\t z = " \<\< \*z \<\< endl;_  
  _}_
 
 **Output**  
@@ -443,7 +447,7 @@ A function name, in general, gives a pointer to that function, although an addre
 An example of a pointer to a function is presented below. The function _compute()_ has 3 arguments: a pointer to a function, and 2 integers. The name of any function that returns a _double_ and has two doubles as arguments can be provided in the function call of _compute()_. The provided function is then used inside the _compute()_ function whenever _f()_ is used.
 
  **/_\* Example of Pointers to functions \*/_**  
- _#include <iostream.h>   // pointers to a functions_  
+ _#include \<iostream.h>   // pointers to a functions_  
  _double adding(double x, double y);_  
  _double subtracting(double x, double y);_  
  _double compute(double (\*f)(double,double), int i, int j);_
@@ -451,9 +455,9 @@ An example of a pointer to a function is presented below. The function _compute(
  _int main()_  
  _{_  
  _int x=7, y=3;_  
- _cout << "\\n compute(adding,x,y) = " << compute(adding,x,y) << endl;_  
- _cout << " compute(subtracting,x,y) = "_  
- _<<  compute(subtracting,x,y) << endl;_  
+ _cout \<\< "\\n compute(adding,x,y) = " \<\< compute(adding,x,y) \<\< endl;_  
+ _cout \<\< " compute(subtracting,x,y) = "_  
+ _\<\<  compute(subtracting,x,y) \<\< endl;_  
  _}_
 
  _double  compute(double (\*f)(double,double), int i, int j)_  
@@ -482,7 +486,7 @@ An example of a pointer to a function is presented below. The function _compute(
 
 An array is used to store a set of values, or objects, of the same (either built-in or user- defined) data type, in one entity. An individual element of the array, i.e. a member of this set, can be accessed using the array’s name and an index which should be a value, or an expression, of integral type. The individual objects of an array are accessed by their position in the array using indexing with the index beginning from 0. Therefore, the last element of an n-size array has index equal to n-1. An array is defined using a pair of square brackets as shown below:
 
- _<data\_type> <array\_name> \[size\];_
+ _\<data\_type> \<array\_name> \[size\];_
 
 The dimension of the array, at the array definition, must be a constant expression, i.e. to be known during compilation, except in the case in which all elements of the array are explicitly initialized at the definition. If less elements of an array are initialized, according to the provided size during definition, the remaining elements are initialized to zero, e.g.:
 
@@ -503,39 +507,39 @@ You should be particularly careful not to exceed the range of an array since the
 
  **_/\* Example on references, pointers and arrays \*/_**
 
- _#include <iostream.h>_  
- _#include <stdio.h>_
+ _#include \<iostream.h>_  
+ _#include \<stdio.h>_
 
  _main()_  
  _{_  
  _double x=11.1 , \*px;_  
  _double &rx = x;_
 
- _cout << "\\n x = " << x << endl;_  
- _cout << " rx = " << rx << endl;_
+ _cout \<\< "\\n x = " \<\< x \<\< endl;_  
+ _cout \<\< " rx = " \<\< rx \<\< endl;_
 
  _rx = 33.3;_  
- _cout << "\\n x = " << x << endl;_  
- _cout << " rx = " << rx << endl;_
+ _cout \<\< "\\n x = " \<\< x \<\< endl;_  
+ _cout \<\< " rx = " \<\< rx \<\< endl;_
 
  _px = &x;_
 
  _ios::sync\_with\_stdio();_  
  _printf( "\\n px = %p \\n" , px );_  
  _ios::sync\_with\_stdio();_  
- _cout << " \*px = " << \*px << endl;_
+ _cout \<\< " \*px = " \<\< \*px \<\< endl;_
 
  _\*px = 44.4;_  
- _cout << "\\n x = " << x << endl;_  
- _cout << " \*px = " << \*px << endl;_
+ _cout \<\< "\\n x = " \<\< x \<\< endl;_  
+ _cout \<\< " \*px = " \<\< \*px \<\< endl;_
 
  _double mat\[\] = { 10 , 20 , 30};_  
  _px = mat ;_  
- _cout << "\\n mat\[0\] = " << mat\[0\] << endl;_  
- _cout << "\\n px = " << \*px++ << endl;_  
- _cout << " px = " << \*px << endl;_  
- _cout << "\\n px\[1\] = \*(px+1) = " << \*(px+1) << endl;_  
- _cout << " mat\[2\] = \*(mat+2) = " << \*(mat+2) << endl;_  
+ _cout \<\< "\\n mat\[0\] = " \<\< mat\[0\] \<\< endl;_  
+ _cout \<\< "\\n px = " \<\< \*px++ \<\< endl;_  
+ _cout \<\< " px = " \<\< \*px \<\< endl;_  
+ _cout \<\< "\\n px\[1\] = \*(px+1) = " \<\< \*(px+1) \<\< endl;_  
+ _cout \<\< " mat\[2\] = \*(mat+2) = " \<\< \*(mat+2) \<\< endl;_  
  _}_
 
 **Output**  
@@ -584,8 +588,8 @@ Although an array of strings can be initialized using the string notation (i.e. 
 The following example demonstrates how a string can be defined, initialized or assigned a literal string, how can be modified, etc.
 
  **_/\* Example for strings as arrays of char \*/_**  
- _#include <iostream.h>_  
- _#include <cstring>_
+ _#include \<iostream.h>_  
+ _#include \<cstring>_
 
  _int main(void)_  
  _{_  
@@ -594,19 +598,19 @@ The following example demonstrates how a string can be defined, initialized or a
  _char str3\[50\] ;_  
  
 
- _cout << "str1 and str2 are " ;_  
- _strcmp(str1,str2) ? cout << "different" << endl : cout << "the same" << endl;_
+ _cout \<\< "str1 and str2 are " ;_  
+ _strcmp(str1,str2) ? cout \<\< "different" \<\< endl : cout \<\< "the same" \<\< endl;_
 
- _cout << "\\n str1 = " << str1 << endl ;_  
- _cout << " str2 = " << str2 << endl ;_
+ _cout \<\< "\\n str1 = " \<\< str1 \<\< endl ;_  
+ _cout \<\< " str2 = " \<\< str2 \<\< endl ;_
 
  _strcpy(str3,str1);_  
  _strcat(str3,str2);_
 
- _cout << "\\n str3 = " << str3 << endl ;_  
+ _cout \<\< "\\n str3 = " \<\< str3 \<\< endl ;_  
  _str3\[0\] = 'T';_  
- _cout << " str3 = " << str3 << "\\t length = "_  
- _<< strlen(str3) << endl ;_  
+ _cout \<\< " str3 = " \<\< str3 \<\< "\\t length = "_  
+ _\<\< strlen(str3) \<\< endl ;_  
  _return 1;_  
  _}_  
  
@@ -653,9 +657,9 @@ Therefore, the following expressions are exactly equivalent to **m\[i\]\[j\]**:
 > **\*(&m\[0\]\[0\]+WIDTH\_SIZE\*i+j)**
 
 > **_/\* Example for 2-D arrays \*/_**  
-> _#include <iostream.h>_  
-> _#include <stdlib.h>_  
-> _#include <iomanip.h>_  
+> _#include \<iostream.h>_  
+> _#include \<stdlib.h>_  
+> _#include \<iomanip.h>_  
 > _#define ROW\_SIZE 4_  
 > _#define COL\_SIZE 7_
 > 
@@ -665,11 +669,11 @@ Therefore, the following expressions are exactly equivalent to **m\[i\]\[j\]**:
 > >  _{ 13.7 , 67.3 , 17.7 } , { 2.6 } };_  
 > >  _int i,j;_
 > > 
-> >  _for(i=0;i<ROW\_SIZE;i++)_  
+> >  _for(i=0;i\<ROW\_SIZE;i++)_  
 > >  _{_  
-> >  _cout << endl;_  
-> >  _for(j=0;j<COL\_SIZE;j++)_  
-> >  _cout << "  " << setw(5) << m\[i\]\[j\];_  
+> >  _cout \<\< endl;_  
+> >  _for(j=0;j\<COL\_SIZE;j++)_  
+> >  _cout \<\< "  " \<\< setw(5) \<\< m\[i\]\[j\];_  
 > >  _}_  
 > >  _return EXIT\_SUCCESS;_  
 > > _}_  
@@ -703,8 +707,8 @@ The following example shows one such a case, in which a reference to a specific 
 > _{_  
 >  _double x\[10\]={0};_  
 >  _fun(3,x) = 57.6;_  
->  _cout << "\\n x\[5\] = " << x\[5\] << endl;_  
->  _cout << "x\[6\] = " << x\[6\] << endl;_  
+>  _cout \<\< "\\n x\[5\] = " \<\< x\[5\] \<\< endl;_  
+>  _cout \<\< "x\[6\] = " \<\< x\[6\] \<\< endl;_  
 > _}_
 
 > _double & fun(int i, double \*x)_  
@@ -793,10 +797,10 @@ Structures can be passed to a function as any other variable, i.e. by value, by 
 >  _pp = &p;_  
 >  _pp -> y = 7.5;            // using the arrow operator_
 > 
->  _cout << "\\n x = " << pp->x << "\\t y = " << (&p) -> y << endl;_  
+>  _cout \<\< "\\n x = " \<\< pp->x \<\< "\\t y = " \<\< (&p) -> y \<\< endl;_  
 >  _struct point p2 = {4.7 , 9.2};    //   A data structure instance can be intialized using_  
 >  _pp = &p2;                             // comma separated values enclosed in curly braces_  
->  _cout << " x = " << pp->x <<  " y = " << p2. y << endl;_  
+>  _cout \<\< " x = " \<\< pp->x \<\<  " y = " \<\< p2. y \<\< endl;_  
 > _}_
 
 **Output  
@@ -831,21 +835,21 @@ The following simple example demonstrates the use of a _Point_ class with some o
 > 
 > _Point::Point()_  
 > _{_  
->  _cout << " In   Point() default constructor " << endl ;_  
+>  _cout \<\< " In   Point() default constructor " \<\< endl ;_  
 >  _x = 0.0 ;_  
 >  _y = 0.0 ;_  
 > _}_
 > 
 > _Point::Point(double xx, double yy)_  
 > _{_  
->  _cout << " In   Point(double,double)  constructor " << endl ;_  
+>  _cout \<\< " In   Point(double,double)  constructor " \<\< endl ;_  
 >  _x = xx ;_  
 >  _y = yy ;_  
 > _}_
 > 
 > _void Point::print()_  
 > _{_  
->  _cout << " (x,y) = (" << x << "," << y << ")"  ;_  
+>  _cout \<\< " (x,y) = (" \<\< x \<\< "," \<\< y \<\< ")"  ;_  
 > _}_  
 >  
 > 
@@ -855,10 +859,10 @@ The following simple example demonstrates the use of a _Point_ class with some o
 >  _Point p1;_  
 >  _Point p2(17,45.75);_
 > 
->  _cout << "\\n Point P1: " ;_  
+>  _cout \<\< "\\n Point P1: " ;_  
 >  _p1.print();_
 > 
->  _cout << "\\n Point P2: " ;_  
+>  _cout \<\< "\\n Point P2: " ;_  
 >  _p2.print();_
 > 
 >  _return EXIT\_SUCCESS ;_  

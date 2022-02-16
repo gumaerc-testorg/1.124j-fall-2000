@@ -1,6 +1,10 @@
 ---
 content_type: page
+learning_resource_types:
+- Recitations
+ocw_type: CourseSection
 parent_title: Recitations
+parent_type: CourseSection
 parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 title: Recitation 3
 uid: 8376d036-9b1e-e759-42ae-6cfd94600d2a
@@ -190,23 +194,23 @@ The **default constructor** is a constructor that does not necessarily requires 
 > _int main()_  
 > _{_  
 >  _MyComplex x;_  
->  _cout << "\\n x = " << x.real << " + "_  
->  _<< x.imaginary << " i " << endl ;_
+>  _cout \<\< "\\n x = " \<\< x.real \<\< " + "_  
+>  _\<\< x.imaginary \<\< " i " \<\< endl ;_
 > 
 >  _x.real = 15.5;_  
 >  _x.imaginary = 2.5;_  
->  _cout << " x = " << x.real << " + "_  
->  _<< x.imaginary << " i " << endl ;_
+>  _cout \<\< " x = " \<\< x.real \<\< " + "_  
+>  _\<\< x.imaginary \<\< " i " \<\< endl ;_
 > 
 >  _double r=3.3;_  
 >  _double i=7.5;_  
 >  _MyComplex y(r,i);_  
->  _cout << " y = " << y.real << " + "_  
->  _<< y.imaginary << " i " << endl ;_
+>  _cout \<\< " y = " \<\< y.real \<\< " + "_  
+>  _\<\< y.imaginary \<\< " i " \<\< endl ;_
 > 
 >  _MyComplex z(x);_  
->  _cout << " z = " << z.real << " + "_  
->  _<< z.imaginary << " i " << endl ;_  
+>  _cout \<\< " z = " \<\< z.real \<\< " + "_  
+>  _\<\< z.imaginary \<\< " i " \<\< endl ;_  
 >  _}_
 > 
 > _**Output**  
@@ -260,14 +264,14 @@ The following example demonstrates the use of a constructor header initializatio
 > _};_  
 > _void MyComplex::print(void)_  
 > _{_  
->  _cout << real << " + " << imaginary << " i " ;_  
+>  _cout \<\< real \<\< " + " \<\< imaginary \<\< " i " ;_  
 > _}_
 > 
 > _int main()_  
 > _{_  
 >  _MyComplex x, y(7, 2.1);_  
->  _cout << "\\n x = " ;     x.print() ;_  
->  _cout << "\\n y = " ;     y.print() ;_  
+>  _cout \<\< "\\n x = " ;     x.print() ;_  
+>  _cout \<\< "\\n y = " ;     y.print() ;_  
 > _}_
 > 
 > _**Output  
@@ -341,7 +345,7 @@ Modifying the last example by putting the member variables in the private part, 
 > 
 >  _~MyComplex()_  
 >  _{_  
->  _//    cout <<  "\\nAn object has been detroyed" << endl;_  
+>  _//    cout \<\<  "\\nAn object has been detroyed" \<\< endl;_  
 >  _}_
 > 
 >  _double **get\_real**(void) const ;_  
@@ -375,17 +379,17 @@ Modifying the last example by putting the member variables in the private part, 
 > _int main()_  
 > _{_  
 >  _MyComplex x;_  
->  _cout << "\\n x = " << **x.get\_real**()_  
->  _<< " + " << **x.get\_imaginary**()_  
->  _<< " i " << endl ;_
+>  _cout \<\< "\\n x = " \<\< **x.get\_real**()_  
+>  _\<\< " + " \<\< **x.get\_imaginary**()_  
+>  _\<\< " i " \<\< endl ;_
 > 
 >  _double r=3.3;_  
 >  _double i=7.5;_
 > 
 >  _MyComplex y(r,i);_  
->  _cout << " x = " << **y.get\_real**()_  
->  _<< " + " << **y.get\_imaginary**()_  
->  _<< " i " << endl ;_  
+>  _cout \<\< " x = " \<\< **y.get\_real**()_  
+>  _\<\< " + " \<\< **y.get\_imaginary**()_  
+>  _\<\< " i " \<\< endl ;_  
 >  _return EXIT\_SUCCESS;_  
 > _}_
 > 
@@ -443,7 +447,7 @@ The following example shows how a static class variable and function are defined
 > 
 > _**void Employee::printEmployeesNumber(void)   ** // static class function definition_  
 > _{_  
->  _cout << "\\n Number of employees: " <<  employeesNumber;_  
+>  _cout \<\< "\\n Number of employees: " \<\<  employeesNumber;_  
 > _}_  
 >  
 > 
@@ -487,9 +491,9 @@ When an identifier, i.e. a variable or function name, is used in a class definit
 >  _n.number=22;_  
 >  _int number = 11;_
 > 
->  _cout << "\\n number = " << **number** ;_  
->  _cout << "\\n n.number = " << **n.number** ;_  
->  _cout << "\\n ::number = " << **::number**<< endl;_  
+>  _cout \<\< "\\n number = " \<\< **number** ;_  
+>  _cout \<\< "\\n n.number = " \<\< **n.number** ;_  
+>  _cout \<\< "\\n ::number = " \<\< **::number**\<\< endl;_  
 > _}_
 > 
 > _**Output  
@@ -511,7 +515,7 @@ Note that pointers to static member data and functions should be defined as regu
 > __class MyComplex {_  
 > _public:_  
 >  _double real, imaginary;_  
->  _void print()  {  cout << real << " + " << imaginary << "i ";   }_  
+>  _void print()  {  cout \<\< real \<\< " + " \<\< imaginary \<\< "i ";   }_  
 > _};_
 > 
 > _void main()_  
@@ -526,15 +530,15 @@ Note that pointers to static member data and functions should be defined as regu
 >  **_pd = &MyComplex::imaginary;_**  
 >  _**x.\*pd** = 0.3;_  
 >  _**y.\*pd** = 44.5;_  
->  _cout << "\\n x = " << x.real << " + " << x.\*pd << " i " ;_  
->  _cout << "\\n y = " << y.real << " + " << y.\*pd << " i " << endl;_
+>  _cout \<\< "\\n x = " \<\< x.real \<\< " + " \<\< x.\*pd \<\< " i " ;_  
+>  _cout \<\< "\\n y = " \<\< y.real \<\< " + " \<\< y.\*pd \<\< " i " \<\< endl;_
 > 
 >  _**pf = &MyComplex::print;**_  
->  _cout << "\\n\\n x = " ;_  
+>  _cout \<\< "\\n\\n x = " ;_  
 >  _**(x.\*pf)();**_  
->  _cout << "\\n y = " ;_  
+>  _cout \<\< "\\n y = " ;_  
 >  _**((\*py).\*pf)();**_  
->  _cout << "\\n y = " ;_  
+>  _cout \<\< "\\n y = " ;_  
 >  _**(py->\*pf)()****;**_  
 > _}_
 > 
@@ -591,9 +595,9 @@ The following example demonstrates the definition and use of an **overloaded ope
   
 Although the **input and output operators** are usually overloaded as **friend functions**, an alternative way is to define it as a non-friend operator overloading function and provide proper get and set member functions that can be called from inside the overloaded operator functions.
 
-> _ostream& operator << (ostream &o, const MyComplex &c)_  
+> _ostream& operator \<\< (ostream &o, const MyComplex &c)_  
 > _{_  
->  _o << c.get\_real() << " + " << c.get\_imaginary() << " i " ;_  
+>  _o \<\< c.get\_real() \<\< " + " \<\< c.get\_imaginary() \<\< " i " ;_  
 >  _return o;_  
 > _}_
 > 
@@ -601,7 +605,7 @@ Although the **input and output operators** are usually overloaded as **friend f
 >  _{_  
 >  _MyComplex x;_  
 >  _...._  
->  _cout << " x = " << x <<  endl;_  
+>  _cout \<\< " x = " \<\< x \<\<  endl;_  
 >  _}_
 
   
@@ -613,7 +617,7 @@ An alternative way to access an operator overloading member function is to use i
 >  _MyComplex z ;_  
 >  _x.operator++( );_  
 >  _z = x.operator+(y);_  
->  _cout << "\\n x = " << x <<  " y = " << y <<  " z = " << z;_  
+>  _cout \<\< "\\n x = " \<\< x \<\<  " y = " \<\< y \<\<  " z = " \<\< z;_  
 >  _}_
 
 If no assignment operator is overloaded, a one-by-one member copy is performed by default using a compiler-provided assignment operator that is implicitly invoked. However, there are some cases in which such a "shallow" copy is not our intention, e.g. when there are pointer data members pointing to dynamically allocated memory. In those cases, an assignment operator can be used to make a "deep" copy, i.e. instead of copying pointer values, resulting in pointer data members of two objects to point to the same memory location, memory is dynamically allocated and the contents in the memory pointed by the source-object pointer is copied at the memory location pointed by the corresponding pointer of the other object (the target one).
@@ -662,14 +666,14 @@ The following example shows a use of two friend functions, of which the one is o
 > _void printMyComplex(const MyComplex &c)_  
 >  _// a friend function has unlimited access_  
 > _{_  
->  _cout << c.real << " + " << c.imaginary << " i " ;_  
+>  _cout \<\< c.real \<\< " + " \<\< c.imaginary \<\< " i " ;_  
 > _}_
 > 
 > _istream& operator >> (istream &i, MyComplex &c)_  
 > _{_  
->  _cout << "\\n Please give the real part: " ;_  
+>  _cout \<\< "\\n Please give the real part: " ;_  
 >  _i >> c.**real** ;                                                // access to private members_  
->  _cout << "\\n   and the imaginary part: " ;_  
+>  _cout \<\< "\\n   and the imaginary part: " ;_  
 >  _i >> c.**imaginary** ;                                               // access to private members_  
 >  _return i;_  
 > _}_
@@ -731,7 +735,7 @@ Even when no explicit conversions are provided the compiler tries to use constru
 > 
 >  _LengthFT(double d)                 **// convert constructor**_  
 >  _{_  
->  _cout << "\\n Using the convert constructor" ;_  
+>  _cout \<\< "\\n Using the convert constructor" ;_  
 >  _feet = (d\*100/2.54)/12;_  
 >  _inches =  d\*100/2.54 - 12\*feet ;_  
 >  _}_  
@@ -743,11 +747,11 @@ Even when no explicit conversions are provided the compiler tries to use constru
 >  _double distance = 0.65;_
 > 
 >  _x = (LengthFT)1.45;_ **//  Type casting (conversion) using the convert constructor**  
->  _cout << "\\n x = " << x.feet << " - " << setprecision(3) << x.inches << "'" << endl;_
+>  _cout \<\< "\\n x = " \<\< x.feet \<\< " - " \<\< setprecision(3) \<\< x.inches \<\< "'" \<\< endl;_
 > 
 >  _x = distance;_ **//  Implicit type conversion using the convert constructor**  
->  _cout << "\\n Distance (m) = " << distance << endl ;_  
->  _cout << " x = " << x.feet << " - " << x.inches << "'\\n" << flush;_
+>  _cout \<\< "\\n Distance (m) = " \<\< distance \<\< endl ;_  
+>  _cout \<\< " x = " \<\< x.feet \<\< " - " \<\< x.inches \<\< "'\\n" \<\< flush;_
 > 
 >  _return EXIT\_SUCCESS;_  
 > _}_
@@ -789,10 +793,10 @@ The following example shows a very simple case where a conversion function is de
 >  _LengthFT x(6,3);_  
 >  _double distance=4.2;_
 > 
->  _cout << "\\n x = " << x.feet << " - " << x.inches << "'" << endl;_  
+>  _cout \<\< "\\n x = " \<\< x.feet \<\< " - " \<\< x.inches \<\< "'" \<\< endl;_  
 >  _**distance += x**;_ **// the member function LengthFT::operator** _double() is called_  
->  _cout << " Distance \[m\] = " << distance << endl ;_  
->  _cout << " x \[m\] = " << **x** << endl ;_  
+>  _cout \<\< " Distance \[m\] = " \<\< distance \<\< endl ;_  
+>  _cout \<\< " x \[m\] = " \<\< **x** \<\< endl ;_  
 >   **     //  LengthFT::operator double() is called**
 > 
 >  _return EXIT\_SUCCESS;_  

@@ -1,6 +1,10 @@
 ---
 content_type: page
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: GNU Makefile Documentation
 uid: be031066-727a-2477-3dab-687fe91d9deb
@@ -728,9 +732,9 @@ foo.o : foo.c cc -c $(CFLAGS) $^ -o $@
 
 (The variable CFLAGS exists so you can specify flags for C compilation by implicit rules; we use it here for consistency so it will affect all C compilations uniformly; see section [Variables Used by Implicit Rules](#SEC96).)
 
-Often the prerequisites include header files as well, which you do not want to mention in the commands. The automatic variable `$<` is just the first prerequisite:
+Often the prerequisites include header files as well, which you do not want to mention in the commands. The automatic variable `$\<` is just the first prerequisite:
 
-VPATH = src:../headersfoo.o : foo.c defs.h hack.h cc -c $(CFLAGS) $< -o $@
+VPATH = src:../headersfoo.o : foo.c defs.h hack.h cc -c $(CFLAGS) $\< -o $@
 
 ### {{< anchor "SEC31" "#TOC31" >}}Directory Search and Implicit Rules{{< /anchor >}}
 
@@ -965,13 +969,13 @@ Each pattern normally contains the character `%` just once. When the target-patt
 {{< anchor "IDX242" >}}{{< /anchor >}}{{< anchor "IDX243" >}}{{< /anchor >}}{{< anchor "IDX244" >}}{{< /anchor >}}{{< anchor "IDX245" >}}{{< /anchor >}}{{< anchor "IDX246" >}}{{< /anchor >}}`%` characters in pattern rules can be quoted with preceding backslashes (`\&grave;). Backslashes that would otherwise quote `%` characters can be quoted with more backslashes. Backslashes that quote `%` characters or other backslashes are removed from the pattern before it is compared to file names or has a stem substituted into it. Backslashes that are not in danger of quoting `%` characters go unmolested. For example, the pattern `the\\%weird\\\\%pattern\\\&grave; has `the%weird\&grave; preceding the operative `%` character, and `pattern\\\&grave; following it. The final two backslashes are left alone because they cannot affect any `%` character.  
 Here is an example, which compiles each of `foo.o` and `bar.o` from the corresponding `.c` file:
 
-objects = foo.o bar.o all: $(objects) $(objects): %.o: %.c $(CC) -c $(CFLAGS) $< -o $@
+objects = foo.o bar.o all: $(objects) $(objects): %.o: %.c $(CC) -c $(CFLAGS) $\< -o $@
 
   
-Here `$<` is the automatic variable that holds the name of the prerequisite and `$@` is the automatic variable that holds the name of the target; see section [Automatic Variables](#SEC101).  
+Here `$\<` is the automatic variable that holds the name of the prerequisite and `$@` is the automatic variable that holds the name of the target; see section [Automatic Variables](#SEC101).  
 Each target specified must match the target pattern; a warning is issued for each target that does not. If you have a list of files, only some of which will match the pattern, you can use the filter function to remove nonmatching file names (see section [Functions for String Substitution and Analysis](#SEC77)):
 
-files = foo.elc bar.o lose.o $(filter %.o,$(files)): %.o: %.c $(CC) -c $(CFLAGS) $< -o $@ $(filter %.elc,$(files)): %.elc: %.el emacs -f batch-byte-compile $<
+files = foo.elc bar.o lose.o $(filter %.o,$(files)): %.o: %.c $(CC) -c $(CFLAGS) $\< -o $@ $(filter %.elc,$(files)): %.elc: %.el emacs -f batch-byte-compile $\<
 
   
 In this example the result of `$(filter %.o,$(files))` is `bar.o lose.o`, and the first static pattern rule causes each of these object files to be updated by compiling the corresponding C source file. The result of `$(filter %.elc,$(files))` is `foo.elc`, so that file is made from `foo.el`.  
@@ -1034,7 +1038,7 @@ In GNU make, the feature of remaking makefiles makes this practice obsolete--you
 The practice we recommend for automatic prerequisite generation is to have one makefile corresponding to each source file. For each source file `name.c` there is a makefile `name.d` which lists what files the object file `name.o` depends on. That way only the source files that have changed need to be rescanned to produce the new prerequisites.  
 Here is the pattern rule to generate a file of prerequisites (i.e., a makefile) called `name.d` from a C source file called `name.c`:
 
-%.d: %.c set -e; $(CC) -M $(CPPFLAGS) $< \\ | sed 's/\\($\*\\)\\.o\[ :\]\*/\\1.o $@ : /g' > $@; \\ \[ -s $@ \] || rm -f $@
+%.d: %.c set -e; $(CC) -M $(CPPFLAGS) $\< \\ | sed 's/\\($\*\\)\\.o\[ :\]\*/\\1.o $@ : /g' > $@; \\ \[ -s $@ \] || rm -f $@
 
   
 See section [Defining and Redefining Pattern Rules](#SEC98), for information on defining pattern rules. The `-e` flag to the shell makes it exit immediately if the $(CC) command fails (exits with a nonzero status). Normally the shell exits with the status of the last command in the pipeline (sed in this case), so make would not notice a nonzero status from the compiler.{{< anchor "IDX260" >}}{{< /anchor >}}  
@@ -1337,7 +1341,7 @@ This is a realistic example, but this particular one is not needed in practice b
 
 {{< anchor "IDX408" >}}{{< /anchor >}}{{< anchor "IDX409" >}}{{< /anchor >}}{{< anchor "IDX410" >}}{{< /anchor >}}In command execution, each line of a canned sequence is treated just as if the line appeared on its own in the rule, preceded by a tab. In particular, make invokes a separate subshell for each line. You can use the special prefix characters that affect command lines (`@`, `-`, and `+`) on each line of a canned sequence. See section [Writing the Commands in Rules](#SEC44). For example, using this canned sequence:
 
-define frobnicate@echo "frobnicating target $@"frob-step-1 $< -o $@-step-1 frob-step-2 $@-step-1 -o $@endef
+define frobnicate@echo "frobnicating target $@"frob-step-1 $\< -o $@-step-1 frob-step-2 $@-step-1 -o $@endef
 
 make will not echo the first line, the echo command. But it _will_ echo the following two command lines.
 
@@ -3182,19 +3186,19 @@ The order in which pattern rules appear in the makefile is important since this 
 
 Here are some examples of pattern rules actually predefined in make. First, the rule that compiles `.c` files into `.o` files:
 
-%.o : %.c $(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+%.o : %.c $(CC) -c $(CFLAGS) $(CPPFLAGS) $\< -o $@
 
-defines a rule that can make any file `x.o` from `x.c`. The command uses the automatic variables `$@` and `$<` to substitute the names of the target file and the source file in each case where the rule applies (see section [Automatic Variables](#SEC101)).
+defines a rule that can make any file `x.o` from `x.c`. The command uses the automatic variables `$@` and `$\<` to substitute the names of the target file and the source file in each case where the rule applies (see section [Automatic Variables](#SEC101)).
 
 Here is a second built-in rule:
 
-% :: RCS/%,v $(CO) $(COFLAGS) $<
+% :: RCS/%,v $(CO) $(COFLAGS) $\<
 
 defines a rule that can make any file `x` whatsoever from a corresponding file `x,v` in the subdirectory `RCS`. Since the target is `%`, this rule will apply to any file whatever, provided the appropriate prerequisite file exists. The double colon makes the rule **terminal**, which means that its prerequisite may not be an intermediate file (see section [Match-Anything Pattern Rules](#SEC103)).
 
 This pattern rule has two targets:
 
-%.tab.c %.tab.h: %.y bison -d $<
+%.tab.c %.tab.h: %.y bison -d $\<
 
 This tells make that the command `bison -d x.y` will make both `x.tab.c` and `x.tab.h`. If the file `foo` depends on the files `parse.tab.o` and `scan.o` and the file `scan.o` depends on the file `parse.tab.h`, when `parse.y` is changed, the command `bison -d parse.y` will be executed only once, and the prerequisites of both `parse.tab.o` and `scan.o` will be satisfied. (Presumably the file `parse.tab.o` will be recompiled from `parse.tab.c` and the file `scan.o` from `scan.c`, while `foo` is linked from `parse.tab.o`, `scan.o`, and its other prerequisites, and it will execute happily ever after.)
 
@@ -3204,7 +3208,7 @@ This tells make that the command `bison -d x.y` will make both `x.tab.c` and `x.
 
 Suppose you are writing a pattern rule to compile a `.c` file into a `.o` file: how do you write the `cc` command so that it operates on the right source file name? You cannot write the name in the command, because the name is different each time the implicit rule is applied.
 
-What you do is use a special feature of make, the **automatic variables**. These variables have values computed afresh for each rule that is executed, based on the target and prerequisites of the rule. In this example, you would use `$@` for the object file name and `$<` for the source file name.
+What you do is use a special feature of make, the **automatic variables**. These variables have values computed afresh for each rule that is executed, based on the target and prerequisites of the rule. In this example, you would use `$@` for the object file name and `$\<` for the source file name.
 
 Here is a table of automatic variables:
 
@@ -3216,7 +3220,7 @@ $%
 
 The target member name, when the target is an archive member. See section [Using make to Update Archive Files](#SEC108). For example, if the target is `foo.a(bar.o)` then `$%` is `bar.o` and `$@` is `foo.a`. `$%` is empty when the target is not an archive member.{{< anchor "IDX844" >}}{{< /anchor >}}{{< anchor "IDX845" >}}{{< /anchor >}}
 
-$<
+$\<
 
 The name of the first prerequisite. If the target got its commands from an implicit rule, this will be the first prerequisite added by the implicit rule (see section [Using Implicit Rules](#SEC93)).{{< anchor "IDX846" >}}{{< /anchor >}}{{< anchor "IDX847" >}}{{< /anchor >}}
 
@@ -3266,11 +3270,11 @@ The directory part and the file-within-directory part of the stem; `dir` and `fo
 
 The directory part and the file-within-directory part of the target archive member name. This makes sense only for archive member targets of the form `archive(member)` and is useful only when member may contain a directory name. (See section [Archive Members as Targets](#SEC109).){{< anchor "IDX871" >}}{{< /anchor >}}{{< anchor "IDX872" >}}{{< /anchor >}}
 
-`$(<D)`
+`$(\<D)`
 
 {{< anchor "IDX873" >}}{{< /anchor >}}{{< anchor "IDX874" >}}{{< /anchor >}}
 
-`$(<F)`
+`$(\<F)`
 
 The directory part and the file-within-directory part of the first prerequisite.{{< anchor "IDX875" >}}{{< /anchor >}}{{< anchor "IDX876" >}}{{< /anchor >}}
 
@@ -3290,7 +3294,7 @@ Lists of the directory parts and the file-within-directory parts of all prerequi
 
 Lists of the directory parts and the file-within-directory parts of all prerequisites that are newer than the target.
 
-Note that we use a special stylistic convention when we talk about these automatic variables; we write "the value of `$<`", rather than "the variable <" as we would write for ordinary variables such as objects and CFLAGS. We think this convention looks more natural in this special case. Please do not assume it has a deep significance; `$<` refers to the variable named < just as `$(CFLAGS)` refers to the variable named CFLAGS. You could just as well use `$(<)` in place of `$<`.
+Note that we use a special stylistic convention when we talk about these automatic variables; we write "the value of `$\<`", rather than "the variable \<" as we would write for ordinary variables such as objects and CFLAGS. We think this convention looks more natural in this special case. Please do not assume it has a deep significance; `$\<` refers to the variable named \< just as `$(CFLAGS)` refers to the variable named CFLAGS. You could just as well use `$(\<)` in place of `$\<`.
 
 ### {{< anchor "SEC102" "#TOC102" >}}How Patterns Match{{< /anchor >}}
 
@@ -3374,15 +3378,15 @@ Suffix rule definitions are recognized by comparing each rule's target against a
 
 For example, `.c` and `.o` are both on the default list of known suffixes. Therefore, if you define a rule whose target is `.c.o`, make takes it to be a double-suffix rule with source suffix `.c` and target suffix `.o`. Here is the old-fashioned way to define the rule for compiling a C source file:
 
-.c.o: $(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
+.c.o: $(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $\<
 
 Suffix rules cannot have any prerequisites of their own. If they have any, they are treated as normal files with funny names, not as suffix rules. Thus, the rule:
 
-.c.o: foo.h $(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
+.c.o: foo.h $(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $\<
 
 tells how to make the file `.c.o` from the prerequisite file `foo.h`, and is not at all like the pattern rule:
 
-%.o: %.c foo.h $(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
+%.o: %.c foo.h $(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $\<
 
 which tells how to make `.o` files from `.c` files, and makes all `.o` files using this pattern rule also depend on `foo.h`.
 
@@ -3522,11 +3526,11 @@ You can write a special kind of suffix rule for dealing with archive files. See 
 
 To write a suffix rule for archives, you simply write a suffix rule using the target suffix `.a` (the usual suffix for archive files). For example, here is the old-fashioned suffix rule to update a library archive from C source files:
 
-.c.a: $(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $\*.o $(AR) r $@ $\*.o $(RM) $\*.o
+.c.a: $(CC) $(CFLAGS) $(CPPFLAGS) -c $\< -o $\*.o $(AR) r $@ $\*.o $(RM) $\*.o
 
 This works just as if you had written the pattern rule:
 
-(%.o): %.c $(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $\*.o $(AR) r $@ $\*.o $(RM) $\*.o
+(%.o): %.c $(CC) $(CFLAGS) $(CPPFLAGS) -c $\< -o $\*.o $(AR) r $@ $\*.o $(RM) $\*.o
 
 In fact, this is just what make does when it sees a suffix rule with `.a` as the target suffix. Any double-suffix rule `.x.a` is converted to a pattern rule with the target pattern `(%.o)` and a prerequisite pattern of `%.x`.
 
@@ -3546,7 +3550,7 @@ Many features come from the version of make in System V.
 *   Variables are read from and communicated via the environment. See section [Variables from the Environment](#SEC68).
 *   Options passed through the variable MAKEFLAGS to recursive invocations of make. See section [Communicating Options to a Sub-make](#SEC53).
 *   The automatic variable $% is set to the member name in an archive reference. See section [Automatic Variables](#SEC101).
-*   The automatic variables $@, $\*, $<, $%, and $? have corresponding forms like $(@F) and $(@D). We have generalized this to $^ as an obvious extension. See section [Automatic Variables](#SEC101).
+*   The automatic variables $@, $\*, $\<, $%, and $? have corresponding forms like $(@F) and $(@D). We have generalized this to $^ as an obvious extension. See section [Automatic Variables](#SEC101).
 *   Substitution variable references. See section [Basics of Variable References](#SEC58).
 *   The command-line options `-b` and `-m`, accepted and ignored. In System V make, these options actually do something.
 *   Execution of recursive commands to run make via the variable MAKE even if `-n`, `-q` or `-t` is specified. See section [Recursive Use of make](#SEC50).
@@ -3654,13 +3658,13 @@ foo.1 : foo.man sedscript sed -e sedscript foo.man > foo.1
 
 will fail when the build directory is not the source directory, because `foo.man` and `sedscript` are in the the source directory.
 
-When using GNU make, relying on `VPATH` to find the source file will work in the case where there is a single dependency file, since the make automatic variable `$<` will represent the source file wherever it is. (Many versions of make set `$<` only in implicit rules.) A Makefile target like
+When using GNU make, relying on `VPATH` to find the source file will work in the case where there is a single dependency file, since the make automatic variable `$\<` will represent the source file wherever it is. (Many versions of make set `$\<` only in implicit rules.) A Makefile target like
 
 foo.o : bar.c $(CC) -I. -I$(srcdir) $(CFLAGS) -c bar.c -o foo.o
 
 should instead be written as
 
-foo.o : bar.c $(CC) -I. -I$(srcdir) $(CFLAGS) -c $< -o $@
+foo.o : bar.c $(CC) -I. -I$(srcdir) $(CFLAGS) -c $\< -o $@
 
 in order to allow `VPATH` to work correctly. When the target has multiple dependencies, using an explicit `$(srcdir)` is the easiest way to make the rule work well. For example, the target above for `foo.1` is best written as:
 
@@ -3718,7 +3722,7 @@ Each program-name variable should come with an options variable that is used to 
 
 If there are C compiler options that _must_ be used for proper compilation of certain files, do not include them in CFLAGS. Users expect to be able to specify CFLAGS freely themselves. Instead, arrange to pass the necessary options to the C compiler independently of CFLAGS, by writing them explicitly in the compilation commands or by defining an implicit rule, like this:
 
-CFLAGS = -gALL\_CFLAGS = -I. $(CFLAGS).c.o: $(CC) -c $(CPPFLAGS) $(ALL\_CFLAGS) $<
+CFLAGS = -gALL\_CFLAGS = -I. $(CFLAGS).c.o: $(CC) -c $(CPPFLAGS) $(ALL\_CFLAGS) $\<
 
 Do include the `-g` option in CFLAGS, because that is not _required_ for proper compilation. You can consider it a default that is only recommended. If the package is set up so that it is compiled with GCC by default, then you might as well include `-O` in the default value of CFLAGS as well.
 
@@ -4246,7 +4250,7 @@ $%
 
 The target member name, when the target is an archive member.
 
-$<
+$\<
 
 The name of the first prerequisite.
 
@@ -4282,11 +4286,11 @@ $(%F)
 
 The directory part and the file-within-directory part of $%.
 
-$(<D)
+$(\<D)
 
-$(<F)
+$(\<F)
 
-The directory part and the file-within-directory part of $<.
+The directory part and the file-within-directory part of $\<.
 
 $(^D)
 
@@ -4412,7 +4416,7 @@ A makefile specified on the command line (first form) or included (second form) 
 
 GNU make allows commands to be specified only once per target (except for double-colon rules). If you give commands for a target which already has been defined to have commands, this warning is issued and the second set of commands will overwrite the first set. See section [Multiple Rules for One Target](#SEC38).
 
-`Circular xxx <- yyy dependency dropped.`
+`Circular xxx \<- yyy dependency dropped.`
 
 This means that make detected a loop in the dependency graph: after tracing the prerequisite yyy of target xxx, and its prerequisites, etc., one of them depended on xxx again.
 
@@ -5499,8 +5503,8 @@ $
 *   [$(%F)](#IDX869)
 *   [$(\*D)](#IDX863)
 *   [$(\*F)](#IDX865)
-*   [$(<D)](#IDX871)
-*   [$(<F)](#IDX873)
+*   [$(\<D)](#IDX871)
+*   [$(\<F)](#IDX873)
 *   [$(?D)](#IDX879)
 *   [$(?F)](#IDX881)
 *   [$(@D)](#IDX859)
@@ -5510,7 +5514,7 @@ $
 *   [$\*](#IDX856)
 *   [$\*, and static pattern](#IDX247)
 *   [$+](#IDX854)
-*   [$<](#IDX844)
+*   [$\<](#IDX844)
 *   [$?](#IDX846)
 *   [$@](#IDX840)
 *   [$^](#IDX850)
@@ -5560,12 +5564,12 @@ $
 *   [/usr/include](#IDX87)
 *   [/usr/local/include](#IDX86)
 
-<
--
+\<
+--
 
-*   [< (automatic variable)](#IDX845)
-*   [<D (automatic variable)](#IDX872)
-*   [<F (automatic variable)](#IDX874)
+*   [\< (automatic variable)](#IDX845)
+*   [\<D (automatic variable)](#IDX872)
+*   [\<F (automatic variable)](#IDX874)
 
 ?
 -

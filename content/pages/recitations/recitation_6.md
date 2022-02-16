@@ -1,6 +1,10 @@
 ---
 content_type: page
+learning_resource_types:
+- Recitations
+ocw_type: CourseSection
 parent_title: Recitations
+parent_type: CourseSection
 parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 title: Recitation 6
 uid: 43cea051-41df-eac9-11ce-e5258adb4160
@@ -127,19 +131,19 @@ The _html_ code is used to specify at least the location and the dimensions of t
 
 myApplet.html:
 
-> <HTML>
+> \<HTML>
 > 
->  <HEAD>  
->  <TITLE> A simple program to run a Java Applet</TITLE>  
->  </HEAD>
+>  \<HEAD>  
+>  \<TITLE> A simple program to run a Java Applet\</TITLE>  
+>  \</HEAD>
 > 
->  <BODY>  
+>  \<BODY>  
 >     Here is the class myApplet is loaded:  
->    <APPLET CODE="myApplet.class" WIDTH=150 HEIGHT=100 align=center>  
->    </APPLET>  
->  </BODY>
+>    \<APPLET CODE="myApplet.class" WIDTH=150 HEIGHT=100 align=center>  
+>    \</APPLET>  
+>  \</BODY>
 > 
-> </HTML>
+> \</HTML>
 
   
 It is possible to write a Java® program that can work both as an applet and as an application.
@@ -164,7 +168,7 @@ The following are the primitive (or built-in) data types:
 
 It is allowable to assign the value of a primitive data type variable from one type to another without an explicit cast if the variable that the value is assigned is on the right of the following order list.
 
->                                  _byte_ < _short_ < _int_ < _long_ < _float_ < _double_
+>                                  _byte_ \< _short_ \< _int_ \< _long_ \< _float_ \< _double_
 
 A _char_ can be promoted to an _int, long, float_ or _double._ However_,_ a _boolean_ cannot be converted to any other primitive data type, since boolean values are not considered to be numbers. The following table presents all the allowable promotions:  
  
@@ -279,11 +283,11 @@ Java® has the following categories of operators. Some of them can be used as ei
 
 *   arithmetic: + , - , \*, / , %
 *   shorthand arithmetic: ++ , --
-*   relational:  > , < , >= , <= , == , !=, instanceof
+*   relational:  > , \< , >= , \<= , == , !=, instanceof
 *   conditional: && , || , ! ,  &, |
 *   assignment:  =
 *   shorthand assignment: += , -= , \*=  , /= , %=, etc.
-*   bitwise and logical operators: >> ,<< , etc.
+*   bitwise and logical operators: >> ,\<\< , etc.
 *   conditional operator: (logical Test) ? trueStatement : falseStatement
 
 The order in which the operations in expressions are performed is decided according to the _precedence_ and _associativity_ rules, which are the same as in C++. According to any precedence table, the operators of higher precedence are evaluated first, before operators with lower precedence.
@@ -341,7 +345,7 @@ additive
 shift
 {{< tdclose >}}
 {{< tdopen >}}
-<< >> >>>
+\<\< >> >>>
 {{< tdclose >}}
 
 {{< trclose >}}
@@ -350,7 +354,7 @@ shift
 relational
 {{< tdclose >}}
 {{< tdopen >}}
-< > <= >= instanceof
+\< > \<= >= instanceof
 {{< tdclose >}}
 
 {{< trclose >}}
@@ -422,7 +426,7 @@ conditional
 assignment
 {{< tdclose >}}
 {{< tdopen >}}
-\= += -= \*= /= %= &= ^= |= <<= >>= >>>=
+\= += -= \*= /= %= &= ^= |= \<\<= >>= >>>=
 {{< tdclose >}}
 
 {{< trclose >}}
@@ -566,24 +570,24 @@ _Example of Arrays_
 >  _int \[\] i ;_  
 >  _i = new int\[SIZE\];_
 > 
->  _for(int j=0 ; j<d.length ; j++)_  
+>  _for(int j=0 ; j\<d.length ; j++)_  
 >  _d\[j\] = j/2;_  
->  _for(int j=0 ; j<i.length ; j++)_  
+>  _for(int j=0 ; j\<i.length ; j++)_  
 >  _i\[j\] = j\*j;_
 > 
->  _for(int j=0 ; j<SIZE ; j++)_  
+>  _for(int j=0 ; j\<SIZE ; j++)_  
 >  _System.out.println( "  d\[" + j + "\] = " + d\[j\]);_  
->  _for(int j=0 ; j<i.length ; j++)_  
+>  _for(int j=0 ; j\<i.length ; j++)_  
 >  _System.out.println( "  i\[" + j + "\] = " + i\[j\]);_
 > 
 >  _int m=5, n=3;_  
 >  _int im, in;_  
 >  _double x\[\]\[\] = new double\[m\]\[n\];_
 > 
->  _for(im=0;im<m;im++)_  
+>  _for(im=0;im\<m;im++)_  
 >  _{_  
 >  _System.out.println();_  
->  _for(in=0;in<n;in++)_  
+>  _for(in=0;in\<n;in++)_  
 >  _{_  
 >  _System.out.print(" " + x\[im\]\[in\] + " ");_  
 >  _}_  
@@ -627,13 +631,13 @@ _Example of a Ragged Array_
 > 
 >  _x = new double\[5\]\[\];_
 > 
->  _for(i=0;i<5;i++)_  
+>  _for(i=0;i\<5;i++)_  
 >  _{_  
 >  _x\[i\] = new double\[i+1\];_
 > 
 >  _System.out.println();_
 > 
->  _for(j=0;j<i+1;j++)_  
+>  _for(j=0;j\<i+1;j++)_  
 >  _{_  
 >  _x\[i\]\[j\] = (i+1)\*10+j+1;_  
 >  _System.out.print(" " + x\[i\]\[j\] + " ");_  
@@ -667,8 +671,8 @@ An _abstract_ class is a class that cannot be instantiated, i.e. no objects of t
 
 A _final_ class is a class that cannot be subclassed. Specifying a class as _final_ automatically implies that all its methods are considered to be final. Specifying a class, or a function, as final may sometimes be useful, considering security and optimization issues.
 
-The _extends <superclass>_ specifies that the class that is declared is a subclass of the provided <superclass>.  
-Finally, the _implements<interface1>, <interface2>,....,_ specifies that the class implements one or more interfaces, whose names are provided after the keyword _implements_ in a comma separated list.
+The _extends \<superclass>_ specifies that the class that is declared is a subclass of the provided \<superclass>.  
+Finally, the _implements\<interface1>, \<interface2>,....,_ specifies that the class implements one or more interfaces, whose names are provided after the keyword _implements_ in a comma separated list.
 
 Note that assigning a reference data type variable, i.e. a variable that refers to an instance of a class, to another reference variable then both variables refer to the same object. The function [clone()](http://java.sun.com/products/jdk/1.1/docs/api/java.lang.Object.html#clone__) may be used to actually make an actual complete copy of one object to another, i.e. copy the object state into a new identical object but in a different memory location.
 
@@ -869,7 +873,7 @@ A function declaration may also provide more information about it using any of t
 > *   _final_: specifies that the function cannot be overridden by a subclass
 > *   native: indicates that the function is implemented in another language (e.g. C++)
 > *   _synchronized_: indicates that certain precautions should be taken to ensure that functions that operate on same data, do it in a threat-safe way.
-> *   _throw_s _<exceptions>_: specifies the checked exceptions that the function may throw
+> *   _throw_s _\<exceptions>_: specifies the checked exceptions that the function may throw
 
 An implicit reference to the object with which a function is invoked, called _this_, is available in every non-class (i.e. non-static) function. It is used to explicitly refer to members of the object that have invoked the function, or when an object reference is required.
 

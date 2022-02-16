@@ -1,6 +1,10 @@
 ---
 content_type: page
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Physical Simulation
 uid: cab4f67e-ebcd-c2e6-24c2-67ad391b0b21
@@ -11,7 +15,7 @@ Physical Simulation Example
 
 The following example shows how you might integrate a numerical simulation with a Java® animation. Here, we have considered a simple spring-mass-damper system of the form
 
-    d2x/dt2 + 2xw0dx/dt + w02 x = 0
+    d{{< sup "2" >}}x/dt{{< sup "2" >}} + 2xw{{< sub "0" >}}dx/dt + w{{< sub "0" >}}{{< sup "2" >}} x = 0
 
 and computed the solution numerically using an explicit Forward Euler time-stepping scheme. Try increasing the size of the time step and notice that the simulation becomes unstable when the growth factors become larger than 1. When using explicit time integration, we must therefore choose our time step to be smaller than the critical time step.
 
@@ -110,7 +114,7 @@ _class Ball {_
  _float G1, G2;  // Growth factors._
 
  _// Determine the eigenvalues._  
- _if (fXi < 1.0f) {_  
+ _if (fXi \< 1.0f) {_  
  _fReal1 = fReal2 = -fW0\*fXi;_  
  _fImag1 = (float)(fW0\*Math.sqrt(1-fXi\*fXi));_  
  _fImag2 = -fImag1;_  

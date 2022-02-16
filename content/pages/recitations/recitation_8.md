@@ -1,6 +1,10 @@
 ---
 content_type: page
+learning_resource_types:
+- Recitations
+ocw_type: CourseSection
 parent_title: Recitations
+parent_type: CourseSection
 parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 title: Recitation 8
 uid: c1780287-d0f8-a77d-3b3f-715b457172f9
@@ -34,10 +38,10 @@ _{_
  _public static void main(String args\[\])_  
  _{_  
  _double d\[\] = new double\[4\];_  
- _for(int j=0 ; j<d.length ; j++)_  
+ _for(int j=0 ; j\<d.length ; j++)_  
  _d\[j\] = j\*7.15 + 2.19 ;_
 
- _for(int j=0 ; j<=d.length ; j++)_  
+ _for(int j=0 ; j\<=d.length ; j++)_  
  _{_  
  _try{_  
  _System.out.print( "  d\[" + j + "\] / " + j + " = ");_  
@@ -165,7 +169,7 @@ _{_
 
  _public void run()_  
  _{_  
- _for(int i=0; i<5;i++)_  
+ _for(int i=0; i\<5;i++)_  
  _{_  
  _System.out.println("Thread: " + name);_  
  _try_  
@@ -249,7 +253,7 @@ _{_
 
  _public void run()_  
  _{_  
- _for(int i=0; i<5;i++)_  
+ _for(int i=0; i\<5;i++)_  
  _{_  
  _System.out.println("Thread: " + name);_  
  _try_  
@@ -363,7 +367,7 @@ _{_
 
  _public void run()_  
  _{_  
- _for(int i=0; i<5;i++)_  
+ _for(int i=0; i\<5;i++)_  
  _{_  
  _System.out.println("Thread: " + name);_  
  _try_  
@@ -588,21 +592,21 @@ The above applet can be executed using an html file like the following:
 
 > SwingApplet1.html
 
-> _<html>_  
-> _<head>_  
->  _<title>JApplet Example # 1</title>_  
-> _</head>_  
-> _<body>_
+> _\<html>_  
+> _\<head>_  
+>  _\<title>JApplet Example # 1\</title>_  
+> _\</head>_  
+> _\<body>_
 > 
-> _<center>_  
-> _<h2>_  
-> _<u>JApplet Example # 1</u></h2>_  
-> _<hr><applet code="SwingApplet1.class" WIDTH="486" HEIGHT="94"></applet>_  
-> _<hr></center>_
+> _\<center>_  
+> _\<h2>_  
+> _\<u>JApplet Example # 1\</u>\</h2>_  
+> _\<hr>\<applet code="SwingApplet1.class" WIDTH="486" HEIGHT="94">\</applet>_  
+> _\<hr>\</center>_
 > 
-> _<p><br>_  
-> _</body>_  
-> _</html>_
+> _\<p>\<br>_  
+> _\</body>_  
+> _\</html>_
 
 Then, appletviewer (using the command: _appletviewer SwingApplet1.html_) displays the following window:
 

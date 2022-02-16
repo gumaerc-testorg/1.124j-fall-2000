@@ -1,6 +1,10 @@
 ---
 content_type: page
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Java 3D Lecture
 uid: c9c9104a-ac54-a054-d006-354e424ccb63
@@ -254,7 +258,7 @@ Class [_TransformGroup_](http://java.sun.com/products/java-media/3D/forDevelope
 
 The [_Transform3D_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Transform3D.html) object of a [_TransformGroup_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/TransformGroup.html) object can be set using the method [_setTransform_(Transform3D  t)](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/TransformGroup.html#setTransform_javax_media_j3d_Transform3D_), which is used to set the transformation components of the [_Transform3D_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Transform3D.html) object to the ones of the passed parameter.
 
-A [_Transform3D_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Transform3D.html) object is a 4x4 double-precision matrix that is used to determine the transformations of a [_TransformGroup_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/TransformGroup.html) node, as shown in the following equation. The elements T00, T01, T02, T10, T11, T12,T20, T21, and T22 are used to set the rotation and scaling, and the T03, T13, and T23 are used to set the translation.
+A [_Transform3D_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Transform3D.html) object is a 4x4 double-precision matrix that is used to determine the transformations of a [_TransformGroup_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/TransformGroup.html) node, as shown in the following equation. The elements T{{< sub "00" >}}, T{{< sub "01" >}}, T{{< sub "02" >}}, T{{< sub "10" >}}, T{{< sub "11" >}}, T{{< sub "12" >}},T{{< sub "20" >}}, T{{< sub "21" >}}, and T{{< sub "22" >}} are used to set the rotation and scaling, and the T{{< sub "03" >}}, T{{< sub "13" >}}, and T{{< sub "23" >}} are used to set the translation.
 
 ![A Transform3D object as a 4x4 double-precision matrix.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/lecture-notes/transformation.gif)
 

@@ -1,6 +1,10 @@
 ---
 content_type: page
+learning_resource_types:
+- Recitations
+ocw_type: CourseSection
 parent_title: Recitations
+parent_type: CourseSection
 parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 title: Recitation 9
 uid: 6fafcc10-1009-861d-bf37-c770639a665f
@@ -144,21 +148,21 @@ _}_
 
 TestingJApplet.html
 
-_<html>_  
-_<head>_  
-_<title>JApplet Testing # 1</title>_  
-_</head>_  
-_<body>_
+_\<html>_  
+_\<head>_  
+_\<title>JApplet Testing # 1\</title>_  
+_\</head>_  
+_\<body>_
 
-_<center>_  
-_<h2>_  
-_<u>JApplet Example # 1</u></h2>_  
-_<hr><Applet code="TestingJApplet.class" WIDTH="500" HEIGHT="100"></Applet>_  
-_<hr></center>_
+_\<center>_  
+_\<h2>_  
+_\<u>JApplet Example # 1\</u>\</h2>_  
+_\<hr>\<Applet code="TestingJApplet.class" WIDTH="500" HEIGHT="100">\</Applet>_  
+_\<hr>\</center>_
 
-_<p><br>_  
-_</body>_  
-_</html>_
+_\<p>\<br>_  
+_\</body>_  
+_\</html>_
 
 _\> appletviewer TestingJApplet.html_
 

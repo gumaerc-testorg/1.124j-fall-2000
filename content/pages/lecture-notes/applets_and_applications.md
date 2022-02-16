@@ -1,6 +1,10 @@
 ---
 content_type: page
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Applets and Applications
 uid: 7377f250-f403-ddda-5d68-af923ca75434
@@ -123,7 +127,7 @@ _}_
 
 _mypage.html_
 
-_<HTML>_
+_\<HTML>_
 
-_<APPLET CODE=MyApp.class WIDTH=400 HEIGHT=400>_  
-_</APPLET>_
+_\<APPLET CODE=MyApp.class WIDTH=400 HEIGHT=400>_  
+_\</APPLET>_

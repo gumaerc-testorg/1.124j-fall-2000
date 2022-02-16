@@ -1,6 +1,10 @@
 ---
 content_type: page
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Shape Example
 uid: c6123d4d-4502-1a86-7b77-30fc94e894d0
@@ -204,7 +208,7 @@ _{_
  _shapeArray\[2\] = new Square(3,3,1);_
 
  _// Print out the array of Shapes. The length member gives the array size._  
- _for (int i = 0; i < shapeArray.length; i++) {_  
+ _for (int i = 0; i \< shapeArray.length; i++) {_  
  _shapeArray\[i\].print();_  
  _}_
 
@@ -217,7 +221,7 @@ _{_
  _// Note: here we have not provided a way to decrement the Shape counter._  
  _a = b = c = null;_  
  _s = null;_  
- _for (int i = 0; i < shapeArray.length; i++) {_  
+ _for (int i = 0; i \< shapeArray.length; i++) {_  
  _shapeArray\[i\] = null;_  
  _}_  
  _shapeArray = null;_  
