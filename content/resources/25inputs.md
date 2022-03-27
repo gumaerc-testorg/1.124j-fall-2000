@@ -12,6 +12,7 @@ learning_resource_types:
 ocw_type: OCWImage
 parent_title: Recitations
 parent_type: CourseSection
+parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 resourcetype: Image
 title: 25inputs.gif
 uid: 1cbac8d9-2fb4-22ad-4bce-f2b8e530b55c

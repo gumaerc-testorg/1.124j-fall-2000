@@ -8,6 +8,7 @@ learning_resource_types:
 ocw_type: OCWFile
 parent_title: Assignments
 parent_type: CourseSection
+parent_uid: 1d7dc895-bfda-1074-c805-2b0dcdb37cee
 resourcetype: Document
 title: sol5.pdf
 uid: f36b83ad-c046-1381-0957-b32221eeff18

@@ -12,6 +12,7 @@ learning_resource_types:
 ocw_type: OCWImage
 parent_title: Recitations
 parent_type: CourseSection
+parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 resourcetype: Image
 title: 24writer.gif
 uid: dbddd749-9bde-d555-8b04-5f94dcea773b

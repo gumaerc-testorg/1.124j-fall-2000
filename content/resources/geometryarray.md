@@ -12,6 +12,7 @@ learning_resource_types:
 ocw_type: OCWImage
 parent_title: Lecture Notes
 parent_type: CourseSection
+parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 resourcetype: Image
 title: geometryarray.gif
 uid: d404ba55-8789-1a59-f627-8f8ae65b49b3

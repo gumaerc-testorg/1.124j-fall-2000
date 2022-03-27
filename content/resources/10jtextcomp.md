@@ -12,6 +12,7 @@ learning_resource_types:
 ocw_type: OCWImage
 parent_title: Recitations
 parent_type: CourseSection
+parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 resourcetype: Image
 title: 10jtextcomp.gif
 uid: 79dfd73b-4fa9-ad21-cb01-265849468f11

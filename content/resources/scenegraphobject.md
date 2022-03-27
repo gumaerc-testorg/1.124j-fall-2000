@@ -12,6 +12,7 @@ learning_resource_types:
 ocw_type: OCWImage
 parent_title: Lecture Notes
 parent_type: CourseSection
+parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 resourcetype: Image
 title: scenegraphobject.gif
 uid: d718435c-535c-ef73-9917-b89c8413f90f

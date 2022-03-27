@@ -77,7 +77,7 @@ Problem Set 6 ([PDF]({{< baseurl >}}/resources/ps6))
 {{< tropen >}}
 {{< tdopen >}}
 Problem Set 7 ([PDF]({{< baseurl >}}/resources/ps7))  
-Pole Data for Problem Set 7 ([DATA](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/assignments/pole.data))
+Pole Data for Problem Set 7 ([DATA]({{< baseurl >}}/resources/pole))
 {{< tdclose >}}
 {{< tdopen >}}
 ([PDF]({{< baseurl >}}/resources/sol7))
