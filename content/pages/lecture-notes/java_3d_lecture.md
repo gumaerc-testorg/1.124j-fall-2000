@@ -1,5 +1,6 @@
 ---
 content_type: page
+description: ''
 learning_resource_types:
 - Lecture Notes
 ocw_type: CourseSection
@@ -8,6 +9,10 @@ parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Java 3D Lecture
 uid: c9c9104a-ac54-a054-d006-354e424ccb63
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 This lecture is courtesy of Petros Komodromos.
@@ -136,7 +141,7 @@ A Java® 3D scene is created as a tree-like graph structure, which is traversed 
 
 The following image shows a basic Java® 3D graph scene, where the content branch is located on the left and the view branch on the right side of the graph:
 
-![A basic Java3D graph scene.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/lecture-notes/scene.gif)
+{{< resource "cb6b58f7-abe0-910f-9d4c-1a4e758995c5" >}}
 
 Java® 3D applications construct individual graphic components as separate objects, called nodes, and connects them together into a tree-like scene graph, in which the objects and the viewing of them can easily be manipulated. The scene graph structure contains the description of the virtual universe, which represents the entire scene. All information concerning geometric objects, their attributes, position and orientation, as well as the viewing information are all contained into the scene graph.
 
@@ -151,7 +156,7 @@ The Java® 3D node objects of a Java® 3D scene graph, which are instances of th
 
 The following graph shows the class hierarchy of the major subclasses of the [_SceneGraphObject_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/SceneGraphObject.html) class:
 
-![Class hierarchy of the major subclasses of the SceneGraphObject class.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/lecture-notes/scenegraphobject.gif)
+{{< resource "d718435c-535c-ef73-9917-b89c8413f90f" >}}
 
 _Class [Node](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Node.html)_ _and its subclasses_
 
@@ -172,7 +177,7 @@ The geometry component information of a [_Shape3D_](http://java.sun.com/products
 
 For example, the [_GeometryArray_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/GeometryArray.html) is a subclass of the class [_Geometry_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Geometry.html), which itself extends the [_NodeComponent_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/NodeComponent.html) class, that is extended to create the various primitive types such as lines, triangle strips and quadrilaterals.
 
-![Class Node Component and its subclasses.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/lecture-notes/geometryarray.gif)
+{{< resource "d404ba55-8789-1a59-f627-8f8ae65b49b3" >}}
 
 The [_IndexedGeometryArray_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/IndexedGeometryArray.html) object above contains separate integer arrays that index, among others, into arrays of positional coordinates specifying how vertices are connected to form geometry primitives. This class is extended to create the various indexed primitive types, such as [_IndexedLineArray_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/IndexedLineArray.html), [_IndexedPointArray_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/IndexedPointArray.html), and [_IndexedQuadArray_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/IndexedQuadArray.html).
 
@@ -207,7 +212,7 @@ Typically, a Java® 3D program has only one [_VirtualUniverse_](http://java.sun
 
 The [_VirtualUniverse_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/VirtualUniverse.html) and [_Locale_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Locale.html) classes, as well as the [_View_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/View.html) class, are subclasses of the basic superclass [_**Object**_](https://docs.oracle.com/javase/tutorial/java/IandI/objectclass.html), as shown below:
 
-![The VirtualUniverse, Locale and View class as subclasses of the basic superclass Object.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/lecture-notes/object.gif)  
+{{< resource "e45316c9-a420-f0b0-66d3-544026497bcd" >}}  
   
  
 
@@ -226,7 +231,7 @@ Viewing Branch: [_ViewPlatform_](http://java.sun.com/products/java-media/3D/for
 
 The view branch has usually the following structure, consisting of nodes that control the viewing of the scene.
 
-![Structure of the view branch.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/lecture-notes/viewbranch.gif)
+{{< resource "be7231df-1539-a99c-6e1a-611c255912f1" >}}
 
 The view branch contains some scene graph viewing objects that can be used to define the viewing parameters and details, such as the [_ViewPlatform_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/ViewPlatform.html), [_View_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/View.html), [_Screen3D_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Screen3D.html), [_PhysicalBody_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/PhysicalBody.html), and [_PhysicalEnvironment_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/PhysicalEnvironment.html) classes.
 
@@ -238,7 +243,7 @@ A [_View_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API
 
 A [_View_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/View.html) object contains a list of [_Canvas3D_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Canvas3D.html) objects where rendering of the view is done. The method [_addCanvas3D_(Canvas3D c)](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/View.html#addCanvas3D_javax_media_j3d_Canvas3D_) of the class [_View_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/View.html) can be used to add the provided [_Canvas3D_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Canvas3D.html) object to the list of canvases of the [View](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/View.html) object.
 
-![Canwas and Canvas3D.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/lecture-notes/canvas.gif)
+{{< resource "962db16a-d746-33a5-7a2a-a1311a65fb65" >}}
 
 Class [_Canvas3D_](http://java.sun.com/products/java-media/3D/forDevelopers/j3dapi/javax/media/j3d/Canvas3D.html) extends the heavyweight class [_Canvas_](http://java.sun.com/j2se/1.3/docs/api/java/awt/Canvas.html) in order to achieve hardware acceleration, since a low rendering library, such as OpenGL, requires the rendering to be done in a native window to enable hardware acceleration.
 
@@ -250,7 +255,7 @@ Default Coordinate System
 The default coordinate system is a right-handed Cartesian coordinate system centered on the screen with the x and y-axes directed towards the right and top of the screen, respectively. The z-axis is, by default directed out of the screen towards the viewer, as shown below. The default distances are in meter and the angles in radians.  
  
 
-![The default coordinate system.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/lecture-notes/coords.gif)  
+{{< resource "b4b7e83d-b897-f4fe-b33f-16f275d7751d" >}}  
   
 Transformations
 
@@ -260,7 +265,7 @@ The [_Transform3D_](http://java.sun.com/products/java-media/3D/forDevelopers/J3
 
 A [_Transform3D_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Transform3D.html) object is a 4x4 double-precision matrix that is used to determine the transformations of a [_TransformGroup_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/TransformGroup.html) node, as shown in the following equation. The elements T{{< sub "00" >}}, T{{< sub "01" >}}, T{{< sub "02" >}}, T{{< sub "10" >}}, T{{< sub "11" >}}, T{{< sub "12" >}},T{{< sub "20" >}}, T{{< sub "21" >}}, and T{{< sub "22" >}} are used to set the rotation and scaling, and the T{{< sub "03" >}}, T{{< sub "13" >}}, and T{{< sub "23" >}} are used to set the translation.
 
-![A Transform3D object as a 4x4 double-precision matrix.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/lecture-notes/transformation.gif)
+{{< resource "339b4938-a492-82c1-5254-af6bded234ec" >}}
 
 As the scene graph is traversed by the Java® 3D renderer, the transformations specified by any transformation nodes accumulate. The transformations closer to the geometry nodes executed prior to the ones closer to the virtual universe node.
 
@@ -479,7 +484,7 @@ _{_
  _frame.setVisible(true);_
 
  _}_  
-_}_![My First Java3D Example.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/lecture-notes/myfirstj3d.gif)
+_}_{{< resource "6b5587cd-656d-0bd0-fb79-7b5e50916d6c" >}}
 
 A utility class, called _SimpleUniverse_, can alternatively be used to automatically build a common arrangement of a universe, locale, and viewing classes, avoiding the need to create explicitly the viewing branch. Then, a branch is added into the simple universe to make its nodes live (i.e. drawable).
 
@@ -557,7 +562,7 @@ Multiple criteria can be combined using the following classes to form complex wa
 
 The class hierarchy of the [_WakeupCondition_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupCondition.html) class is shown below:
 
-![Class hierarchy of the WakeupCondition class.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/lecture-notes/wakeupconditions.gif)
+{{< resource "76163ee3-f63d-c91c-3d9f-88be97281f08" >}}
 
 The following code provides an example of setting a [_WakeupCondition_](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupCondition.html) object
 

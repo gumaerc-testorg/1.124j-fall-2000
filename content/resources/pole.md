@@ -1,7 +1,7 @@
 ---
 content_type: resource
 description: ''
-file: /media/courses/1-124j-foundations-of-software-engineering-fall-2000/321319c4f173bf369d0cb81b86c39c74_pole.data
+file: /courses/1-124j-foundations-of-software-engineering-fall-2000/321319c4f173bf369d0cb81b86c39c74_pole.data
 file_type: text/plain
 learning_resource_types:
 - Assignments
@@ -12,4 +12,8 @@ parent_uid: 1d7dc895-bfda-1074-c805-2b0dcdb37cee
 resourcetype: Other
 title: pole.data
 uid: 321319c4-f173-bf36-9d0c-b81b86c39c74
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---

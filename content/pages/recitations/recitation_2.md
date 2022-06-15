@@ -1,5 +1,6 @@
 ---
 content_type: page
+description: ''
 learning_resource_types:
 - Recitations
 ocw_type: CourseSection
@@ -8,6 +9,10 @@ parent_type: CourseSection
 parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 title: Recitation 2
 uid: 6e443d7a-ea50-629d-198f-5b188cc78200
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 {{< anchor "1" >}}{{< /anchor >}}
@@ -503,7 +508,7 @@ You should be particularly careful not to exceed the range of an array since the
  _x\[0\]= 5;_  
  _x\[3\] = x\[0\]+23;_
 
-![Example on references, pointers and arrays.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/recitations/rec2a.jpg)
+{{< resource "493f266f-14df-0799-423b-0acc9c93027d" >}}
 
  **_/\* Example on references, pointers and arrays \*/_**
 
@@ -647,7 +652,7 @@ Multidimensional arrays (of any dimension) can be defined using additional brack
 
 Although it is natural to think a 2-D array having a rectangular 2-D form, the elements of arrays (of any dimension) in C++ are actually stored in a contiguous memory location. The following graph shows how a 2-D array is stored. The top graph shows the virtual representation of a 2-D array, while the bottom one shows how actually it is stored in memory:
 
-![Graphs showing how a 2-D array is stored.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/recitations/rec2b.jpg)
+{{< resource "aa95256f-9d16-3e59-da6d-6ae0f9e6d010" >}}
 
 Therefore, the following expressions are exactly equivalent to **m\[i\]\[j\]**:
 
