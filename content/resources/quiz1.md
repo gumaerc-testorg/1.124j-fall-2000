@@ -5,6 +5,7 @@ file: /courses/1-124j-foundations-of-software-engineering-fall-2000/779df2801837
 file_type: application/pdf
 learning_resource_types:
 - Exams
+license: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ocw_type: OCWFile
 parent_title: Exams
 parent_type: CourseSection

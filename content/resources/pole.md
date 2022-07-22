@@ -5,6 +5,7 @@ file: /courses/1-124j-foundations-of-software-engineering-fall-2000/321319c4f173
 file_type: text/plain
 learning_resource_types:
 - Assignments
+license: https://creativecommons.org/licenses/by-nc-sa/4.0/
 ocw_type: OCWFile
 parent_title: Assignments
 parent_type: CourseSection
