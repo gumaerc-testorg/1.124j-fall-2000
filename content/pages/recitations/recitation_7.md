@@ -1,9 +1,18 @@
 ---
 content_type: page
+description: ''
+learning_resource_types:
+- Recitations
+ocw_type: CourseSection
 parent_title: Recitations
+parent_type: CourseSection
 parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 title: Recitation 7
 uid: a0fed608-bcf6-b4cc-ed12-a80b51d8f0b1
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 These notes were prepared by [Petros Komodromos](mailto:komodromos@ucy.ac.cy).  
@@ -316,7 +325,7 @@ Example with Strings
 >  _title\[2\] = " Engineering";_
 > 
 >  _course = number + ": ";_  
->  _for(int i=0 ; i<title.length ; i++)_  
+>  _for(int i=0 ; i\<title.length ; i++)_  
 >  _course += title\[i\];_  
 >  _System.out.println(course);_  
 >  _}_  
@@ -334,7 +343,7 @@ A _package_ essentially defines a certain namespace, allowing functions in diffe
 
 Every class in Java® belongs to a package, either the one specified at the top in a package statement or the default package. Everything in the java.lang package is by default imported in any Java® program, and therefore, it does not need to be imported.
 
-A package is created by using a package statement in the java® source code file. The statement is the keyword package followed by the name of the package. Then, everything defined after that point is considered to belong to that package. When a Java® source code file is compiled the resulting class file(s) is (are) created in the directory specified by the package statement. An extra option to the javac compiler (javac -d <directory> <myProgram.java>) can be used to specify where to create all subdirectories according to the package statement. To enable the use of any new packages it may be necessary to properly setup the CLASSPATH environment variable. The latter variable indicates where to search for user-developed packages.
+A package is created by using a package statement in the java® source code file. The statement is the keyword package followed by the name of the package. Then, everything defined after that point is considered to belong to that package. When a Java® source code file is compiled the resulting class file(s) is (are) created in the directory specified by the package statement. An extra option to the javac compiler (javac -d \<directory> \<myProgram.java>) can be used to specify where to create all subdirectories according to the package statement. To enable the use of any new packages it may be necessary to properly setup the CLASSPATH environment variable. The latter variable indicates where to search for user-developed packages.
 
 The classes defined in a package can be used in a program using an import statement. This statement consists of the keyword import followed by the name of the package to be inserted. The import statement specifies to the Java® compiler the location of the classes enabling the use of shorter names for each imported class. No import statements are required if the class files that are used in a Java® program are in the same directory that the class that uses them is located.
 
@@ -434,7 +443,7 @@ The garbage collection may be performed at any time and in any order according t
 
 An applet inherits functionalities that allow it to run in a Java®-enabled browser. Although applets do not need to implement a main method, every applet has to implement at least one of the _init_, _start_, or _paint_ methods that inherits from its superclass. For AWT, the class Applet that is provided in the package java.applet of the Application Programming Interface (API) is inherited by any applet. For Swing applets the class JApplet is inherited by any applet. Class JApplet extends the AWT Applet class and implements the Accessible and RootPaneContainer interfaces.
 
-A **Java® applet** is based on a set of conventions and functionalities that are inherited allowing it to be executed in an appletviewer or any Java® enabled browser. An _html_ file needs to be used so as to load the class from a Java® enabled browser, or using the appletviewer provided with the Java® Development Kit (JDK). The class file of an applet can be loaded and interpreted in any Java® enabled browser, or the appletviewer, using an _html_ file. The _html_ code is used to specify at least the location and the dimensions of the applet to be loaded. When a Java®-enabled browser, or the appletviewer, encounters an <APPLET> tag, it reserves a display area according to the specified width and height for the applet, loads the bytecodes for the specified subclass of **Applet**, then, creates an instance of that subclass. Finally, it calls the applets _init()_ and _start()_ methods. The execution of the applet can be customized using the options that the <APPLET> tag provides. When the applet needs to use a class, the browser, first,  tries to find the class on the host that's running the browser, and if it cannot find, it searches for it in the same place from where the Applet subclass bytecode came from in order to create that applet's instance.
+A **Java® applet** is based on a set of conventions and functionalities that are inherited allowing it to be executed in an appletviewer or any Java® enabled browser. An _html_ file needs to be used so as to load the class from a Java® enabled browser, or using the appletviewer provided with the Java® Development Kit (JDK). The class file of an applet can be loaded and interpreted in any Java® enabled browser, or the appletviewer, using an _html_ file. The _html_ code is used to specify at least the location and the dimensions of the applet to be loaded. When a Java®-enabled browser, or the appletviewer, encounters an \<APPLET> tag, it reserves a display area according to the specified width and height for the applet, loads the bytecodes for the specified subclass of **Applet**, then, creates an instance of that subclass. Finally, it calls the applets _init()_ and _start()_ methods. The execution of the applet can be customized using the options that the \<APPLET> tag provides. When the applet needs to use a class, the browser, first,  tries to find the class on the host that's running the browser, and if it cannot find, it searches for it in the same place from where the Applet subclass bytecode came from in order to create that applet's instance.
 
 An AWT applet inherits, since it _extends_ it, the **Applet** class provided by the java.applet package of the Java® Core API. The **Applet** class extends the AWT (Abstarct Window Toolkit) Panel class, which itself extends the Container class (which provides the ability to include other components and using a layout manager to control the size and position of those components). The latter extends the Component class (which provides the drawing and handling events capabilities). _Swing applets_ extend the JApplet class, which is a subclass of the AWT Applet class and implements the Accessible and RootPaneContainer interfaces.
 

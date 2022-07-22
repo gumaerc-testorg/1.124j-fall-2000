@@ -1,9 +1,18 @@
 ---
 content_type: page
+description: ''
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Linked Lists
 uid: 030b40c6-3c0f-72a6-b3c6-c628e49db05f
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 Topics
@@ -203,7 +212,7 @@ _**list.h**_
 _#ifndef \_LIST\_H\__  
 _#define \_LIST\_H\__
 
-_#include <iostream.h>_  
+_#include \<iostream.h>_  
 _#ifndef TRUE_  
 _#define TRUE 1_  
 _#endif                          // TRUE_  
@@ -235,8 +244,8 @@ _class ListElement {_
  _// Grant special access privilege to class list._  
 _friend class List;_
 
- _// An operator<< which prints out a list._  
-_friend ostream& operator<<(ostream &os, const List& list);_  
+ _// An operator\<\< which prints out a list._  
+_friend ostream& operator\<\<(ostream &os, const List& list);_  
 _};_  
  
 
@@ -264,8 +273,8 @@ _class List {_
  _// Return a pointer to the smallest element. Does not remove it from the list._  
  _ListElement \*GetSmallest();_
 
- _// An operator<< which prints out the entire list._  
- _friend ostream& operator<<(ostream &os, const List& list);_  
+ _// An operator\<\< which prints out the entire list._  
+ _friend ostream& operator\<\<(ostream &os, const List& list);_  
 _};_
 
 _#endif                          // \_LIST\_H\__
@@ -359,8 +368,8 @@ _ListElement \*List::GetSmallest() {_
  _return pPrevious;_  
 _}_
 
-_// An operator<< which prints out the entire list._  
-_ostream& operator<<(ostream &os, const List& list) {_  
+_// An operator\<\< which prints out the entire list._  
+_ostream& operator\<\<(ostream &os, const List& list) {_  
  _ListElement \*pCurrent;_
 
  _for (pCurrent = list.mpHead; pCurrent ! = NULL;_  
@@ -399,7 +408,7 @@ _class Triangle : public ListElement {_
  _Triangle(float fBase, float fHeight) {mfBase = fBase; mfHeight = fHeight;}_  
  _~Triangle() {}_  
  _float ElementValue() {return (mfBase \* mfHeight / 2);}_  
- _void print() {cout << "Triangle: area = " << ElementValue() << endl;}_  
+ _void print() {cout \<\< "Triangle: area = " \<\< ElementValue() \<\< endl;}_  
 _};_  
  
 
@@ -414,7 +423,7 @@ _class Rectangle : public ListElement {_
  _Rectangle(float fBase, float fHeight) {mfBase = fBase; mfHeight = fHeight;}_  
  _~Rectangle() {}_  
  _float ElementValue() {return (mfBase \* mfHeight);}_  
- _void print() {cout << "Rectangle: area = " << ElementValue() << endl;}_  
+ _void print() {cout \<\< "Rectangle: area = " \<\< ElementValue() \<\< endl;}_  
 _};_  
    
  
@@ -430,7 +439,7 @@ _class Circle : public ListElement {_
  _Circle(float fRadius) {mfRadius = fRadius;}_  
  _~Circle() {}_  
  _float ElementValue() {return (PI \* mfRadius \* mfRadius);}_  
- _void print() {cout << "Circle: area = " << ElementValue() << endl;}_  
+ _void print() {cout \<\< "Circle: area = " \<\< ElementValue() \<\< endl;}_  
 _};_  
 _#endif                          // \_SHAPE\_H\__  
  
@@ -454,13 +463,13 @@ _main() {_
  _p = new Circle(1);_  
  _list.AddElement(p);_
 
- _cout << list << endl;_
+ _cout \<\< list \<\< endl;_
 
  _list.RemoveElement(list.GetLargest());_
 
- _cout << list << endl;_
+ _cout \<\< list \<\< endl;_
 
  _list.RemoveElement(list.GetSmallest());_
 
- _cout << list << endl;_  
+ _cout \<\< list \<\< endl;_  
 _}_

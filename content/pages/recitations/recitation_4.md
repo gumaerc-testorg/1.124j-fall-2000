@@ -1,9 +1,18 @@
 ---
 content_type: page
+description: ''
+learning_resource_types:
+- Recitations
+ocw_type: CourseSection
 parent_title: Recitations
+parent_type: CourseSection
 parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 title: Recitation 4
 uid: 1576744a-2518-3f40-7d8f-37045356d09c
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 These notes were prepared by [Petros Komodromos](mailto:komodromos@ucy.ac.cy).
@@ -71,7 +80,7 @@ The access level to a member that is inherited from a superclass can be adjusted
 > > 
 > > _Voxel::Voxel(double x=0, double y=0, double z=0, int col) : Point(x,y,z)_ _{_ _   color = col;_ _}_
 > > 
-> > _void Voxel::print()_ _{                                 _ //  x is always not accessible since x is private _   cout << y ;            _ // Accessible but if the derivation is private it                                    // becomes private in the derived class _   cout <<  z ;               _ //  Accessible but it becomes whatever is                                      // the derivation in the derived class _}_
+> > _void Voxel::print()_ _{                                 _ //  x is always not accessible since x is private _   cout \<\< y ;            _ // Accessible but if the derivation is private it                                    // becomes private in the derived class _   cout \<\<  z ;               _ //  Accessible but it becomes whatever is                                      // the derivation in the derived class _}_
 > > 
 > > _void main()_ _{_ _                Voxel v(4,7,2,101110101);_ _                v.print();_ _}_
 
@@ -154,7 +163,7 @@ The previous example has been extended, as shown below, to show how to explicitl
 > 
 > _Point::Point(double xx, double yy)_ _{_ _  x = xx ;   y = yy ;_ _}_
 > 
-> _void Point::print()_ _{_ _  cout << " (x,y) = (" << x << "," << y << ")  "  ;_ _}_
+> _void Point::print()_ _{_ _  cout \<\< " (x,y) = (" \<\< x \<\< "," \<\< y \<\< ")  "  ;_ _}_
 > 
 > _class Pixel : public Point_ _{_ _private:_ _  int color;_ _public:_ _  Pixel();_ _  Pixel(double x, double y, int col);_ _  void print();_ _};_
 > 
@@ -162,13 +171,13 @@ The previous example has been extended, as shown below, to show how to explicitl
 > 
 > _Pixel::Pixel(double x, double y, int col) : Point(x,y)_ _{_ _  color = col;_ _}_
 > 
-> _void Pixel::print()_ _{_ _  this -> Point::print();         _           // the member function print()                                                       // of class Point is called _  cout << " color = " << color;_ _}_
+> _void Pixel::print()_ _{_ _  this -> Point::print();         _           // the member function print()                                                       // of class Point is called _  cout \<\< " color = " \<\< color;_ _}_
 > 
-> _int main ( )_ _{_ _  Pixel px1;_ _  cout << "\\n Pixel px1:" ;_ _  px1**.print();  **                                _   // the member function print()                                                        // of class Pixel is called _  cout << endl;_
+> _int main ( )_ _{_ _  Pixel px1;_ _  cout \<\< "\\n Pixel px1:" ;_ _  px1**.print();  **                                _   // the member function print()                                                        // of class Pixel is called _  cout \<\< endl;_
 > 
->  _Pixel px2(2.75, 8.23, 111000101);_ _  cout << " Pixel px2:" ;_ _  px2.**Point::print();    **                   _     // the member function print()                                                         // of class Point is called
+>  _Pixel px2(2.75, 8.23, 111000101);_ _  cout \<\< " Pixel px2:" ;_ _  px2.**Point::print();    **                   _     // the member function print()                                                         // of class Point is called
 > 
->  _cout << endl;_ _  return EXIT\_SUCCESS;_ _}_
+>  _cout \<\< endl;_ _  return EXIT\_SUCCESS;_ _}_
 > 
 > Output
 > ------
@@ -188,19 +197,19 @@ A derived class does not need to redefine a member function that has been indica
 
 _**/\* Simple example on virtual functions \*/**_
 
-> _#include <iostream.h> #include <stdlib.h>_
+> _#include \<iostream.h> #include \<stdlib.h>_
 > 
 > _class MyBase { public:_
 > 
->  _void print()   {     cout << "\\n Printing through the base class: MyBase" << endl;   }_
+>  _void print()   {     cout \<\< "\\n Printing through the base class: MyBase" \<\< endl;   }_
 > 
->  _**virtual** void print(int i)   {     cout << "\\n Printing through the base class: MyBase:"   << " i = " << i << endl;   } };_ 
+>  _**virtual** void print(int i)   {     cout \<\< "\\n Printing through the base class: MyBase:"   \<\< " i = " \<\< i \<\< endl;   } };_ 
 > 
 > _class MyDerived : public MyBase { public:_
 > 
->  _void print()   {     cout << "\\n Printing through the derived class: MyDerived" << endl;   }_
+>  _void print()   {     cout \<\< "\\n Printing through the derived class: MyDerived" \<\< endl;   }_
 > 
->  _**virtual** void print(int i)   {     cout << "\\n Printing through the derived class: MyDerived:"   << " i = " << i << endl;   } };_ 
+>  _**virtual** void print(int i)   {     cout \<\< "\\n Printing through the derived class: MyDerived:"   \<\< " i = " \<\< i \<\< endl;   } };_ 
 > 
 > _int main(void) {   MyBase b;   MyDerived d;_
 > 
@@ -267,7 +276,7 @@ Then, the _outputStreamName_ can be used instead of the output operator _cout_ t
 
 After using the _ifstream_, or _ofstream_, object to read from, or write to, a file, the file should be closed when access to it is no longer needed. A file can be closed using the member function _close()_, i.e.     _inputStreamName.close();_ or  _outputStreamName.close();_
 
- **_EOF_** (end-of-file), which is a constant defined in the iostream.h header file can be used to read data until the end of file (EOF) is reached, by checking whether what was read is equal to EOF (machine dependent). EOF is entered in Unix workstations using <Control-d>.
+ **_EOF_** (end-of-file), which is a constant defined in the iostream.h header file can be used to read data until the end of file (EOF) is reached, by checking whether what was read is equal to EOF (machine dependent). EOF is entered in Unix workstations using \<Control-d>.
 
 You may optionally take a look to the following topics, which were not covered in the course.
 
@@ -295,25 +304,25 @@ The _using_ directive can be used to access members of a namespace without the n
 
 **_test2.C_**
 
-> _#include <iostream.h>_
+> _#include \<iostream.h>_
 > 
 > _**namespace** NameSpaceTest2_ _{_ _  int x = 22;_ _}_
 > 
-> _**namespace** NameSpaceTest2_ _{_ _  void print(double d)_ _    {_ _      cout <<"\\n printing through NStest2::print(double d) "_ _    << " d = " << d << endl;_ _    }_ _}_  
+> _**namespace** NameSpaceTest2_ _{_ _  void print(double d)_ _    {_ _      cout \<\<"\\n printing through NStest2::print(double d) "_ _    \<\< " d = " \<\< d \<\< endl;_ _    }_ _}_  
 
 **_test1.C_**
 
-> _#include <iostream.h>_ _#include <stdlib.h>_ _#include "test2.h"_
+> _#include \<iostream.h>_ _#include \<stdlib.h>_ _#include "test2.h"_
 > 
 > _int x = 11;_
 > 
-> _void print(int i)_ _{_ _  cout <<"\\n printing through ::print(int i):   i = " << i << endl;_ _}_
+> _void print(int i)_ _{_ _  cout \<\<"\\n printing through ::print(int i):   i = " \<\< i \<\< endl;_ _}_
 > 
 > **_using NameSpaceTest2::print;_**
 > 
 > _main()_ _{_ _  int x = 77;_
 > 
->  _cout << "\\n x = " << x << endl;_ _  cout << " ::x = " << ::x << endl;_ _  cout << " NameSpaceTest2::x = " << **NameSpaceTest2::**x << endl;_
+>  _cout \<\< "\\n x = " \<\< x \<\< endl;_ _  cout \<\< " ::x = " \<\< ::x \<\< endl;_ _  cout \<\< " NameSpaceTest2::x = " \<\< **NameSpaceTest2::**x \<\< endl;_
 > 
 >  _print(3);_ _  **NameSpaceTest2::**print(4);_
 > 
@@ -344,11 +353,11 @@ The following example demonstrates how assertions can be used to check whether a
 
 _**/\* Example on the use of assertions \*/**_ 
 
-> _#include <iostream.h> #include <fstream.h> #include <stdlib.h> #include <assert.h>_ 
+> _#include \<iostream.h> #include \<fstream.h> #include \<stdlib.h> #include \<assert.h>_ 
 > 
-> _int main() {   char str1\[\]="existing";   system("ls>existing");   // Using system() an OS command can be executed   ifstream ifp1 (str1);   assert(ifp1);           // line 14   cout << "\\n File " << str1 << " has been opened properly" << endl;_
+> _int main() {   char str1\[\]="existing";   system("ls>existing");   // Using system() an OS command can be executed   ifstream ifp1 (str1);   assert(ifp1);           // line 14   cout \<\< "\\n File " \<\< str1 \<\< " has been opened properly" \<\< endl;_
 > 
->  _char str2\[\]="nonexisting";   ifstream ifp2 (str2);   assert(ifp2);           // line 19   cout << "\\n File " << str2 << " has been opened properly" << endl;_
+>  _char str2\[\]="nonexisting";   ifstream ifp2 (str2);   assert(ifp2);           // line 19   cout \<\< "\\n File " \<\< str2 \<\< " has been opened properly" \<\< endl;_
 > 
 >  _return EXIT\_SUCCESS; }_ 
 > 
@@ -363,29 +372,29 @@ A **string** class, that has several convenient and object-oriented capabilities
 
 _**/\* Example on the C++ standard library string class \*/**_
 
-> _#include <iostream.h> #include <iomanip.h> #include <cstring> #include <string>_
+> _#include \<iostream.h> #include \<iomanip.h> #include \<cstring> #include \<string>_
 > 
 > _int main(void) {   string str1("Testing"), str2;   string str3(str1);   char str4\[\] = "MIT";   const char \*str5 = "";_
 > 
->  _cout << "\\n str1: " << setw(20) << str1 << "\\t size = " << str1.size();   str1.empty() ?  cout << "\\t (empty)" << endl : cout << endl ;_
+>  _cout \<\< "\\n str1: " \<\< setw(20) \<\< str1 \<\< "\\t size = " \<\< str1.size();   str1.empty() ?  cout \<\< "\\t (empty)" \<\< endl : cout \<\< endl ;_
 > 
->  _cout << " str2: " << setw(30) << str2 << "\\t size = " << str2.size();   str2.empty() ?  cout << "\\t (empty)" << endl : cout << endl ;_
+>  _cout \<\< " str2: " \<\< setw(30) \<\< str2 \<\< "\\t size = " \<\< str2.size();   str2.empty() ?  cout \<\< "\\t (empty)" \<\< endl : cout \<\< endl ;_
 > 
->  _cout << " str3: " << setw(20) << str3 << "\\t size = " << str3.size();   str3.empty() ?  cout << "\\t (empty)" << endl : cout << endl ;_
+>  _cout \<\< " str3: " \<\< setw(20) \<\< str3 \<\< "\\t size = " \<\< str3.size();   str3.empty() ?  cout \<\< "\\t (empty)" \<\< endl : cout \<\< endl ;_
 > 
->  _cout << " str4: " << setw(20) << str4 << "\\t size = " << strlen(str4);   strlen(str4) ?  cout << endl : cout << "\\t (empty)" << endl ;_
+>  _cout \<\< " str4: " \<\< setw(20) \<\< str4 \<\< "\\t size = " \<\< strlen(str4);   strlen(str4) ?  cout \<\< endl : cout \<\< "\\t (empty)" \<\< endl ;_
 > 
->  _cout << " str5: " << setw(20) << str5 << "\\t size = " << strlen(str5);   strlen(str5) ?  cout << endl : cout << "\\t (empty)" << endl ;_
+>  _cout \<\< " str5: " \<\< setw(20) \<\< str5 \<\< "\\t size = " \<\< strlen(str5);   strlen(str5) ?  cout \<\< endl : cout \<\< "\\t (empty)" \<\< endl ;_
 > 
 >  _if(str1==str3)     str2 = str1 + str4 ;   str2 += str3 ;   str2\[10\] = 't' ;_
 > 
->  _cout << " str2: " << setw(15) << str2 << "\\t size = " << str2.size();   str2.empty() ?  cout << "\\t (empty)" << endl : cout << endl ;_
+>  _cout \<\< " str2: " \<\< setw(15) \<\< str2 \<\< "\\t size = " \<\< str2.size();   str2.empty() ?  cout \<\< "\\t (empty)" \<\< endl : cout \<\< endl ;_
 > 
 >  _return 1; }_
 > 
 > **Output**
 > 
->  _str1: Testing                   size = 7  str2:                           size = 0        (empty)  str3: Testing                   size = 7  str4:                  MIT      size = 3  str5:                           size = 0        (empty)  str2: TestingMITtesting         size = 17< /EM >_
+>  _str1: Testing                   size = 7  str2:                           size = 0        (empty)  str3: Testing                   size = 7  str4:                  MIT      size = 3  str5:                           size = 0        (empty)  str2: TestingMITtesting         size = 17\< /EM >_
 
 ### {{< anchor "A4" >}}{{< /anchor >}}A.4. Linkage Specifications: extern "C"
 

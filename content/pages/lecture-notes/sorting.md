@@ -1,9 +1,18 @@
 ---
 content_type: page
+description: ''
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Sorting
 uid: 99a23bcb-0d8c-e738-f2e1-2cf8e3a06179
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 Topics
@@ -27,7 +36,7 @@ Sorting techniques have a wide variety of applications. Computer-Aided Engineeri
 
 There are several criteria to be used in evaluating a sorting algorithm:
 
-*   _Running time_. Typically, an elementary sorting algorithm requires _O(N2)_ steps to sort _N_ randomly arranged items. More sophisticated sorting algorithms require _O(N log N)_ steps on average. Algorithms differ in the constant that appears in front of the _N2_ or _N log N_. Furthermore, some sorting algorithms are more sensitive to the nature of the input than others. Quicksort, for example, requires _O(N log N)_ time in the average case, but requires _O(N2)_ time in the worst case. 
+*   _Running time_. Typically, an elementary sorting algorithm requires _O(N{{< sup "2" >}})_ steps to sort _N_ randomly arranged items. More sophisticated sorting algorithms require _O(N log N)_ steps on average. Algorithms differ in the constant that appears in front of the _N{{< sup "2" >}}_ or _N log N_. Furthermore, some sorting algorithms are more sensitive to the nature of the input than others. Quicksort, for example, requires _O(N log N)_ time in the average case, but requires _O(N{{< sup "2" >}})_ time in the worst case. 
 *   _Memory requirements_. The amount of extra memory required by a sorting algorithm is also an important consideration. _In place_ sorting algorithms are the most memory efficient, since they require practically no additional memory. _Linked list_ representations require an additional _N_ words of memory for a list of pointers. Still other algorithms require sufficent memory for another copy of the input array. These are the most inefficient in terms of memory usage. 
 *   _Stability_. This is the ability of a sorting algorithm to preserve the relative order of equal keys in a file.
 
@@ -60,16 +69,16 @@ _}_
 _void selection(ItemType a\[\], int N) {_  
  _int i, j, min;_
 
- _for (i = 1; i < N; i++) {_  
+ _for (i = 1; i \< N; i++) {_  
  _min = i;_  
- _for (j = i+1; j <= N; j++)_  
- _if (a\[j\] < a\[min\])_  
+ _for (j = i+1; j \<= N; j++)_  
+ _if (a\[j\] \< a\[min\])_  
  _min = j;_  
  _swap(a,min,i);_  
  _}_  
 _}_
 
-Selection sort is easy to implement; there is little that can go wrong with it. However, the method requires _O(N2)_ comparisons and so it should only be used on small files. There is an important exception to this rule. When sorting files with large records and small keys, the cost of exchanging records controls the running time. In such cases, selection sort requires _O(N_) time since the number of exchanges is at most _N_.
+Selection sort is easy to implement; there is little that can go wrong with it. However, the method requires _O(N{{< sup "2" >}})_ comparisons and so it should only be used on small files. There is an important exception to this rule. When sorting files with large records and small keys, the cost of exchanging records controls the running time. In such cases, selection sort requires _O(N_) time since the number of exchanges is at most _N_.
 
 {{< anchor "Insertion" >}}{{< /anchor >}}4\. Insertion Sort
 -----------------------------------------------------------
@@ -95,7 +104,7 @@ _void insertion(ItemType a\[\], int N) {_
  _int i, j;_  
  _ItemType v;_
 
- _for (i = 2; i <= N; i++) {_  
+ _for (i = 2; i \<= N; i++) {_  
  _v = a\[i\];_  
  _j = i;_  
  _while (a\[j-1\] > v) {_  
@@ -106,7 +115,7 @@ _void insertion(ItemType a\[\], int N) {_
  _}_  
 _}_
 
-It is important to note that there is no test in the while loop to prevent the index _j_ from running out of bounds. This could happen if _v_ is smaller than _a\[1\],a\[2\],...,a\[i-1\]_. To remedy this situation, we place a _sentinel_ key in _a\[0\]_, making it at least as small as the smallest element in the array. The use of a sentinel is more efficient than performing a test of the form _while (j > 1 &&  a\[j-1\] > v)_. Insertion sort is an _O(N2)_ method both in the average case and in the worst case. For this reason, it is most effectively used on files with roughly _N < 20_. However, in the special case of an almost sorted file, insertion sort requires only _linear_ time.
+It is important to note that there is no test in the while loop to prevent the index _j_ from running out of bounds. This could happen if _v_ is smaller than _a\[1\],a\[2\],...,a\[i-1\]_. To remedy this situation, we place a _sentinel_ key in _a\[0\]_, making it at least as small as the smallest element in the array. The use of a sentinel is more efficient than performing a test of the form _while (j > 1 &&  a\[j-1\] > v)_. Insertion sort is an _O(N{{< sup "2" >}})_ method both in the average case and in the worst case. For this reason, it is most effectively used on files with roughly _N \< 20_. However, in the special case of an almost sorted file, insertion sort requires only _linear_ time.
 
 {{< anchor "Shell" >}}{{< /anchor >}}5\. Shell Sort
 ---------------------------------------------------
@@ -121,11 +130,11 @@ An _h-sorted_ file is one with the property that taking every _h_th element (sta
 Approach
 --------
 
-*   Choose an initial large step size, _hK_, and use insertion sort to produce an _hK_\-sorted file.
-*   Choose a smaller step size, _hK-1_, and use insertion sort to produce an _hK-1_\-sorted file, using the _hK_\-sorted file as input.
-*   Continue this process until done. The last stage uses insertion sort, with a step size _h1 = 1_, to produce a sorted file.
+*   Choose an initial large step size, _h{{< sub "K" >}}_, and use insertion sort to produce an _h{{< sub "K" >}}_\-sorted file.
+*   Choose a smaller step size, _h{{< sub "K-1" >}}_, and use insertion sort to produce an _h{{< sub "K-1" >}}_\-sorted file, using the _h{{< sub "K" >}}_\-sorted file as input.
+*   Continue this process until done. The last stage uses insertion sort, with a step size _h{{< sub "1" >}} = 1_, to produce a sorted file.
 
-Each stage in the sorting process brings the elements closer to their final positions. The method derives its efficiency from the fact that insertion sort is able to exploit the order present in a partially sorted input file; input files with more order to them require a smaller number of exchanges. It is important to choose a good sequence of increments. A commonly used sequence is _(3K\-1)/2,...,121,40,13,4,1_, which is obtained from the recurrence _hk = 3 hk+1+1_. Note that the sequence obtained by taking powers of 2 leads to bad performance because elements in odd positions are not compared with elements in even positions until the end.
+Each stage in the sorting process brings the elements closer to their final positions. The method derives its efficiency from the fact that insertion sort is able to exploit the order present in a partially sorted input file; input files with more order to them require a smaller number of exchanges. It is important to choose a good sequence of increments. A commonly used sequence is _(3{{< sup "K" >}}\-1)/2,...,121,40,13,4,1_, which is obtained from the recurrence _h{{< sub "k" >}} = 3 h{{< sub "k+1" >}}+1_. Note that the sequence obtained by taking powers of 2 leads to bad performance because elements in odd positions are not compared with elements in even positions until the end.
 
 Here is the complete code for shell sort:
 
@@ -137,10 +146,10 @@ _void shell(ItemType a\[\], int N) {_
  _int i, j, h;_  
  _ItemType v;_
 
- _for (h = 1; h < = N/9; h = 3\*h+1);_
+ _for (h = 1; h \< = N/9; h = 3\*h+1);_
 
  _for (; h > 0; h /= 3)_  
- _for (i = h+1; i <= N; i++) {_  
+ _for (i = h+1; i \<= N; i++) {_  
  _v = a\[i\];_  
  _j = i;_  
  _while (j > h && a\[j-h\] > v) {_  
@@ -151,7 +160,7 @@ _void shell(ItemType a\[\], int N) {_
  _}_  
 _}_
 
-Shell sort requires _O(N3/2)_ operations in the worst case, which means that it can be quite effectively used even for moderately large files (say _N < 5000_).
+Shell sort requires _O(N{{< sup "3/2" >}})_ operations in the worst case, which means that it can be quite effectively used even for moderately large files (say _N \< 5000_).
 
 {{< anchor "Quick" >}}{{< /anchor >}}6\. Quicksort
 --------------------------------------------------
@@ -191,7 +200,7 @@ _void quicksort(ItemType a\[\], int left, int right) {_
  _i = left - 1;_  
  _j = right;_  
  _for (;;) {_  
- _while (a\[++i\] < v);_  
+ _while (a\[++i\] \< v);_  
  _while (a\[--j\] > v);_  
  _if (i >= j) break;_  
  _swap(a,i,j);_  
@@ -202,17 +211,17 @@ _void quicksort(ItemType a\[\], int left, int right) {_
  _}_  
 _}_
 
-Note that this code requires a sentinel key in _a\[0\]_ to stop the right-to-left scan in case the partitioning element is the smallest element in the file. Quicksort requires _O(N log N)_ operations in the average case. However, its worst case performance is O(N2), which occurs in the case of an already sorted file! There are a number of improvements which can be made to the basic quicksort algorithm.  
+Note that this code requires a sentinel key in _a\[0\]_ to stop the right-to-left scan in case the partitioning element is the smallest element in the file. Quicksort requires _O(N log N)_ operations in the average case. However, its worst case performance is O(N{{< sup "2" >}}), which occurs in the case of an already sorted file! There are a number of improvements which can be made to the basic quicksort algorithm.  
  
 
 *   Using the _median of three_ partitioning method makes the worst case far less probable, and it eliminates the need for sentinels. The basic idea is as follows. Choose three elements, _a\[left\]_, _a\[middle\]_ and _a\[right\]_, from the left, middle and right of the array. Sort them (by direct comparison) so that the median of the three is in _a\[middle\]_ and the largest is in _a\[right\]_. Now exchange _a\[middle\]_ with _a\[right-1\]_. Finally, we run the partitioning algorithm on the subarray _a\[left+1\],a\[left+2\],...,a\[right-2\]_ with _a\[right-1\]_ as the partitioning element.
-*   Another improvement is to _remove recursion_ from the algorithm by using an explicit stack. The basic idea is as follows. After partitioning, push the larger subfile onto the stack. The smaller subfile is processed immediately by simply resetting the parameters _left_ and _right_ (this is known as _end-recursion removal_). With the explicit stack implementation, the maximum stack size is about _log2 N_. On the other hand, with the recursive implementation, the underlying stack could be as large as _N_.
-*   A third improvement is to use a cutoff to insertion sort whenever small subarrays are encountered. This is because insertion sort, albeit an _O(N2)_ algorithm, has a sufficiently small constant in front of the _N2_ to be more efficient than quicksort for small _N_. A suitable value for the cutoff subarray size would be approximately in the range _5  ~ 25_.
+*   Another improvement is to _remove recursion_ from the algorithm by using an explicit stack. The basic idea is as follows. After partitioning, push the larger subfile onto the stack. The smaller subfile is processed immediately by simply resetting the parameters _left_ and _right_ (this is known as _end-recursion removal_). With the explicit stack implementation, the maximum stack size is about _log{{< sub "2" >}} N_. On the other hand, with the recursive implementation, the underlying stack could be as large as _N_.
+*   A third improvement is to use a cutoff to insertion sort whenever small subarrays are encountered. This is because insertion sort, albeit an _O(N{{< sup "2" >}})_ algorithm, has a sufficiently small constant in front of the _N{{< sup "2" >}}_ to be more efficient than quicksort for small _N_. A suitable value for the cutoff subarray size would be approximately in the range _5  ~ 25_.
 
 {{< anchor "Algorithm" >}}{{< /anchor >}}7\. Choosing a Sorting Algorithm
 -------------------------------------------------------------------------
 
-Table 1 summarizes the performance characteristics of some common sorting algorithms. Shell sort is usually a good starting choice for moderately large files _N < 5000_, since it is easily implemented. Bubble sort, which is included in Table 1 for comparison purposes only, is generally best avoided. Insertion sort requires linear time for _almost sorted_ files, while selection sort requires linear time for files with large records and small keys. Insertion sort and selection sort should otherwise be limited to small files. Quicksort is the method to use for very large sorting problems. However, its performance may be significantly affected by subtle implementation errors. Furthermore, quicksort performs badly if the file is already sorted. Another possible disadvantage is that quicksort is not stable i.e. it does not preserve the relative order of equal keys. All of the above sorting algorithms are in-place methods. Quicksort requires a small amount of additional memory for the auxiliary stack. There are a few other sorting methods which we have not considered. Heapsort requires _O(N log N)_ steps both in the average case and the worst case, but it is about twice as slow as quicksort on average. Mergesort is another _O(N log N)_ algorithm in the average and worst cases. Mergesort is the method of choice for sorting _linked lists_, where sequential access is required.
+Table 1 summarizes the performance characteristics of some common sorting algorithms. Shell sort is usually a good starting choice for moderately large files _N \< 5000_, since it is easily implemented. Bubble sort, which is included in Table 1 for comparison purposes only, is generally best avoided. Insertion sort requires linear time for _almost sorted_ files, while selection sort requires linear time for files with large records and small keys. Insertion sort and selection sort should otherwise be limited to small files. Quicksort is the method to use for very large sorting problems. However, its performance may be significantly affected by subtle implementation errors. Furthermore, quicksort performs badly if the file is already sorted. Another possible disadvantage is that quicksort is not stable i.e. it does not preserve the relative order of equal keys. All of the above sorting algorithms are in-place methods. Quicksort requires a small amount of additional memory for the auxiliary stack. There are a few other sorting methods which we have not considered. Heapsort requires _O(N log N)_ steps both in the average case and the worst case, but it is about twice as slow as quicksort on average. Mergesort is another _O(N log N)_ algorithm in the average and worst cases. Mergesort is the method of choice for sorting _linked lists_, where sequential access is required.
 
 Table 1: Approximate running times for various sorting algorithms
 
@@ -247,31 +256,31 @@ Shell sort
 Quicksort
 {{< tdclose >}}
 {{< tdopen >}}
-N2/2  
-N2/4  
-N2/2  
-~N.1.25  
+N{{< sup "2" >}}/2  
+N{{< sup "2" >}}/4  
+N{{< sup "2" >}}/2  
+~N{{< sup ".1.25" >}}  
 2 N ln N   
-(1.38 N log2 N)
+(1.38 N log{{< sub "2" >}} N)
 {{< tdclose >}}
 {{< tdopen >}}
-N2/2  
-N2/2  
-N2/2  
-N3/2  
-N2/2
+N{{< sup "2" >}}/2  
+N{{< sup "2" >}}/2  
+N{{< sup "2" >}}/2  
+N{{< sup "3/2" >}}  
+N{{< sup "2" >}}/2
 {{< tdclose >}}
 {{< tdopen >}}
 N  
-N2/8  
-N2/2  
+N{{< sup "2" >}}/8  
+N{{< sup "2" >}}/2  
 ?  
 N
 {{< tdclose >}}
 {{< tdopen >}}
 N  
-N2/4  
-N2/2  
+N{{< sup "2" >}}/4  
+N{{< sup "2" >}}/2  
 ?  
 N
 {{< tdclose >}}

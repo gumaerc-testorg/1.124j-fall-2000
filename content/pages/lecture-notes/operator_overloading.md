@@ -1,9 +1,18 @@
 ---
 content_type: page
+description: ''
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Operator Overloading
 uid: 856b251e-e05f-8ffe-ac12-de49977a2a23
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 Operator Overloading
@@ -92,15 +101,15 @@ Here we have overloaded _operator()()_ to return _true_ if the object has an ima
 
 The overloaded subscript operator is useful if we wish to access fields of the object like array elements. In our example, we have made _a\[0\]_ refer to the real part and _a\[1\]_ refer to the imaginary part of the object.
 
-**operator<<()**
+**operator\<\<()**
 
-The output operator cannot be overloaded as a member function because we do not have access to the _ostream_ class to which the predefined object _cout_ belongs. Instead, _operator<<()_ is overloaded as a global function. We must return a reference to the _ostream_ class so that the output operator can be concatenated. For example,
+The output operator cannot be overloaded as a member function because we do not have access to the _ostream_ class to which the predefined object _cout_ belongs. Instead, _operator\<\<()_ is overloaded as a global function. We must return a reference to the _ostream_ class so that the output operator can be concatenated. For example,
 
-    _cout << a << b;_
+    _cout \<\< a \<\< b;_
 
 will be invoked as
 
-    _operator<<((operator<<(cout, a),b)_  
+    _operator\<\<((operator\<\<(cout, a),b)_  
  
 
 _**complex.h**_
@@ -109,12 +118,12 @@ _// Interface for class Complex._
 _#ifndef \_COMPLEX\_H\__  
 _#define \_COMPLEX\_H\__
 
-_#include <iostream.h>_  
+_#include \<iostream.h>_  
 _#include "point.h"_
 
 _#ifndef DEBUG\_PRINT_  
 _#ifdef \_DEBUG_  
-_#define DEBUG\_PRINT(str)  cout << str << endl;_  
+_#define DEBUG\_PRINT(str)  cout \<\< str \<\< endl;_  
 _#else_  
 _#define DEBUG\_PRINT(str)_  
 _#endif_  
@@ -149,7 +158,7 @@ _class Complex {_
 
  _// Overloaded global operators. We make these operators friends of class_  
  _// Complex, so that they will have direct access to the private data._  
- _friend ostream& operator<<(ostream& os, const Complex& c);       // Overloaded output operator._  
+ _friend ostream& operator\<\<(ostream& os, const Complex& c);       // Overloaded output operator._  
  _friend Complex operator\*(const Complex& c, const Complex& d);   // Overloaded \* operator._  
 _};_  
 _#endif    // \_COMPLEX\_H\__  
@@ -159,7 +168,7 @@ _**complex.C**_
 
 _// Implementation for class Complex._  
 _#include "complex.h"_  
-_#include <stdlib.h>_
+_#include \<stdlib.h>_
 
 _// Definition of copy constructor._  
 _Complex::Complex(const Complex& c) {_  
@@ -229,21 +238,21 @@ _double& Complex::operator\[\](int i) {_
  _return mdImag;_
 
  _default:_  
- _cerr << "Index out of bounds" << endl;_  
+ _cerr \<\< "Index out of bounds" \<\< endl;_  
  _exit(0);                           // A function in the C standard library._  
  _}_  
 _}_
 
 _// Definition of a print function._  
 _void Complex::print() {_  
- _cout << mdReal << " + j" << mdImag << endl;_  
+ _cout \<\< mdReal \<\< " + j" \<\< mdImag \<\< endl;_  
 _}_
 
 _// Definition of overloaded output operator. Note that this is a global function. We can_  
 _// access the private data of the Complex object c because the operator is a friend function._  
-_ostream& operator<<(ostream& os, const Complex& c) {_  
- _DEBUG\_PRINT("In ostream& operator<<(ostream&, const Complex&)")_  
- _cout << c.mdReal << " + j" << c.mdImag;_  
+_ostream& operator\<\<(ostream& os, const Complex& c) {_  
+ _DEBUG\_PRINT("In ostream& operator\<\<(ostream&, const Complex&)")_  
+ _cout \<\< c.mdReal \<\< " + j" \<\< c.mdImag;_  
  _return os;_  
 _}_
 
@@ -281,9 +290,9 @@ _void main() {_
 
  _// Use of the overloaded operator>()._  
  _if (b > a)_  
- _cout << "b > a" << endl;_  
+ _cout \<\< "b > a" \<\< endl;_  
  _else_  
- _cout << "b <= a" << endl;_
+ _cout \<\< "b \<= a" \<\< endl;_
 
  _// Use of cast-to-Point operator. This will convert a Complex object to a Point object._  
  _// An alternative way to handle the type conversion is to give the Point class a constructor_  
@@ -294,21 +303,21 @@ _void main() {_
 
  _// Use of the overloaded operator()()._  
  _if (a() == true)_  
- _cout << "a is a complex number" << endl;_  
+ _cout \<\< "a is a complex number" \<\< endl;_  
  _else_  
- _cout << "a is a real number" << endl;_
+ _cout \<\< "a is a real number" \<\< endl;_
 
  _// Use of the overloaded operator\[\](). This will change the imaginary part of a._  
  _a\[1\] = 8.0;_  
  _a.print();_
 
- _// Use of the overloaded global operator<<()._  
- _cout << "a = " << a << endl;_
+ _// Use of the overloaded global operator\<\<()._  
+ _cout \<\< "a = " \<\< a \<\< endl;_
 
  _// User of the overloaded global operator\*(). The double literal constant will be passed as the_  
  _// first argument to operator\*() and it will be converted to a Complex object using the Complex_  
  _// constructor.  This statement would not be legal if the operator were a member function._  
  _d = 7.0 \* b;_
 
- _cout << "d = " << d << endl;_  
+ _cout \<\< "d = " \<\< d \<\< endl;_  
 _}_

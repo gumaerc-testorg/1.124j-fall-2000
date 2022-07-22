@@ -1,9 +1,18 @@
 ---
 content_type: page
+description: ''
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Templates
 uid: 75669def-94dc-da57-0156-40ac5f7060a4
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 Topics
@@ -25,12 +34,12 @@ The following example illustrates how to use function templates.
 
 _**FunctionTemplates.cpp**_
 
-_#include <iostream.h>_
+_#include \<iostream.h>_
 
 _// A function template for creating functions that reverse the order of the elements in an array._  
-_template<typename ItemType>_  
+_template\<typename ItemType>_  
 _void reverse(ItemType a\[\], int N) {_  
- _for (int i = 0; i < N/2; i++) {_  
+ _for (int i = 0; i \< N/2; i++) {_  
  _ItemType tmp = a\[i\];_  
  _a\[i\] = a\[N-1-i\];_  
  _a\[N-1-i\] = tmp;_  
@@ -38,19 +47,19 @@ _void reverse(ItemType a\[\], int N) {_
 _}_
 
 _// A function template, where the type cannot be inferred from the function arguments._  
-_template<typename ItemType>_  
+_template\<typename ItemType>_  
 _void print(void \*p, int N) {_  
  _ItemType \*a = (ItemType \*)p;_
 
- _for (int i = 0; i < N; i++)_  
- _cout << "Element " << i << " is " << a\[i\] << endl;_  
+ _for (int i = 0; i \< N; i++)_  
+ _cout \<\< "Element " \<\< i \<\< " is " \<\< a\[i\] \<\< endl;_  
 _}_  
  
 
 _// Optional: you are allowed to explicitly instantiate the function templates, if you wish. If you don't_  
 _// do this, the instantiation will occur implicitly as a result of the functions calls below._  
-_template void print<int>(void \*, int);_  
-_template void print<float>(void \*, int);_
+_template void print\<int>(void \*, int);_  
+_template void print\<float>(void \*, int);_
 
 _const int aLength = 5;_  
 _const int bLength = 10;_
@@ -60,10 +69,10 @@ _int main() {_
  _int a\[aLength\];_  
  _float b\[bLength\];_
 
- _for (i = 0; i < aLength; i++)_  
+ _for (i = 0; i \< aLength; i++)_  
  _a\[i\] = i;_
 
- _for (i = 0; i < bLength; i++)_  
+ _for (i = 0; i \< bLength; i++)_  
  _b\[i\] = (float)i;_
 
  _// The compiler will create two versions of reverse(), one to handle ints and one to handle floats._  
@@ -75,8 +84,8 @@ _int main() {_
  _// In this case, ItemType cannot be inferred from the function arguments. Hence, explicit_  
  _// specification of the parameter is required. (VC++ users note: VC++ 6.0 has a bug which_  
  _// causes it to use the float version in both cases.)_  
- _print<int>((void \*)a, aLength);_  
- _print<float>((void \*)b, bLength);_
+ _print\<int>((void \*)a, aLength);_  
+ _print\<float>((void \*)b, bLength);_
 
  _return 0;_  
 _}_
@@ -88,10 +97,10 @@ The following example illustrates how to use class templates.
 
 **ArrayClass.h**
 
-_#include <iostream.h>_
+_#include \<iostream.h>_
 
 _// This class template allows us to create array objects of any type and size._  
-_template<typename ItemType, int size>_  
+_template\<typename ItemType, int size>_  
 _class ArrayClass {_  
  _private:_  
  _ItemType array\[size\];_
@@ -105,17 +114,17 @@ _};_
 
 _// In a class template, all member function definitions should be placed in the header file._
 
-_template<typename ItemType, int size>_  
-_ArrayClass<ItemType, size>::ArrayClass() {_  
- _for (int i = 0; i < size; i++) {_  
+_template\<typename ItemType, int size>_  
+_ArrayClass\<ItemType, size>::ArrayClass() {_  
+ _for (int i = 0; i \< size; i++) {_  
  _array\[i\] = (ItemType)(i/2.0);   // The chosen default behavior._  
  _}_  
 _}_
 
-_template<typename ItemType, int size>_  
-_void ArrayClass<ItemType, size>::print() {_  
-_for (int i = 0; i < size; i++) {_  
- _cout << array\[i\] << endl;_  
+_template\<typename ItemType, int size>_  
+_void ArrayClass\<ItemType, size>::print() {_  
+_for (int i = 0; i \< size; i++) {_  
+ _cout \<\< array\[i\] \<\< endl;_  
  _}_  
 _}_  
  
@@ -125,11 +134,11 @@ _}_
 _#include "ArrayClass.h"_
 
 _int main() {_  
- _ArrayClass<int, 5> a;_  
- _ArrayClass<float, 10> b;_
+ _ArrayClass\<int, 5> a;_  
+ _ArrayClass\<float, 10> b;_
 
  _a.print();_  
- _cout << endl;_  
+ _cout \<\< endl;_  
  _b.print();_
 
  _return 0;_  

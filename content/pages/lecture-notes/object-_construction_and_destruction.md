@@ -1,9 +1,18 @@
 ---
 content_type: page
+description: ''
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Object Construction and Destruction
 uid: 8c606902-9761-4d7e-7e5a-c945f6cf00af
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 Contents
@@ -56,7 +65,7 @@ _int& r = i;_
 
 Be careful not to confuse this use of _&_ with the _address of_ operator. Also note that, unlike a pointer, a reference must be initialized at the time it is defined.
 
-_#include <stdio.h>_
+_#include \<stdio.h>_
 
 _int main() {_  
  _int i = 0;_  
@@ -92,7 +101,7 @@ _void decrement (int& i) {_
  _i--;                               // Modifies storage in the calling function._  
 _}_
 
-_#include <stdio.h>_
+_#include \<stdio.h>_
 
 _int main () {_  
  _int k = 0;_
@@ -128,7 +137,7 @@ _int& select\_month(struct date &d) {_
  _return d.month;_  
 _}_
 
-_#include <stdio.h>_
+_#include \<stdio.h>_
 
 _int main() {_  
  _struct date today;_
@@ -189,7 +198,7 @@ _inline void swap(int& a, int& b) {_
  _b = tmp;_  
 _}_
 
-_#include <stdio.h>_
+_#include \<stdio.h>_
 
 _main() {_  
  _int i = 2, j = 3;_
@@ -214,7 +223,7 @@ Whenever the compiler needs to expand a call to an _inline_ function, it needs t
  
 
 
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 {{< anchor "4" >}}{{< /anchor >}}4\. Basic Input and Output
 -----------------------------------------------------------
@@ -230,8 +239,8 @@ Reading from Standard Input: cin
 _cin_ is an object of type _istream_ that allows us to read in a stream of data from _standard input_. It is functionally equivalent to the _scanf()_ function in C. The following example shows how _cin_ is used in conjunction with the _\>>_ operator. Note that the _\>>_ points _towards_ the object into which we are reading data.  
  
 
-_#include <iostream.h>                // Provides access to cin and cout._  
-_#include <stdio.h>                     /\* Provides access to printf and scanf. \*/_
+_#include \<iostream.h>                // Provides access to cin and cout._  
+_#include \<stdio.h>                     /\* Provides access to printf and scanf. \*/_
 
 _int main() {_  
  _int i;_
@@ -248,18 +257,18 @@ _}_
 Writing to Standard Output: _cout_
 ----------------------------------
 
-_cout_ is an object of type _ostream_ that allows us to write out a stream of data to _standard output_. It is functionally equivalent to the _printf()_ function in C. The following example shows how _cout_ is used in conjunction with the _<<_ operator. Note that the _<<_ points _away_ from the object from which we are writing out data.  
+_cout_ is an object of type _ostream_ that allows us to write out a stream of data to _standard output_. It is functionally equivalent to the _printf()_ function in C. The following example shows how _cout_ is used in conjunction with the _\<\<_ operator. Note that the _\<\<_ points _away_ from the object from which we are writing out data.  
  
 
-_#include <iostream.h>                // Provides access to cin and cout._  
-_#include <stdio.h>                     /\* Provides access to printf and scanf. \*/_
+_#include \<iostream.h>                // Provides access to cin and cout._  
+_#include \<stdio.h>                     /\* Provides access to printf and scanf. \*/_
 
 _int main() {_  
- _cout << "Hello World!\\n";       // Uses the stream output object, cout, to print out a string._  
+ _cout \<\< "Hello World!\\n";       // Uses the stream output object, cout, to print out a string._  
  _printf("Hello World!\\n");          /\* Equivalent C-style statement. \*/_
 
  _int i = 7;_  
- _cout << "i = " << i << endl;     // Sends multiple objects to standard output._  
+ _cout \<\< "i = " \<\< i \<\< endl;     // Sends multiple objects to standard output._  
  _printf("i = %d\\n", i);                 /\* Equivalent C-style statement. \*/_  
 _}_  
  
@@ -269,12 +278,12 @@ Writing to Standard Error: _cerr_
 
 _cerr_ is also an object of type _ostream_. It is provided for the purpose of writing out warning and error messages to _standard error_. The usage of _cerr_ is identical to that of _cout_. Why then should we bother with _cerr_? The reason is that it makes it easier to filter out warning and error messages from real data. For example, suppose that we compile the following program into an executable named _foo_:
 
-_#include <iostream.h>_
+_#include \<iostream.h>_
 
 _int main() {_  
  _int i = 7;_  
- _cout << i << endl;                                   // This is real data._  
- _cerr << "A warning message" << endl;    // This is a warning._  
+ _cout \<\< i \<\< endl;                                   // This is real data._  
+ _cerr \<\< "A warning message" \<\< endl;    // This is a warning._  
 _}_
 
 We could separate the data from the warning by redirecting the standard output to a file, while allowing the standard error to be printed on our console.
@@ -332,7 +341,7 @@ _// Declaration of class Point._
 _#ifndef \_POINT\_H\__  
 _#define \_POINT\_H\__
 
-_#include <iostream.h>_
+_#include \<iostream.h>_
 
 _class Point {_  
  _// The state of a Point object. Property variables are typically_  
@@ -349,7 +358,7 @@ _class Point {_
  _Point(const Point& p);         // The copy constructor._  
  _~Point();                             // The destructor._  
  _void print() {                       // This function will be made inline by default._  
- _cout << "(" << mfX << "," << mfY << ")" << endl;_  
+ _cout \<\< "(" \<\< mfX \<\< "," \<\< mfY \<\< ")" \<\< endl;_  
  _}_  
  _void set\_x(float fX);_  
  _float get\_x();_  
@@ -368,7 +377,7 @@ _#include "point.h"_
 
 _// A constructor which creates a Point object at (0,0)._  
 _Point::Point() {_  
- _cout << "In constructor Point::Point()" << endl;_  
+ _cout \<\< "In constructor Point::Point()" \<\< endl;_  
  _mfX = 0.0;_  
  _mfY = 0.0;_  
 _}_
@@ -376,7 +385,7 @@ _}_
 _// A constructor which creates a Point object from two_  
 _// floats._  
 _Point::Point(float fX, float fY) {_  
- _cout << "In constructor Point::Point(float fX, float fY)" << endl;_  
+ _cout \<\< "In constructor Point::Point(float fX, float fY)" \<\< endl;_  
  _mfX = fX;_  
  _mfY = fY;_  
 _}_
@@ -384,14 +393,14 @@ _}_
 _// A constructor which creates a Point object from_  
 _// another Point object._  
 _Point::Point(const Point& p) {_  
- _cout << "In constructor Point::Point(const Point& p)" << endl;_  
+ _cout \<\< "In constructor Point::Point(const Point& p)" \<\< endl;_  
  _mfX = p.mfX;_  
  _mfY = p.mfY;_  
 _}_
 
 _// The destructor._  
 _Point::~Point() {_  
- _cout << "In destructor Point::~Point()" << endl;_  
+ _cout \<\< "In destructor Point::~Point()" \<\< endl;_  
 _}_
 
 _// Modifier for x coordinate._  
@@ -435,6 +444,6 @@ _void main() {_
  _b.set\_y(4.0);_
 
  _// Print out the current state of b._  
- _cout << endl;_  
+ _cout \<\< endl;_  
  _b.print();_  
  _}_

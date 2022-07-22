@@ -1,9 +1,18 @@
 ---
 content_type: page
+description: ''
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Static Class Members
 uid: 0f2e5fd5-ac35-ade3-feed-1ed2cd37e418
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 Static Member Data and Static Member Functions
@@ -26,7 +35,7 @@ _// Declaration of class Point._
 _#ifndef \_POINT\_H\__  
 _#define \_POINT\_H\__
 
-_#include <iostream.h>_
+_#include \<iostream.h>_
 
 _class Point {_  
  _// The state of a Point object. Property variables are typically_  
@@ -58,7 +67,7 @@ _int Point::miCount = 0;_
 
 _// A constructor which creates a Point object from two floats._  
 _Point::Point(float fX, float fY) {_  
- _cout << "In constructor Point::Point(float,float)" << endl;_  
+ _cout \<\< "In constructor Point::Point(float,float)" \<\< endl;_  
  _mfX = fX;_  
  _mfY = fY;_  
  _miCount++;_  
@@ -66,7 +75,7 @@ _}_
 
 _// The destructor._  
 _Point::~Point() {_  
- _cout << "In destructor Point::~Point()" << endl;_  
+ _cout \<\< "In destructor Point::~Point()" \<\< endl;_  
  _miCount--;_  
 _}_
 
@@ -80,16 +89,16 @@ _}_
 _#include "point.h"_
 
 _int main() {_  
- _cout << Point::get\_count() << endl;  // We don't have any Point objects yet!_
+ _cout \<\< Point::get\_count() \<\< endl;  // We don't have any Point objects yet!_
 
  _Point a;_  
  _Point \*b = new Point(1.0, 2.0);_
 
-    _cout << b->get\_count() << endl;      // This is allowed, since \*b exists._
+    _cout \<\< b->get\_count() \<\< endl;      // This is allowed, since \*b exists._
 
  _delete b;_
 
- _cout << a.get\_count() << endl;           // This is allowed, since a exists._
+ _cout \<\< a.get\_count() \<\< endl;           // This is allowed, since a exists._
 
  _return 0;_  
  _}_

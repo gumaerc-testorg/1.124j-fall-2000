@@ -1,9 +1,18 @@
 ---
 content_type: page
+description: ''
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Custom Graphics
 uid: 8ee0e91e-a113-9da9-244a-5d801314bf8d
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 Topics
@@ -288,24 +297,24 @@ _class DrawingArea extends JPanel implements MouseListener {_
  _super.paintComponent(g);_
 
  _// Draw all objects that are stored in the object lists._  
- _for (i = 0; i < mPointList.size(); i++) {_  
+ _for (i = 0; i \< mPointList.size(); i++) {_  
  _Point point = (Point)mPointList.elementAt(i);_  
  _g.fillRect(point.x-1, point.y-1, 3, 3);_  
  _}_
 
- _for (i = 0; i < mLineList.size(); i++) {_  
+ _for (i = 0; i \< mLineList.size(); i++) {_  
  _Line line = (Line)mLineList.elementAt(i);_  
  _line.draw(g);_  
  _}_
 
- _for (i = 0; i < mPolygonList.size(); i++) {_  
+ _for (i = 0; i \< mPolygonList.size(); i++) {_  
  _Polygon polygon = (Polygon)mPolygonList.elementAt(i);_  
  _int j;_
 
  _g.setColor(Color.red);_  
  _g.drawPolygon(polygon);_  
  _g.setColor(Color.black);_  
- _for (j = 0; j < polygon.npoints; j++) {_  
+ _for (j = 0; j \< polygon.npoints; j++) {_  
  _g.fillRect(polygon.xpoints\[j\], polygon.ypoints\[j\], 3, 3);_  
  _}_  
  _}_
@@ -324,7 +333,7 @@ _class DrawingArea extends JPanel implements MouseListener {_
  _g.setColor(Color.red);_  
  _g.drawPolyline(polygon.xpoints, polygon.ypoints, polygon.npoints);_  
  _g.setColor(Color.black);_  
- _for (j = 0; j < polygon.npoints; j++) {_  
+ _for (j = 0; j \< polygon.npoints; j++) {_  
  _g.fillRect(polygon.xpoints\[j\], polygon.ypoints\[j\], 3, 3);_  
  _}_  
  _break;_
@@ -431,7 +440,7 @@ _class DrawingArea extends JPanel implements MouseListener {_
  _break;_
 
  _case LINE\_OBJECT:_  
- _if (miPointsEntered <= 2) {_  
+ _if (miPointsEntered \<= 2) {_  
  _str = "End " + miPointsEntered + " at (" + iX + "," + iY + ")";_  
  _str += "\\n";_  
  _mGeomApplet.getTextArea().append(str);_  

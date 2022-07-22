@@ -1,9 +1,18 @@
 ---
 content_type: page
+description: ''
+learning_resource_types:
+- Recitations
+ocw_type: CourseSection
 parent_title: Recitations
+parent_type: CourseSection
 parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 title: Recitation 1
 uid: 627fc44d-3c41-840b-842b-8cbe6b73ef3d
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 These notes were prepared by [Petros Komodromos](mailto:komodromos@ucy.ac.cy).  
@@ -75,17 +84,17 @@ Problem Sets
 You need to follow the instructions that are provided with each problem set, concerning what you must submit. In all problem sets you must both electronically turnin the source code files, and submit hardcopies of all completed, or modified, source code files. Sometimes you may also need to provide screen dumps of the window with the output results from the execution of your programs.
 
 The problem statement and the provided source code files can be obtained using CVS, which is a version control system (covered later in this recitation). Whenever source code files are provided, the following naming convention is used:  
-For each question there is a _ps<number\_of\_problem\_set>\_<number\_of\_question>.C_ which you may need to use, e.g. _ps3\_2.C_ for question 2 of problem set 3.  
-In some cases a makefile (named _make<number\_of\_problem\_set>_) is provided, which you may use to compile and link your code.
+For each question there is a _ps\<number\_of\_problem\_set>\_\<number\_of\_question>.C_ which you may need to use, e.g. _ps3\_2.C_ for question 2 of problem set 3.  
+In some cases a makefile (named _make\<number\_of\_problem\_set>_) is provided, which you may use to compile and link your code.
 
 Please comment your code to make it more readable whenever you think it would be helpful for someone else to understand what and how you do it (i.e. for the graders). Comments may be incorporated in your code by either enclosing them between /\* and \*/, or, by putting them on the right side of two division symbols //.  
 It is also very useful for both yourselves, and the graders, to indent your code in order to emphasize loops and different parts of your code. You should indent your code so that different blocks start in different columns making it less obscure and difficult to understand.  
 Please, do not make any other changes to the provided code, except those that you are asked to make.
 
 You can print a file in a compact form (saving some paper) using the following command so as to have the name of the file and the time and date printed on the hardcopy.  
-        athena% _enscript   -2Gr    -P<printer name>   <filename>_  
+        athena% _enscript   -2Gr    -P\<printer name>   \<filename>_  
 Whenever necessary, you can dump an X window directly to a printer using the following command and clicking on the window you want to print.  
-        athena% _xdpr  -P<printer name>_
+        athena% _xdpr  -P\<printer name>_
 
 Homework that is turned in late will be penalized as follows:  
  
@@ -266,8 +275,8 @@ You can continuously see the values stored in a variable, by displaying it inste
 4\. Use of makefiles
 --------------------
 
-In some cases a makefile (named _make<number\_of\_problem>_) will be provided, and you may use it to compile and link your code. Makefiles are used to automate the compilation and linking of programs. To compile and link a specific program, assuming that a proper makefile is available, the following command is used:  
- _% gmake -f make\_file\_name   <program\_name>_  
+In some cases a makefile (named _make\<number\_of\_problem>_) will be provided, and you may use it to compile and link your code. Makefiles are used to automate the compilation and linking of programs. To compile and link a specific program, assuming that a proper makefile is available, the following command is used:  
+ _% gmake -f make\_file\_name   \<program\_name>_  
 You do not have to use the provided makefiles, but you can use instead your own makefiles, or any of the makefiles you have seen in the lectures or anywhere else. You need to turnin the makefile that you use to compile your files on athena (either the ones you got using CVS or your own) Learning to use makefiles will help you when you start writing and compiling larger programs with several files, which makes the use of makefiles necessary.
 
 In problem set # 0, a simple makefile is provided for you, called _makePS0a_, which you may use to compile and link your code. There is also a more advanced makefile named _makePS0b_ which you can use.  
@@ -286,12 +295,12 @@ For the development of large software packages and programs it is useful to use 
 *   [CVS Index](http://www.catb.org/~esr/writings/version-control/cederqvist-1.11.22.html#SEC193)
 *   [Concurrent Versions System - The Open Standard for Version Control](http://www.cvshome.org/)
 
-The provided source code files are in the directory _/mit/1.124/Problems/<Problem set number>_ from where you can copy them using CVS to your directory, and, make the necessary additions and/or modifications. To use CVS to check out the problem sets for the 1.124 you should first set the environment variable CVSROOT as below: (you can also put it in your _.environment_ dotfile)  
+The provided source code files are in the directory _/mit/1.124/Problems/\<Problem set number>_ from where you can copy them using CVS to your directory, and, make the necessary additions and/or modifications. To use CVS to check out the problem sets for the 1.124 you should first set the environment variable CVSROOT as below: (you can also put it in your _.environment_ dotfile)  
  _% setenv CVSROOT /afs/athena.mit.edu/course/1/1.124/src_  
 then you can use the command:  
- _% cvs co Problems/PS<Problem set number>_  
+ _% cvs co Problems/PS\<Problem set number>_  
 or, using the alias defined in 1.124/src/CVSROOT/modules  
- _% cvs co OOP\_PS<Problem set number>_
+ _% cvs co OOP\_PS\<Problem set number>_
 
 {{< anchor "6_Introduction" >}}{{< /anchor >}}6\. Introduction to C++
 ---------------------------------------------------------------------
@@ -380,8 +389,8 @@ Note the different meaning of the following declarations:
 
 Before using any variable we have to declare it, i.e. inform the C++ compiler what is the data type of the variable. Every variable has a certain data type that determines the storage requirements and the operations that can be performed on it. In C++, as in C, we can combine several separate variable declarations into one declaration, as long as each variable is of the same data type, e.g.:
 
- _<data\_type1>  <variable1\_name>;  
-           <data\_type2>  <variable2\_name> = <initial\_value>,  <variable3\_name>;< /EM >_
+ _\<data\_type1>  \<variable1\_name>;  
+           \<data\_type2>  \<variable2\_name> = \<initial\_value>,  \<variable3\_name>;\< /EM >_
 
 _int a, b, c;  
 double x,y ;  
@@ -394,9 +403,9 @@ For example, the following statement is a declaration because it informs the com
 
 We can also initialize a variables in its definition, assigning an initial value and this is called **initialization**. When a value is assigned to an already defined variable this is called **assignment** :  
       _int a, b, c;_                          // definitions  
-      _double x = 3.4, y(4.);< /EM >        // definitions and  initializations  
-     _ float  z = 9.9;< /EM >                    // definition and initialization  
-      _c = 10; < /EM >                            // assignment_
+      _double x = 3.4, y(4.);\< /EM >        // definitions and  initializations  
+     _ float  z = 9.9;\< /EM >                    // definition and initialization  
+      _c = 10; \< /EM >                            // assignment_
 
 {{< anchor "9_operators" >}}{{< /anchor >}}9\. Operators
 --------------------------------------------------------
@@ -409,7 +418,7 @@ These are:
 *    the **assignment** operator is the =
 *    the **shorthand** (abbreviated) assignment operators: += ,  -= , \*= and /=
 *    the (unary) **postfix** and **prefix increment/decrement** operators ++ and --
-*    the **relational** operators are: > , < , >= , and <=  (used to compare two expressions)
+*    the **relational** operators are: > , \< , >= , and \<=  (used to compare two expressions)
 *    the **equality** operators are: == and !=   (used to check two expressions for equality)
 *    the **logical** operators are the: && , || , and !
 
@@ -740,7 +749,7 @@ arithmetic operators
 left
 {{< tdclose >}}
 {{< tdopen >}}
-<< , >>
+\<\< , >>
 {{< tdclose >}}
 {{< tdopen >}}
 bitwise shift
@@ -755,7 +764,7 @@ bitwise shift
 left
 {{< tdclose >}}
 {{< tdopen >}}
-< , <= , > , >=
+\< , \<= , > , >=
 {{< tdclose >}}
 {{< tdopen >}}
 relational operators
@@ -876,7 +885,7 @@ right
 {{< tdclose >}}
 {{< tdopen >}}
 \= , \*= , /= , %= , += , -=  
-<<= , >>= , &= , |= , ^=
+\<\<= , >>= , &= , |= , ^=
 {{< tdclose >}}
 {{< tdopen >}}
 assignment operators
@@ -905,7 +914,7 @@ Conversions: C++ defines a set of standard conversions, implicit type conversion
 
 The following order is used:  
   
-          **_bool, char, short int < int < long int < float < double < long double_**  
+          **_bool, char, short int \< int \< long int \< float \< double \< long double_**  
 _  
 bool_, _char_ and _short int_ are always converted to int whenever they appear in any expression, i.e. before performing any operation on them. A bool is promoted to int, getting the value 1 or 0, depending on its value (true or false, respectively). When a number is converted to a type bool all values other than zero are converted to true and a zero value is converted to false. Integer constants (e.g. 17) are considered _int_, and, floating point constants (e.g. 4.53) are considered _double_. We can use L after an integer and a floating point constant to define that should be considered as a long int, and, a long double, respectively.
 
@@ -917,40 +926,40 @@ _(dataType) variableOrExpression ; _ and   _dataType (variableOrExpression) ;
 
 Another way do an explicit conversion, i.e. to cast a data type constant or variable to another data type, is using the keyword static\_cast followed by a data type name surrounded by angle brackets and the certain variable or constant to cast within parentheses, e.g.  
 _  
-static\_cast <dataType> (variableOrExpression)_  
-_static\_cast <float> (5) / 3        _             //  gives  1.66667
+static\_cast \<dataType> (variableOrExpression)_  
+_static\_cast \<float> (5) / 3        _             //  gives  1.66667
 
 **_/\* Example: Mixed Expressions - Precedence - Associativity - Casting \*/_**
 
-_#include <iostream.h>_  
+_#include \<iostream.h>_  
 _main()_  
 _{_  
  _int i=4 ;_  
  _float f = 2.5 ;_  
  _double d = 3;_
 
- _cout << "\\n  i  / 5 \* f = "            // Mixed Expressions_  
- _<<  i  / 5 \* f  << endl ;_
+ _cout \<\< "\\n  i  / 5 \* f = "            // Mixed Expressions_  
+ _\<\<  i  / 5 \* f  \<\< endl ;_
 
- _cout << "\\n 'a'  = "    <<  'a' << endl ;_
+ _cout \<\< "\\n 'a'  = "    \<\<  'a' \<\< endl ;_
 
- _cout << "\\n 'a' - 1 = "                // Mixed Expressions_  
- _<<  'a' - 1 << endl ;_  
- _cout << "\\n 'f' - 'd' = "              // Mixed Expressions_  
- _<<  'f' - 'd' << endl ;_
+ _cout \<\< "\\n 'a' - 1 = "                // Mixed Expressions_  
+ _\<\<  'a' - 1 \<\< endl ;_  
+ _cout \<\< "\\n 'f' - 'd' = "              // Mixed Expressions_  
+ _\<\<  'f' - 'd' \<\< endl ;_
 
- _cout << "\\n  f + 5 \* d = "                 // Precedence_  
- _<<  f + 5 \* d  << endl ;_
+ _cout \<\< "\\n  f + 5 \* d = "                 // Precedence_  
+ _\<\<  f + 5 \* d  \<\< endl ;_
 
- _cout << "\\n  f \* 2 \* 2.5 = "               // Associativity_  
- _<<  f \* 2 \* 2.5  << endl ;_
+ _cout \<\< "\\n  f \* 2 \* 2.5 = "               // Associativity_  
+ _\<\<  f \* 2 \* 2.5  \<\< endl ;_
 
- _cout << "\\n (float) i  / 5 \* f = "         // Casting_  
- _<<  (float) i  / 5 \* f  << endl ;_  
- _cout << "\\n float i  / 5 \* f = "         // Casting_  
- _<<  float (i)  / 5 \* f  << endl ;_  
- _cout << "\\n static\_cast <float> (5) / 3 = "     // Casting_  
- _<< static\_cast <float> (5) / 3 << endl;_  
+ _cout \<\< "\\n (float) i  / 5 \* f = "         // Casting_  
+ _\<\<  (float) i  / 5 \* f  \<\< endl ;_  
+ _cout \<\< "\\n float i  / 5 \* f = "         // Casting_  
+ _\<\<  float (i)  / 5 \* f  \<\< endl ;_  
+ _cout \<\< "\\n static\_cast \<float> (5) / 3 = "     // Casting_  
+ _\<\< static\_cast \<float> (5) / 3 \<\< endl;_  
 _}_
 
 Results
@@ -970,35 +979,35 @@ Results
 
  _(float) i  / 5 \* f = 2      float 2_  
  _float(i)  / 5 \* f = 2      float 2_  
- _static\_cast <float> (5) / 3 = 1.66667_
+ _static\_cast \<float> (5) / 3 = 1.66667_
 
 {{< anchor "11_input" >}}{{< /anchor >}}11\. Input/Output Operators
 -------------------------------------------------------------------
 
 In C++ the predefined objects _cin_, _cout_ and _cerr_ are available for input and output operations. The predefined object **_cin_** refers to the standard input (which is by default the keyboard), **_cout_** and **_cerr_** refer to the standard output and the standard error, respectively (which are both by default the display). These defaults can be changed using redirection while executing the program.
 
-The **output operator** (<<) (known as insertion operator) directs (display) output information on your standard output (screen), e.g.  
- _cout << "\\n  x = " << x << endl ;_  
+The **output operator** (\<\<) (known as insertion operator) directs (display) output information on your standard output (screen), e.g.  
+ _cout \<\< "\\n  x = " \<\< x \<\< endl ;_  
 "\\n" represents a new line character, while _endl_ inserts a new line and flushes the output buffer. The operating system buffers the output to the display characters and prints them out in a batch to minimize I/O overhead. This may lead to wrong indications of where the error may be if we consider the printed out information without flushing the buffer.  
 We may have several output operators in the same output statement
 
 Similarly, you can use the **input operator** (>>) to obtain (read) input values from the standard input (keyboard). e.g.:  
- _cout << "\\n x = "  ;_  
+ _cout \<\< "\\n x = "  ;_  
  _cin >> x ;    cin >> y >> z;_
 
 The standard input-output library (_iostream.h_) must be included using a preprocessor directive, in order to be able to use the input and output operators, as well as the manipulators without arguments such as _endl, flush, hex, oct_, etc.
 
 Certain options may be specified when using the output stream operator to select the way that the output should look. The precision can be set using a iostream manipulator, the _setprecision(number\_of\_digits)_, while the _setiosflags(options separated by |)_ can be used e.g. to specify whether the decimal point or tailing zeros should be shown. The _setw()_ specifies the field width in which the next value should be printed out. It is the only manipulator that does not apply to all subsequent input or output, but becomes zero as soon as something is printed. The _setfill(c)_ makes c the fill character. To use these parameterized stream manipulators (i.e. with arguments) we need to include the _iomanip.h_ header file. e.g.:  
- _cout << setprecision(2) << setiosflags(ios::fixed | ios::showpoint)_  
- _<< "\\n\\n 3. = " << 3. << "\\t 0.333333 = " << 0.333333 << endl;_  
+ _cout \<\< setprecision(2) \<\< setiosflags(ios::fixed | ios::showpoint)_  
+ _\<\< "\\n\\n 3. = " \<\< 3. \<\< "\\t 0.333333 = " \<\< 0.333333 \<\< endl;_  
 (will give: 3.=3.00    0.333333 = 0.33)
 
 We can also redirect the input from the keyboard to a file and the output to another file:  
- _athena%  executable\_file\_name  <  input\_file\_name      >  output\_file\_name_
+ _athena%  executable\_file\_name  \<  input\_file\_name      >  output\_file\_name_
 
 Finally, there is a standard error stream cerr which is used to display error messages  
   
-      _cerr << "\\n Not proper values were provided!"  ;_
+      _cerr \<\< "\\n Not proper values were provided!"  ;_
 
 The following member functions can be invoked by the input stream, _**cin**: cin.good()_ returns true if everything is ok;, _cin.eof()_ return true if EOF is reached; _cin.fail()_ returns true if a format error has occurred.
 
@@ -1013,13 +1022,13 @@ However, when both C input/output functions and C++ input and output operators a
 The preprocessing takes place prior to the actual compilation. The preprocessor searches all files that are to be compiled and takes action according to the preprocessor directives. The preprocessor directives are the lines which begin with # (usually placed at the top of the source code file).
 
 An **include preprocessor directive** results in the substitution of it, with the contents of the indicated file. i.e. the following include preprocessor directive:  
- _#include <file.h>_  
+ _#include \<file.h>_  
   
 is equivalent to typing the contents of the included file at that point.
 
 There are two variations of the include preprocessor directive:  
   
-       _#include <file.h> _     or      _#include "file.h"_  
+       _#include \<file.h> _     or      _#include "file.h"_  
   
 The difference is that in the first case the preprocessor searches for the included file in the standard include directory, while in the second case it searches in the current directory. The latter case is usually used for the user written functions.
 
@@ -1039,7 +1048,7 @@ Also, while compiling a program we can define a preprocessor constant on the com
   
 e.g. compiling the file with -DDEBUG\_MODE option will consider the cout statement:  
  _#ifdef DEBUG\_MODE_  
- _cout << "\\n testing debug mode \\n" << endl;_  
+ _cout \<\< "\\n testing debug mode \\n" \<\< endl;_  
  _#endif_
 
 The define directive can also be used to specify macro substitutions with variable parameters. e.g. having defined the following macro using:               
@@ -1055,13 +1064,13 @@ will be replaced during preprocessing by:     _product = 267.2 + (25.7 \* 33
 -----------------
 
 To be able to use the input and output operators you must first include the standard input-output library (**_iostream.h_**) using a preprocessor directive:  
- _#include <iostream.h>_
+ _#include \<iostream.h>_
 
 When the C input/output functions _scanf()/printf()_ are used the **_stdio.h_** header file (which contains their prototypes) must be included instead.
 
 Similarly to be able to use any other standard library function you need to include its header file which contains all necessary declarations.  
 e.g. to be able to use the math function, such as _sqrt()_ you need to include the **_math.h_** header file using the following command:  
- _#include <math.h>_
+ _#include \<math.h>_
 
 When the header file that you include is in the current directory, e.g. a header file that you wrote, then you should use double quotes, instead of  
 brackets, e.g.:  
@@ -1069,12 +1078,12 @@ brackets, e.g.:
 
 According to the new ANSI/ISO standard, which however is not followed by all available compilers yet, the iostream header file can be included using:  
   
-  _#include <iostream>_  
+  _#include \<iostream>_  
  _using namespace std;_  
  _int main()_  
  _{_  
- _std::cout << "\\n testing:_  
- _pi = " << 3.1415 << endl;_  
+ _std::cout \<\< "\\n testing:_  
+ _pi = " \<\< 3.1415 \<\< endl;_  
  _}_
 
 Header files are very useful to provide **declarations** (e.g. for global variables and functions) in order to avoid incompatible declarations which may happen when multiple declarations are provided in several source-code files. In addition, any changes to a declaration would require only a single local modification instead of having to update all appearances of the declarations. A header file should never contain definitions, (unless its a definition of an inline function).
@@ -1084,11 +1093,11 @@ Header files are very useful to provide **declarations** (e.g. for global variab
 
 Control statements are used to control the flow of our programs which is normally sequential. i.e. statements are executed one after the other in order. Changing this sequential execution in a controlled way is called transfer of control and is achieved using control structures.
 
-The C++ control structures are identical with those of C. The **relational** operators ( > , < , >= ,  <= ), **equality** operators ( ==  ,  != ), and the **logical** operators (&& , || ,  !) are used in logical tests which produce either true or false (0).
+The C++ control structures are identical with those of C. The **relational** operators ( > , \< , >= ,  \<= ), **equality** operators ( ==  ,  != ), and the **logical** operators (&& , || ,  !) are used in logical tests which produce either true or false (0).
 
 Typically, the following operators are used to form a logical test for the control structures which determines what action should be taken:
 
-*   the **relational** operators: > , < , >= , and <=  (which are used to compare two expressions)
+*   the **relational** operators: > , \< , >= , and \<=  (which are used to compare two expressions)
 *   the **equality** operators: == and !=   (which are used to check two expressions for equality)
 *   the **logical** operators: && , || , and !
 
@@ -1159,7 +1168,7 @@ Finally, the following control structure is the **_conditional operator_** which
  _( logical test)  ?  when\_true\_statement : when\_false\_statement ;_
 
 e.g.:   _max = (x>y) ? x : y ;_  
- _(i%2) ? cout << i << " is an odd integer" : cout << i << " is an even integer" ;_
+ _(i%2) ? cout \<\< i \<\< " is an odd integer" : cout \<\< i \<\< " is an even integer" ;_
 
 The **_break_** statement is typically used to skip the remainder of the switch statement. It is also used to exit repetition control structures (i.e. _while_, _do/while_ and _for_). In all these cases execution continues with the first statement after the terminated control structure. The break statement exits the innermost loop, or switch statement.
 

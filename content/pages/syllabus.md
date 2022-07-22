@@ -1,7 +1,14 @@
 ---
 content_type: page
+description: ''
+learning_resource_types: []
+ocw_type: CourseSection
 title: Syllabus
 uid: c5b990fd-3649-bcc5-e36b-a2c4e828f284
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 This class was also offered in Course 13 (Department of Ocean Engineering) as 13.470J. In 2005, ocean engineering subjects became part of Course 2 (Department of Mechanical Engineering), and the 13.470J designation was dropped in lieu of 2.159J.

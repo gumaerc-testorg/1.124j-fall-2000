@@ -1,9 +1,18 @@
 ---
 content_type: page
+description: ''
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Dynamic Management of Objects
 uid: 10cbc2f6-01a3-e189-7699-ef4c2482f9f9
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 Contents
@@ -63,7 +72,7 @@ _// Declaration of class Point._
 _#ifndef \_POINT\_H\__  
 _#define \_POINT\_H\__
 
-_#include <iostream.h>_
+_#include \<iostream.h>_
 
 _class Point {_  
  _// The state of a Point object. Property variables are typically_  
@@ -80,7 +89,7 @@ _class Point {_
  _Point(const Point& p);         // The copy constructor._  
  _~Point();                             // The destructor._  
  _void print() {                       // This function will be made inline by default._  
- _cout << "(" << mfX << "," << mfY << ")" << endl;_  
+ _cout \<\< "(" \<\< mfX \<\< "," \<\< mfY \<\< ")" \<\< endl;_  
  _}_  
  _void set\_x(float fX);_  
  _float get\_x();_  
@@ -99,7 +108,7 @@ _#include "point.h"_
 
 _// A constructor which creates a Point object at (0,0)._  
 _Point::Point() {_  
- _cout << "In constructor Point::Point()" << endl;_  
+ _cout \<\< "In constructor Point::Point()" \<\< endl;_  
  _mfX = 0.0;_  
  _mfY = 0.0;_  
 _}_
@@ -107,7 +116,7 @@ _}_
 _// A constructor which creates a Point object from two_  
 _// floats._  
 _Point::Point(float fX, float fY) {_  
- _cout << "In constructor Point::Point(float fX, float fY)" << endl;_  
+ _cout \<\< "In constructor Point::Point(float fX, float fY)" \<\< endl;_  
  _mfX = fX;_  
  _mfY = fY;_  
 _}_
@@ -115,14 +124,14 @@ _}_
 _// A constructor which creates a Point object from_  
 _// another Point object._  
 _Point::Point(const Point& p) {_  
- _cout << "In constructor Point::Point(const Point& p)" << endl;_  
+ _cout \<\< "In constructor Point::Point(const Point& p)" \<\< endl;_  
  _mfX = p.mfX;_  
  _mfY = p.mfY;_  
 _}_
 
 _// The destructor._  
 _Point::~Point() {_  
- _cout << "In destructor Point::~Point()" << endl;_  
+ _cout \<\< "In destructor Point::~Point()" \<\< endl;_  
 _}_
 
 _// Modifier for x coordinate._  
@@ -166,7 +175,7 @@ _int main() {_
  _b.set\_y(4.0);_
 
  _// Print out the current state of b._  
- _cout << endl;_  
+ _cout \<\< endl;_  
  _b.print();_
 
  _return 0;_  
@@ -221,7 +230,7 @@ _int main() {_
  _b = new Point(2.0, 3.0);_
 
  _// Print out the two point objects._  
- _cout << "Here are the two Point objects I have created:" << endl;_  
+ _cout \<\< "Here are the two Point objects I have created:" \<\< endl;_  
  _a->print();_  
  _b->print();_
 
@@ -230,19 +239,19 @@ _int main() {_
  _delete b;_
 
  _// Now allocate an array of Point objects in heap memory._  
- _cout << "I will now create an array of Points. How big shall I make it? ";_  
+ _cout \<\< "I will now create an array of Points. How big shall I make it? ";_  
  _cin >> num\_points;_  
  _c = new Point\[num\_points\];_
 
- _for (int i = 0; i < num\_points; i++) {_  
+ _for (int i = 0; i \< num\_points; i++) {_  
  _d = (float)i;_  
  _c\[i\].set\_x(d);_  
  _c\[i\].set\_y(d + 1.0);_  
  _}_  
    
  _// Print out the array of point objects._  
- _cout << "Here is the array I have created:" << endl;_  
- _for (int i = 0; i < num\_points; i++) {_  
+ _cout \<\< "Here is the array I have created:" \<\< endl;_  
+ _for (int i = 0; i \< num\_points; i++) {_  
  _c\[i\].print();_  
  _}_
 
@@ -288,7 +297,7 @@ _int main() {_
  _a.print();_  
  _::a.print();_
 
- _for (int i = 0; i < 3; i++)_  
+ _for (int i = 0; i \< 3; i++)_  
  _foo();_
 
  _Point \*b = new Point(5.0, 6.0);    // Resides in heap memory._  
@@ -309,24 +318,24 @@ _}_
 
 Here is the output from the program:
 
-In constructor Point::Point(float fX, float fY)                                     <-- Global object _a_.  
-In constructor Point::Point(float fX, float fY)                                     <-- Local object _a_.  
+In constructor Point::Point(float fX, float fY)                                     \<-- Global object _a_.  
+In constructor Point::Point(float fX, float fY)                                     \<-- Local object _a_.  
 (4,3)  
 (1,2)  
-In constructor Point::Point()                                                              <-- Object _a_ in _foo()_.  
+In constructor Point::Point()                                                              \<-- Object _a_ in _foo()_.  
 (1,0)  
 (2,0)  
 (3,0)  
-In constructor Point::Point(float fX, float fY)                                     <-- Object _\*b_.  
+In constructor Point::Point(float fX, float fY)                                     \<-- Object _\*b_.  
 (5,6)  
-In destructor Point::~Point()                                                             <-- Object _\*b_.  
-In constructor Point::Point(float fX, float fY)                                     <-- Second local object _a_.  
+In destructor Point::~Point()                                                             \<-- Object _\*b_.  
+In constructor Point::Point(float fX, float fY)                                     \<-- Second local object _a_.  
 (7,9)  
 (1,2)  
-In destructor Point::~Point()                                                             <-- Second local object _a_.  
-In destructor Point::~Point()                                                             <-- Local object _a_.  
-In destructor Point::~Point()                                                             <-- Object _a_ in _foo()_.  
-In destructor Point::~Point()                                                             <-- Global object _a_.
+In destructor Point::~Point()                                                             \<-- Second local object _a_.  
+In destructor Point::~Point()                                                             \<-- Local object _a_.  
+In destructor Point::~Point()                                                             \<-- Object _a_ in _foo()_.  
+In destructor Point::~Point()                                                             \<-- Global object _a_.
 
 {{< anchor "4" >}}{{< /anchor >}}4\. Data Structures for Managing Objects
 -------------------------------------------------------------------------
@@ -351,7 +360,7 @@ _int main() {_
  _a = new Point \*\[max\_points\];_
 
  _// Now create some point objects and store them in the array._  
- _for (i = 0; i < max\_points; i++)_  
+ _for (i = 0; i \< max\_points; i++)_  
  _a\[i\] = new Point(i, i);_
 
  _// Let's suppose we want to eliminate the middle Point._  
@@ -360,14 +369,14 @@ _int main() {_
  _a\[i\] = NULL;_
 
  _// Print out the remaining Points._  
- _for (i = 0; i < max\_points; i++) {_  
+ _for (i = 0; i \< max\_points; i++) {_  
  _if (a\[i\])_  
  _a\[i\]->print();_  
  _}_
 
  _// Delete the remaining Points. Note that it is acceptable to pass a NULL_  
  _// pointer to the delete operator._  
- _for (i = 0; i < max\_points; i++)_  
+ _for (i = 0; i \< max\_points; i++)_  
  _delete a\[i\];_
 
  _// Now delete the array of pointers._  

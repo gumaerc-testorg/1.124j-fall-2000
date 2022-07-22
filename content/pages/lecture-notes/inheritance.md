@@ -1,9 +1,18 @@
 ---
 content_type: page
+description: ''
+learning_resource_types:
+- Lecture Notes
+ocw_type: CourseSection
 parent_title: Lecture Notes
+parent_type: CourseSection
 parent_uid: dd846b6b-f0c7-fd62-35a9-4e87d772d0e9
 title: Inheritance
 uid: a4708bad-8d4b-e4aa-eb25-0446faa7d391
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 Inheritance, Polymorphism and Virtual Functions
@@ -39,7 +48,7 @@ The _Circle_ class can also override functions that it inherits from the _Shape_
 
 we will invoke the _print()_ function in the underlying _Circle_ object. In the example below, we have used an array of _Shape_ pointers, _sa,_ to store a heterogeneous collection of _Circle_ and _Rectangle_ objects. In the code fragment
 
- _for (i = 0; i < num\_shapes; i++) {_  
+ _for (i = 0; i \< num\_shapes; i++) {_  
  _sa\[i\]->print();    // This will call either Circle::print() or Rectangle::print(), as appropriate._  
  _}_
 
@@ -53,7 +62,7 @@ Since we have not implemented _draw()_ in class _Shape_, the class is incomplete
 
 We must take care when deleting the objects stored in the array of _Shape_ pointers. In the code fragment
 
- _for (i = 0; i < num\_shapes; i++)_  
+ _for (i = 0; i \< num\_shapes; i++)_  
  _delete sa\[i\];  // This will call either Circle::~Circle() or Rectangle::~Rectangle(), as appropriate,_  
  _// before calling Shape::~Shape()._
 
@@ -65,12 +74,12 @@ _**shape.h**_
 _#ifndef \_SHAPE\_H\__  
 _#define \_SHAPE\_H\__
 
-_#include <iostream.h>_  
+_#include \<iostream.h>_  
 _#include "point.h"_
 
 _#ifndef DEBUG\_PRINT_  
 _#ifdef \_DEBUG_  
-_#define DEBUG\_PRINT(str) cout << str << endl;_  
+_#define DEBUG\_PRINT(str) cout \<\< str \<\< endl;_  
 _#else_  
 _#define DEBUG\_PRINT(str)_  
 _#endif_  
@@ -122,9 +131,9 @@ _}_
 
 _void Shape::print() {_  
  _DEBUG\_PRINT("In Shape::print()")_  
- _cout << "Centroid: ";_  
+ _cout \<\< "Centroid: ";_  
  _mCentroid.print();_  
- _cout << "Area = " << mfArea << endl;_  
+ _cout \<\< "Area = " \<\< mfArea \<\< endl;_  
 _}_  
  
 
@@ -167,7 +176,7 @@ _}_
 
 _void Circle::print() {_  
  _DEBUG\_PRINT("In Circle::print()")_  
- _cout << "Circle Radius: " << mfRadius << endl;_
+ _cout \<\< "Circle Radius: " \<\< mfRadius \<\< endl;_
 
  _// If we want to print out the Shape part of the Circle object as well,_  
  _// we could call the base class print function like this:_  
@@ -219,7 +228,7 @@ _}_
 
 _void Rectangle::print() {_  
  _DEBUG\_PRINT("In Rectangle::print()")_  
- _cout << "Rectangle Width: " << mfWidth << " Height: " << mfHeight << endl;_
+ _cout \<\< "Rectangle Width: " \<\< mfWidth \<\< " Height: " \<\< mfHeight \<\< endl;_
 
  _// If we want to print out the Shape part of the Rectangle object as well,_  
  _// we could call the base class print function like this:_  
@@ -268,7 +277,7 @@ _int main() {_
  _// with a similar signature that are specific to the derived classes. If_  
  _// a derived class does not provide an implementation of print, then the_  
  _// Shape::print function will be called by default._  
- _for (i = 0; i < num\_shapes; i++) {_  
+ _for (i = 0; i \< num\_shapes; i++) {_  
  _sa\[i\]->print();    // This will call either Circle::print() or Rectangle::print(), as appropriate._  
  _}_
 
@@ -276,7 +285,7 @@ _int main() {_
  _// even though the objects that we created using new were derived class_  
  _// objects. To ensure that the appropriate destructor for the derived_  
  _// object is called, we must make the Shape destructor virtual._  
- _for (i = 0; i < num\_shapes; i++)_  
+ _for (i = 0; i \< num\_shapes; i++)_  
  _delete sa\[i\];  // This will call either Circle::~Circle() or Rectangle::~Rectangle(), as appropriate,_  
  _// before calling Shape::~Shape()._
 

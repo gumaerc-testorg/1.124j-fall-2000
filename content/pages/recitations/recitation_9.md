@@ -1,9 +1,18 @@
 ---
 content_type: page
+description: ''
+learning_resource_types:
+- Recitations
+ocw_type: CourseSection
 parent_title: Recitations
+parent_type: CourseSection
 parent_uid: 08c0c758-213b-77ad-faca-c379a74d5283
 title: Recitation 9
 uid: 6fafcc10-1009-861d-bf37-c770639a665f
+video_files:
+  video_thumbnail_file: null
+video_metadata:
+  youtube_id: null
 ---
 
 These notes were prepared by [Petros Komodromos](mailto:komodromos@ucy.ac.cy).
@@ -114,7 +123,7 @@ _}_
 
 Executing the above Java® application (_java FrameApplication1_) opens the following window with its left top corner at the location (100,100):
 
-![MY JFrame.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/recitations/myJFrame1.gif)
+{{< resource "25203a1d-1478-f4aa-8b55-5ecdb7403905" >}}
 
 Applets: JApplet
 ----------------
@@ -144,25 +153,25 @@ _}_
 
 TestingJApplet.html
 
-_<html>_  
-_<head>_  
-_<title>JApplet Testing # 1</title>_  
-_</head>_  
-_<body>_
+_\<html>_  
+_\<head>_  
+_\<title>JApplet Testing # 1\</title>_  
+_\</head>_  
+_\<body>_
 
-_<center>_  
-_<h2>_  
-_<u>JApplet Example # 1</u></h2>_  
-_<hr><Applet code="TestingJApplet.class" WIDTH="500" HEIGHT="100"></Applet>_  
-_<hr></center>_
+_\<center>_  
+_\<h2>_  
+_\<u>JApplet Example # 1\</u>\</h2>_  
+_\<hr>\<Applet code="TestingJApplet.class" WIDTH="500" HEIGHT="100">\</Applet>_  
+_\<hr>\</center>_
 
-_<p><br>_  
-_</body>_  
-_</html>_
+_\<p>\<br>_  
+_\</body>_  
+_\</html>_
 
 _\> appletviewer TestingJApplet.html_
 
-![Applet viewer.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/recitations/testingJApplet.gif)
+{{< resource "f6e73219-a907-2fa3-e012-35326d3e5c3d" >}}
 
 Dialogs: JDialog
 ----------------
@@ -231,7 +240,7 @@ _}_
 _}_  
 _}_
 
-![Dialog.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/recitations/dialog1.gif)
+{{< resource "0fc6b893-4460-22e2-b2e5-074d0bf41667" >}}
 
 _Option panes_ are components that can be placed in dialox boxes. The JOptionPane class allows the creation and customization of several different kinds of dialogs, such as support for laying out standard dialogs, specifying the dialog's title and text, providing icons, customizing the button text and the components the dialog displays, and specifying where the dialog should appear onscreen. Any one of four standard _JOptionPane_ icons (which indicate question, information, warning, and error) can be displayed by the dialog.
 
@@ -296,7 +305,7 @@ _}_
 _}_  
 _}_
 
-![Dialog instance.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/recitations/dialog2.gif)
+{{< resource "8672770e-6ddf-47fe-c635-a6493d83d2f5" >}}
 
 The [JFC/Swing Tutorial](http://java.sun.com/docs/books/tutorial/uiswing/TOC.html) provided by Sun has a series of tables with details on the:
 
@@ -348,7 +357,7 @@ The following program creates a _JWindow_ instance with a _JButton_ instance wit
 
 The execution of the above application gives a window that looks like the following:
 
-![JWindow example.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/recitations/window1.gif)
+{{< resource "54e22d15-aeeb-d940-7c9e-f09ca9ba11f1" >}}
 
 3{{< anchor "3" >}}{{< /anchor >}}. Intermediate Swing Containers
 -----------------------------------------------------------------
@@ -414,7 +423,7 @@ _}_
 
 The above example, when executed, gives the following window:
 
-![Example of JPanel.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/recitations/jpanel.gif)
+{{< resource "869b935d-454e-ccf7-b5d4-0efa3f0c0ccc" >}}
 
 Internal Frames: JInternalFrame
 -------------------------------
@@ -435,7 +444,7 @@ A JRootPane is contained in all Swing top-level containers. It is a fundamental 
 
 A _root pane_ consists of the following components, as shown in the following figure (adapted from the [Sun's Java® Tutorial](http://java.sun.com/docs/books/tutorial/uiswing/TOC.html)):
 
-![Components of root pane.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/recitations/layers.jpg)
+{{< resource "98532ffd-8b29-3d08-6c5d-b88595cfc417" >}}
 
 *   _Glass pane_: The glass pane is the topmost component in a root pane. It is hidden, by default, unless it is made visible. It's also completely transparent unless its _paint()_ method is overwritten. The glass pane, when it is visible, can trap mouse events. If it expresses interest in handling mouse events, by adding a mouse listener or enabling mouse events, it blocks all input events from reaching the components in the content pane, since it is the topmost lightweight component in its container. The glass pane can also be used to paint over an area that already contains one or more components.
 *   _Layered pane_ : The layered pane, which is underneath the glass pane, can be used to place components on separate layers. The layered pane serves to position its contents, and, optionally, in a specified z-order. A JLayeredPane allows to the components that it contains to be placed in specific layers with which the depth at which the components are displayed is controlled. Each layer is assigned a specific numerical value, which can be explicitly set using the setLayer() method of the JLayeredPane class. Also, the relative depth of a component with respect to other components on the same layer can be specified using the setPosition() method. Positions are specified using an integer between -1 and the number of components at that depth minus one. Overlapping components can appear one on top of the other, displaying the layers with higher values in front of those with lower values. JLayeredPane class specifies certain values to some specific layers, as described in the corresponding API documentation. It does not help to add a heavyweight component in a JLayeredPane, since a heavyweight component is always displayed above a lightweight component. A JLayeredPane instance contains, in turn, a content pane and an optional menu bar.
@@ -456,7 +465,7 @@ The JScrollPane is a container that can be used (instead of the AWT ScrollPane _
 
 The following figure (taken from the Java® 2 API) shows the JScrollPane components.
 
-![Components of JScrollPane.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/recitations/JScrollPane.gif)
+{{< resource "165cde23-7f97-fe5f-cdbb-5d9941c49e3d" >}}
 
 The JViewport is rarely instantiated and used directly. It is used, as shown above, by JScrollPane instances, through which a particular region of a view is displayed. The position of the view displayed by a viewport can be modified in order to allow to different regions of the view to be selectively displayed.
 
@@ -557,7 +566,7 @@ _}_
 Execution of the program:
 -------------------------
 
-![Example of JButton.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/recitations/button1.gif)
+{{< resource "24b38ffb-9451-dbb8-ecbc-fe23a6514214" >}}
 
 Toggle Buttons: **JToggleButton**
 
@@ -588,7 +597,7 @@ An _accelerator_, which offers keyboard shortcuts to bypass navigating the menu 
 
 The following image (adapted from the Sun's Swing/JFC Tutorial) presents the menu-related inheritance hierarchy:
 
-![The menu-related inheritance hierarchy.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/recitations/object.gif)
+{{< resource "532734fc-f001-3791-4cac-a52e776aa593" >}}
 
 Since a menu is a lightweight component, a component of any type can be added to it. A menu that resides in a menu bar is considered as a top-level menu, while a menu contained in a menu is considered a cascading menu.
 
@@ -692,7 +701,7 @@ Text components display text, which can, optionally, be editable by the user. Sw
 
 The following figure, (adapted from the Sun's Java® Tutorial) shows the hierarchy of the JTextComponent, which is the base class for swing text components.
 
-![Text components.](/courses/civil-and-environmental-engineering/1-124j-foundations-of-software-engineering-fall-2000/recitations/10jtextcomp.gif)
+{{< resource "79dfd73b-4fa9-ad21-cb01-265849468f11" >}}
 
 *   _JTextField_ allows the editing of a single line of text.
 *   _JTextArea_ is a multi-line area that displays plain text.
