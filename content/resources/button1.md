@@ -2,6 +2,7 @@
 content_type: resource
 description: ''
 file: /courses/1-124j-foundations-of-software-engineering-fall-2000/24b38ffb9451dbb8ecbcfe23a6514214_button1.gif
+file_size: 31654
 file_type: image/gif
 image_metadata:
   caption: ''

@@ -2,6 +2,7 @@
 content_type: resource
 description: ''
 file: /courses/1-124j-foundations-of-software-engineering-fall-2000/76163ee3f63dc91c3d9f88be97281f08_wakeupconditions.gif
+file_size: 18658
 file_type: image/gif
 image_metadata:
   caption: ''
