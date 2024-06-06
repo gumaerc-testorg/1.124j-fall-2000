@@ -2,6 +2,7 @@
 content_type: resource
 description: ''
 file: /courses/1-124j-foundations-of-software-engineering-fall-2000/97cea5df725c43edbef85c8eb6d92f51_sample_quiz1.pdf
+file_size: 51166
 file_type: application/pdf
 learning_resource_types:
 - Exams

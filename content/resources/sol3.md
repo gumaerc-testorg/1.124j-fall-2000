@@ -2,6 +2,7 @@
 content_type: resource
 description: ''
 file: /courses/1-124j-foundations-of-software-engineering-fall-2000/65e37d8398807fca23531667638bf266_sol3.pdf
+file_size: 65571
 file_type: application/pdf
 learning_resource_types:
 - Assignments
