@@ -33,18 +33,18 @@ This lecture is courtesy of Petros Komodromos.
 
 Topics
 
-1. [Introduction to Java® 3D](#1)
-2. [Java® 3D References](#2)
-3. [Examples and Applications](#3)
-4. [Scene Graph Structure and basic Java® 3D concepts and classes](#4)
-5. [A simple Java® 3D program](#5)
-6. [Performance of Java® 3D](#6)
+1. [Introduction to Java® 3D](https://ocw-studio.odl.mit.edu/sites/1-124j-foundations-of-software-engineering-fall-2000/type/page/edit/c9c9104a-ac54-a054-d006-354e424ccb63/#1)
+2. [Java® 3D References](https://ocw-studio.odl.mit.edu/sites/1-124j-foundations-of-software-engineering-fall-2000/type/page/edit/c9c9104a-ac54-a054-d006-354e424ccb63/#2)
+3. [Examples and Applications](https://ocw-studio.odl.mit.edu/sites/1-124j-foundations-of-software-engineering-fall-2000/type/page/edit/c9c9104a-ac54-a054-d006-354e424ccb63/#3)
+4. [Scene Graph Structure and basic Java® 3D concepts and classes](https://ocw-studio.odl.mit.edu/sites/1-124j-foundations-of-software-engineering-fall-2000/type/page/edit/c9c9104a-ac54-a054-d006-354e424ccb63/#4)
+5. [A simple Java® 3D program](https://ocw-studio.odl.mit.edu/sites/1-124j-foundations-of-software-engineering-fall-2000/type/page/edit/c9c9104a-ac54-a054-d006-354e424ccb63/#5)
+6. [Performance of Java® 3D](https://ocw-studio.odl.mit.edu/sites/1-124j-foundations-of-software-engineering-fall-2000/type/page/edit/c9c9104a-ac54-a054-d006-354e424ccb63/#6)
 
 {{\< anchor "1" >}}{{\< /anchor >}}1. Introduction to Java® 3D
 
 *Java® 3D* is a general-purpose, platform-independent, object-oriented API for 3D-graphics that enables high-level development of Java® applications and applets with 3D interactive rendering capabilities. With *Java® 3D*, 3D scenes can be built programmatically, or, alternatively, 3D content can be loaded from VRML or other external files. *Java® 3D*, as a part of the *Java® Media APIs*, integrates well with the other [Java® technologies and APIs](http://java.sun.com/products/). For example, [*Java® 2D*](http://java.sun.com/products/java-media/2D/index.html) API can be used to plot selected results, while the [*Java® Media Framework (JMF)*](http://java.sun.com/products/java-media/jmf/index.html) API can be used to capture and stream audio and video.
 
-Java® 3D is based on a directed acyclic graph-based scene structure, known as scene graph, that is used for representing and rendering the scene. The scene structure is a tree-like diagram that contains nodes with all the necessary information to create and render the scene. In particular, the [scene graph](#4) contains the nodes that are used to represent and transform all objects in the scene, and all viewing control parameters, i.e. all objects with information related to the viewing of the scene. The scene graph can be manipulated very easily and quickly allowing efficient rendering by following a certain optimal order and bypassing hidden parts of objects in the scene.
+Java® 3D is based on a directed acyclic graph-based scene structure, known as scene graph, that is used for representing and rendering the scene. The scene structure is a tree-like diagram that contains nodes with all the necessary information to create and render the scene. In particular, the [scene graph](https://ocw-studio.odl.mit.edu/sites/1-124j-foundations-of-software-engineering-fall-2000/type/page/edit/c9c9104a-ac54-a054-d006-354e424ccb63/#4) contains the nodes that are used to represent and transform all objects in the scene, and all viewing control parameters, i.e. all objects with information related to the viewing of the scene. The scene graph can be manipulated very easily and quickly allowing efficient rendering by following a certain optimal order and bypassing hidden parts of objects in the scene.
 
 Java® 3D API has been developed under a joint collaboration between Intel, Silicon Graphics, Apple, and Sun, combining the related knowledge of these companies. It has been designed to be a platform-independent API concerning the host's operating system (PC/Solaris/Irix/HPUX/Linux) and graphics (OpenGL/Direct3D) platform, as well as the input and output (display) devices. The implementation of Java® 3D is built on top of OpenGL, or Direct3D. The high level Java® 3D API allows rapid application development which is very critical, especially nowadays.
 
@@ -60,7 +60,7 @@ The following list includes many links related to the Java® 3D API
 
 - [*Java® 3D 1.2 API Documentation*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/index.html)  
 - [*Java® 3D 1.2 Specification*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dguide/index.html)  
-- Java® 3D Tutorial (PDF format):      
+- Java® 3D Tutorial (PDF format):       
       
     - [*Chapter 0*](http://java.sun.com/products/java-media/3D/collateral/j3d_tutorial_ch0.pdf) , Preface, Appendices, and Glossary
     - [*Chapter 1*](http://java.sun.com/products/java-media/3D/collateral/j3d_tutorial_ch1.pdf) , Getting Started
@@ -69,9 +69,9 @@ The following list includes many links related to the Java® 3D API
     - [*Chapter 4*](http://java.sun.com/products/java-media/3D/collateral/j3d_tutorial_ch4.pdf) , Interaction
     - [*Chapter 5*](http://java.sun.com/products/java-media/3D/collateral/j3d_tutorial_ch5.pdf) , Animation
     - [*Chapter 6*](http://java.sun.com/products/java-media/3D/collateral/j3d_tutorial_ch6.pdf) *,* Lights
-    - [*Chapter 7*](http://java.sun.com/products/java-media/3D/collateral/j3d_tutorial_ch7.pdf) , Textures       
+    - [*Chapter 7*](http://java.sun.com/products/java-media/3D/collateral/j3d_tutorial_ch7.pdf) , Textures        
          
-- [*Raw J3D*](http://www.java3d.org/)
+- [*Raw J3D*](https://www.oracle.com/java/technologies/javase/java-3d.html)
 - [*Java® 3D: For Developers and End-User*](http://java.sun.com/developer/Books/Java3D/)
 - *A Fourth generation Java® 3D graphics API*
 - *Java® 3D FAQ at Sun*
@@ -227,7 +227,7 @@ Capability Bits, Making Live and Compiling
 
 Certain optimizations can be done to achieve better performance by compiling a subgraph into an optimized internal format, prior to its attachment to a virtual universe. However, many *set* and *get* methods of objects that are part of a live or compiled scene graph cannot be accessed. In general, the *set* and *get* methods can be used only during the creation of a scene graph, except where explicitly allowed, in order to allow certain optimizations during rendering. The set and get methods that can be used when the object is live or compiled should be specified using a set of capability bits, which by default are disabled, prior to compiling or making live the object. The methods [*isCompiled()*](http://java.sun.com/products/java-media/3D/forDevelopers/j3dapi/javax/media/j3d/SceneGraphObject.html#isCompiled__) and [*isLive()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/SceneGraphObject.html#isLive__) can be used to find out whether a scene graph object is compiled or live. The methods [*setCapability*()](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/SceneGraphObject.html#setCapability_int_) and [*getCapability*()](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/SceneGraphObject.html#getCapability_int_) can be used to set properly the capability bits to allow access to the object's methods. However, the less the capability bits that are enabled, the more optimizations can be performed during rendering.
 
-Viewing Branch: [*ViewPlatform*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/ViewPlatform.html)*, * [*View*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/View.html)*,* [*Screen3D*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Screen3D.html)
+Viewing Branch: [*ViewPlatform*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/ViewPlatform.html)*,*  [*View*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/View.html)*,* [*Screen3D*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Screen3D.html)
 
 The view branch has usually the following structure, consisting of nodes that control the viewing of the scene.
 
@@ -251,7 +251,7 @@ Finally, all [*Canvas3D*](http://java.sun.com/products/java-media/3D/forDevelop
 
 Default Coordinate System
 
-The default coordinate system is a right-handed Cartesian coordinate system centered on the screen with the x and y-axes directed towards the right and top of the screen, respectively. The z-axis is, by default directed out of the screen towards the viewer, as shown below. The default distances are in meter and the angles in radians.       
+The default coordinate system is a right-handed Cartesian coordinate system centered on the screen with the x and y-axes directed towards the right and top of the screen, respectively. The z-axis is, by default directed out of the screen towards the viewer, as shown below. The default distances are in meter and the angles in radians.        
  
 
 {{< resource uuid="b4b7e83d-b897-f4fe-b33f-16f275d7751d" >}}
@@ -274,214 +274,214 @@ A Java® 3D program builds a scene graph, using Java® 3D classes and methods, t
 
 The following program creates 2 color cubes and a sphere as shown to the snapshot that follows the code.
 
-*import java.awt.\*;*       
-*import javax.swing.\*;*       
-*import javax.media.j3d.\*;*       
-*import javax.vecmath.\*;*       
-*import java.awt.event.\*;*       
+*import java.awt.\*;*        
+*import javax.swing.\*;*        
+*import javax.media.j3d.\*;*        
+*import javax.vecmath.\*;*        
+*import java.awt.event.\*;*        
 *import com.sun.j3d.utils.geometry.\*;*
 
-*public class MyJava3D extends JFrame*       
-*{*       
-*//  Virtual Universe object.*       
+*public class MyJava3D extends JFrame*        
+*{*        
+*//  Virtual Universe object.*        
 *private VirtualUniverse universe;*
 
-*//  Locale of the scene graph.*       
-*private Locale locale;*       
+*//  Locale of the scene graph.*        
+*private Locale locale;*        
  
 
-*// BranchGroup for the Content Branch of the scene*       
+*// BranchGroup for the Content Branch of the scene*        
 *private BranchGroup contentBranch;*
 
-*//  TransformGroup  node of the scene contents*       
-*private TransformGroup contentsTransGr;*       
+*//  TransformGroup  node of the scene contents*        
+*private TransformGroup contentsTransGr;*        
  
 
-*// BranchGroup for the View Branch of the scene*       
+*// BranchGroup for the View Branch of the scene*        
 *private BranchGroup viewBranch;*
 
-*// ViewPlatform node, defines from where the scene is viewed.*       
+*// ViewPlatform node, defines from where the scene is viewed.*        
 *private ViewPlatform viewPlatform;*
 
-*//  Transform group for the ViewPlatform node*       
+*//  Transform group for the ViewPlatform node*        
 *private TransformGroup vpTransGr;*
 
-*//  View node, defines the View parameters.*       
+*//  View node, defines the View parameters.*        
 *private View view;*
 
-*// A PhysicalBody object can specify the user's head*       
+*// A PhysicalBody object can specify the user's head*        
 *PhysicalBody body;*
 
-*// A PhysicalEnvironment object can specify the physical*       
-*// environment in which the view will be generated*       
+*// A PhysicalEnvironment object can specify the physical*        
+*// environment in which the view will be generated*        
 *PhysicalEnvironment environment;*
 
-*// Drawing canvas for 3D rendering*       
+*// Drawing canvas for 3D rendering*        
 *private Canvas3D canvas;*
 
-*// Screen3D Object contains screen's information*       
+*// Screen3D Object contains screen's information*        
 *private Screen3D screen;*
 
-*private Bounds bounds;*       
+*private Bounds bounds;*        
  
 
-*public MyJava3D()*       
-*{*       
+*public MyJava3D()*        
+*{*        
 *super("My First Java3D Example");*
 
-*// Creating and setting the Canvas3D*       
-*canvas = new Canvas3D(null);*       
-*getContentPane().setLayout( new BorderLayout( ) );*       
+*// Creating and setting the Canvas3D*        
+*canvas = new Canvas3D(null);*        
+*getContentPane().setLayout( new BorderLayout( ) );*        
 *getContentPane().add(canvas, "Center");*
 
-*// Setting the VirtualUniverse and the Locale nodes*       
+*// Setting the VirtualUniverse and the Locale nodes*        
 *setUniverse();*
 
-*// Setting the content branch*       
+*// Setting the content branch*        
 *setContent();*
 
-*// Setting the view branch*       
+*// Setting the view branch*        
 *setViewing();*
 
-*// To avoid problems between Java3D and Swing*       
+*// To avoid problems between Java3D and Swing*        
 *JPopupMenu.setDefaultLightWeightPopupEnabled(false);*
 
-*// enabling window closing*       
-*addWindowListener(new WindowAdapter() {*       
-*public void windowClosing(WindowEvent e)*       
-*{System.exit(0); }   });*       
-*setSize(600, 600);*       
-*bounds = new BoundingSphere(new Point3d(0.0,0.0,0.0), Double.MAX\_VALUE);*       
-*}*       
+*// enabling window closing*        
+*addWindowListener(new WindowAdapter() {*        
+*public void windowClosing(WindowEvent e)*        
+*{System.exit(0); }   });*        
+*setSize(600, 600);*        
+*bounds = new BoundingSphere(new Point3d(0.0,0.0,0.0), Double.MAX\_VALUE);*        
+*}*        
  
 
-*private void setUniverse()*       
-*{*       
-*// Creating the VirtualUniverse and the Locale nodes*       
-*universe = new VirtualUniverse();*       
-*locale = new Locale(universe);*       
+*private void setUniverse()*        
+*{*        
+*// Creating the VirtualUniverse and the Locale nodes*        
+*universe = new VirtualUniverse();*        
+*locale = new Locale(universe);*        
 *}*
 
-*private void setContent()*       
-*{*       
+*private void setContent()*        
+*{*        
 *// Creating the content branch*
 
-*contentsTransGr = new TransformGroup();*       
+*contentsTransGr = new TransformGroup();*        
 *contentsTransGr.setCapability(TransformGroup.ALLOW\_TRANSFORM\_WRITE);*
 
 *setLighting();*
 
 *ColorCube cube1 = new ColorCube(0.1);*
 
-*Appearance appearance = new Appearance();*       
+*Appearance appearance = new Appearance();*        
 *cube1.setAppearance(appearance);*
 
-*contentsTransGr.addChild(cube1);*       
+*contentsTransGr.addChild(cube1);*        
  
 
 *ColorCube cube2 = new ColorCube(0.25);*
 
-*Transform3D t1 = new Transform3D();*       
-*t1.rotZ(0.5);*       
-*Transform3D t2 = new Transform3D();*       
-*t2.set(new Vector3f(0.7f, 0.6f,-1.0f));*       
-*t2.mul(t1);*       
-*TransformGroup trans2 = new TransformGroup(t2);*       
-*trans2.addChild(cube2);*       
-*contentsTransGr.addChild(trans2);*       
+*Transform3D t1 = new Transform3D();*        
+*t1.rotZ(0.5);*        
+*Transform3D t2 = new Transform3D();*        
+*t2.set(new Vector3f(0.7f, 0.6f,-1.0f));*        
+*t2.mul(t1);*        
+*TransformGroup trans2 = new TransformGroup(t2);*        
+*trans2.addChild(cube2);*        
+*contentsTransGr.addChild(trans2);*        
  
 
-*Sphere sphere = new Sphere(0.2f);*       
-*Transform3D t3 = new Transform3D();*       
-*t3.set(new Vector3f(-0.2f, 0.5f,-0.2f));*       
+*Sphere sphere = new Sphere(0.2f);*        
+*Transform3D t3 = new Transform3D();*        
+*t3.set(new Vector3f(-0.2f, 0.5f,-0.2f));*        
 *TransformGroup trans3 = new TransformGroup(t3);*
 
 *Appearance appearance3 = new Appearance();*
 
-*Material mat = new Material();*       
-*mat.setEmissiveColor(-0.2f, 1.5f, 0.1f);*       
-*mat.setShininess(5.0f);*       
-*appearance3.setMaterial(mat);*       
-*sphere.setAppearance(appearance3);*       
-*trans3.addChild(sphere);*       
-*contentsTransGr.addChild(trans3);*       
+*Material mat = new Material();*        
+*mat.setEmissiveColor(-0.2f, 1.5f, 0.1f);*        
+*mat.setShininess(5.0f);*        
+*appearance3.setMaterial(mat);*        
+*sphere.setAppearance(appearance3);*        
+*trans3.addChild(sphere);*        
+*contentsTransGr.addChild(trans3);*        
  
 
-*contentBranch = new BranchGroup();*       
-*contentBranch.addChild(contentsTransGr);*       
-*// Compiling the branch graph before making it live*       
+*contentBranch = new BranchGroup();*        
+*contentBranch.addChild(contentsTransGr);*        
+*// Compiling the branch graph before making it live*        
 *contentBranch .compile();*
 
-*// Adding a branch graph into a locale makes its nodes live (drawable)*       
-*locale.addBranchGraph(contentBranch);*       
+*// Adding a branch graph into a locale makes its nodes live (drawable)*        
+*locale.addBranchGraph(contentBranch);*        
 *}*
 
-*private void setLighting()*       
-*{*       
-*AmbientLight ambientLight =  new AmbientLight();*       
-*ambientLight.setEnable(true);*       
-*ambientLight.setColor(new Color3f(0.10f, 0.1f, 1.0f) );*       
-*ambientLight.setCapability(AmbientLight.ALLOW\_STATE\_READ);*       
-*ambientLight.setCapability(AmbientLight.ALLOW\_STATE\_WRITE);*       
-*ambientLight.setInfluencingBounds(bounds);*       
+*private void setLighting()*        
+*{*        
+*AmbientLight ambientLight =  new AmbientLight();*        
+*ambientLight.setEnable(true);*        
+*ambientLight.setColor(new Color3f(0.10f, 0.1f, 1.0f) );*        
+*ambientLight.setCapability(AmbientLight.ALLOW\_STATE\_READ);*        
+*ambientLight.setCapability(AmbientLight.ALLOW\_STATE\_WRITE);*        
+*ambientLight.setInfluencingBounds(bounds);*        
 *contentsTransGr.addChild(ambientLight);*
 
-*DirectionalLight dirLight =  new DirectionalLight();*       
-*dirLight.setEnable(true);*       
-*dirLight.setColor( new Color3f( 1.0f, 0.0f, 0.0f ) );*       
-*dirLight.setDirection( new Vector3f( 1.0f, -0.5f, -0.5f ) );*       
-*dirLight.setCapability( AmbientLight.ALLOW\_STATE\_WRITE );*       
-*dirLight.setInfluencingBounds(bounds);*       
-*contentsTransGr.addChild(dirLight);*       
+*DirectionalLight dirLight =  new DirectionalLight();*        
+*dirLight.setEnable(true);*        
+*dirLight.setColor( new Color3f( 1.0f, 0.0f, 0.0f ) );*        
+*dirLight.setDirection( new Vector3f( 1.0f, -0.5f, -0.5f ) );*        
+*dirLight.setCapability( AmbientLight.ALLOW\_STATE\_WRITE );*        
+*dirLight.setInfluencingBounds(bounds);*        
+*contentsTransGr.addChild(dirLight);*        
 *}*
 
-*private void setViewing()*       
-*{*       
+*private void setViewing()*        
+*{*        
 *// Creating the viewing branch*
 
 *viewBranch = new BranchGroup();*
 
-*// Setting the viewPlatform*       
-*viewPlatform = new ViewPlatform();*       
-*viewPlatform.setActivationRadius(Float.MAX\_VALUE);*       
+*// Setting the viewPlatform*        
+*viewPlatform = new ViewPlatform();*        
+*viewPlatform.setActivationRadius(Float.MAX\_VALUE);*        
 *viewPlatform.setBounds(bounds);*
 
-*Transform3D t = new Transform3D();*       
-*t.set(new Vector3f(0.3f, 0.7f, 3.0f));*       
+*Transform3D t = new Transform3D();*        
+*t.set(new Vector3f(0.3f, 0.7f, 3.0f));*        
 *vpTransGr = new TransformGroup(t);*
 
-*// Node capabilities control (granding permission) read and write access*       
-*//  after a node is live or compiled*       
-*//  The number of capabilities small to allow more optimizations during compilation*       
-*vpTransGr.setCapability(TransformGroup.ALLOW\_TRANSFORM\_WRITE);*       
+*// Node capabilities control (granding permission) read and write access*        
+*//  after a node is live or compiled*        
+*//  The number of capabilities small to allow more optimizations during compilation*        
+*vpTransGr.setCapability(TransformGroup.ALLOW\_TRANSFORM\_WRITE);*        
 *vpTransGr.setCapability( TransformGroup.ALLOW\_TRANSFORM\_READ);*
 
-*vpTransGr.addChild(viewPlatform);*       
+*vpTransGr.addChild(viewPlatform);*        
 *viewBranch.addChild(vpTransGr);*
 
-*// Setting the view*       
-*view = new View();*       
-*view.setProjectionPolicy(View.PERSPECTIVE\_PROJECTION );*       
+*// Setting the view*        
+*view = new View();*        
+*view.setProjectionPolicy(View.PERSPECTIVE\_PROJECTION );*        
 *view.addCanvas3D(canvas);*
 
-*body = new PhysicalBody();*       
-*view.setPhysicalBody(body);*       
-*environment = new PhysicalEnvironment();*       
+*body = new PhysicalBody();*        
+*view.setPhysicalBody(body);*        
+*environment = new PhysicalEnvironment();*        
 *view.setPhysicalEnvironment(environment);*
 
 *view.attachViewPlatform(viewPlatform);*
 
 *view.setWindowResizePolicy(View.PHYSICAL\_WORLD);*
 
-*locale.addBranchGraph(viewBranch);*       
+*locale.addBranchGraph(viewBranch);*        
 *}*
 
-*public static void main(String\[\] args)*       
-*{*       
-*JFrame frame = new MyJava3D();*       
+*public static void main(String\[\] args)*        
+*{*        
+*JFrame frame = new MyJava3D();*        
 *frame.setVisible(true);*
 
-*}*       
+*}*        
 *}*
 
 {{< resource uuid="6b5587cd-656d-0bd0-fb79-7b5e50916d6c" >}}
@@ -490,7 +490,7 @@ The following program creates 2 color cubes and a sphere as shown to the snapsho
 
 A utility class, called *SimpleUniverse*, can alternatively be used to automatically build a common arrangement of a universe, locale, and viewing classes, avoiding the need to create explicitly the viewing branch. Then, a branch is added into the simple universe to make its nodes live (i.e. drawable).
 
-*SimpleUniverse simpleUniverse = new SimpleUniverse(canvas);*       
+*SimpleUniverse simpleUniverse = new SimpleUniverse(canvas);*        
 *simpleUniverse.addBranchGraph(contentBranch);*
 
 6\. More on Java® 3D
@@ -521,7 +521,7 @@ The [*processStimulus()*](http://java.sun.com/products/java-media/3D/forDevelope
 
 The Java® 3D behavior scheduler invokes the [*processStimulus()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#processStimulus_java_util_Enumeration_) method of a Behavior node when its scheduling region intersects the  activation volume of a [*ViewPlatform*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/ViewPlatform.html) node and all wakeup criteria  of that behavior are satisfied. Then, the statements in the [*processStimulus()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#processStimulus_java_util_Enumeration_) method may perform any computations and actions, such as including the registration of state change information that could cause Java® 3D to wake other Behavior objects and modify node values within the scene graph, change the internal state of the behavior, specify its next wakeup conditions, and exit. It is allowed to a [*Behavior*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html) object to change its next trigger event. The [*processStimulus()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#processStimulus_java_util_Enumeration_) method, typically, manipulates scene graph elements, as long as the associated capabilities bits are set accordingly. For example, a [*Behavior*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html) node can be used to repeatedly modify a [*TransformGroup*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/TransformGroup.html) node in order to animate the associated with the [*TransformGroup*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/TransformGroup.html) node objects.
 
-The amount of work done in a [*processStimulus()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#processStimulus(java.util.Enumeration)#processStimulus_java_util_Enumeration_) method should be limited since the method may lower the frame rate of the renderer. Java® 3D assumes that [*Behavior*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html) methods run to completion and if necessary they spawn threads.
+The amount of work done in a [*processStimulus()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#processStimulus%28java.util.Enumeration%29#processStimulus_java_util_Enumeration_) method should be limited since the method may lower the frame rate of the renderer. Java® 3D assumes that [*Behavior*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html) methods run to completion and if necessary they spawn threads.
 
 The application must provide the [*Behavior*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html) object with references to those scene graph elements that the Behavior object will manipulate. This is achieved by providing those references as arguments to the constructor of the behavior when the [*Behavior*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html) object is created. Alternatively, the Behavior object itself can obtain access to the relevant scene graph elements either when Java® 3D invokes its [*initialize()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#initialize__) method or each time Java® 3D invokes its [*processStimulus()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#processStimulus_java_util_Enumeration_) method. Typically, the application provides references to the scene graph objects that a behavior should be able to access as arguments to its constructor when the [*Behavior*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html) is instantiated.
 
@@ -566,19 +566,19 @@ The class hierarchy of the [*WakeupCondition*](http://java.sun.com/products/java
 
 The following code provides an example of setting a [*WakeupCondition*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupCondition.html) object
 
-    *public void initialize()*       
-*{*       
-[*WakeupCriterion*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupCriterion.html) *criteria\[\] = new WakeupCriterion\[2\];*       
-*criteria\[0\] = new* [*WakeupOnElapsedFrames(3)*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupOnElapsedFrames.html#WakeupOnElapsedFrames_int_)*;*       
+    *public void initialize()*        
+*{*        
+[*WakeupCriterion*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupCriterion.html) *criteria\[\] = new WakeupCriterion\[2\];*        
+*criteria\[0\] = new* [*WakeupOnElapsedFrames(3)*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupOnElapsedFrames.html#WakeupOnElapsedFrames_int_)*;*        
 *criteria\[0\] = new* [*WakeupOnElapsedTime(500)*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupOnElapsedTime.html#WakeupOnElapsedTime_long_)*;*
 
-[*WakeupCondition*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupCondition.html) *condition = new* [*WakeupOr*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupOr.html)*(criteria);*       
-[*wakeupOn(*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#wakeupOn_javax_media_j3d_WakeupCondition_)*condition);*       
+[*WakeupCondition*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupCondition.html) *condition = new* [*WakeupOr*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupOr.html)*(criteria);*        
+[*wakeupOn(*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#wakeupOn_javax_media_j3d_WakeupCondition_)*condition);*        
 *}*
 
-A [*Behavior*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html) node provides a [*WakeupCondition*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupCondition.html) object to the behavior scheduler via its [*wakeupOn()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#wakeupOn_javax_media_j3d_WakeupCondition_) method and the behavior scheduler provides an enumeration of that [*WakeupCondition*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupCondition.html). The [*wakeupOn()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#wakeupOn_javax_media_j3d_WakeupCondition_) method should be called from the [*initialize()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#initialize__) and [*processStimulus()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#processStimulus(java.util.Enumeration)) methods, just prior of exiting these methods.
+A [*Behavior*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html) node provides a [*WakeupCondition*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupCondition.html) object to the behavior scheduler via its [*wakeupOn()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#wakeupOn_javax_media_j3d_WakeupCondition_) method and the behavior scheduler provides an enumeration of that [*WakeupCondition*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupCondition.html). The [*wakeupOn()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#wakeupOn_javax_media_j3d_WakeupCondition_) method should be called from the [*initialize()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#initialize__) and [*processStimulus()*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#processStimulus%28java.util.Enumeration%29) methods, just prior of exiting these methods.
 
-In the current Java® 3D implementation the behavior scheduler, and, therefore, the [*processStimulus*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#processStimulus(java.util.Enumeration)) method of the [*Behavior*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html) class as well, run concurrently with the rendering thread. However, a new thread will not start until both the renderer, which may be working on the previous frame, and the behavior scheduler are done.
+In the current Java® 3D implementation the behavior scheduler, and, therefore, the [*processStimulus*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#processStimulus%28java.util.Enumeration%29) method of the [*Behavior*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html) class as well, run concurrently with the rendering thread. However, a new thread will not start until both the renderer, which may be working on the previous frame, and the behavior scheduler are done.
 
 Java® 3D guarantees that all behaviors with a [*WakeupOnElapsedFrames*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/WakeupOnElapsedFrames.html) will be executed before the next frame starts rendering, i.e. the rendering thread will wait until all behaviors are done with their [*processStimulus*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#processStimulus_java_util_Enumeration_) methods before drawing the next frame. In addition, Java® 3D guarantees that all scene graph updates that occur from within a single [*Behavior*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html) object will be reflected in the same frame for consistency purposes.
 
@@ -603,16 +603,16 @@ A thread scheduler was implemented inside the Java® 3D, providing to the Java®
 
 The thread scheduler is essentially in a big infinite loop implemented inside the Java® 3D. For each iteration, the thread scheduler runs each thread that needs to be run once, waiting for all threads to be completed before entering the next iteration. The behavior and the rendering threads may run once in a single iteration. The following operations are conceptually performed within this infinite loop.
 
-*while(true)*       
-*{*       
+*while(true)*        
+*{*        
 *process input*
 
-*if(there is a request for exit)*       
+*if(there is a request for exit)*        
 *break*
 
 *perform any behaviors*
 
-*transverse scene graph and render visible objects*       
+*transverse scene graph and render visible objects*        
 *}*
 
 Whenever a node of the scene graph is modified a message is generated with a value associated with it and any state necessary to reflect the specific changes, and queued with all other messages by the thread scheduler. At each iteration the messages are processed and the various structures are updated accordingly. The update time is very fast when the messages are very simple, which is typically the case. In the current implementation the rendering thread and the behavior thread can run concurrently. In particular, the behavior scheduler and therefore the [*processStimulus*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html#processStimulus_java_util_Enumeration_) method of a [*Behavior*](http://java.sun.com/products/java-media/3D/forDevelopers/J3D_1_2_API/j3dapi/javax/media/j3d/Behavior.html) object, can run concurrently with the renderer. However, a new frame will not start until both the rendering of the previous frame and the behavior scheduler are done.
