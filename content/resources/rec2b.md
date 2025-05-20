@@ -1,7 +1,7 @@
 ---
 content_type: resource
 description: ''
-file: /ol-ocw-studio-app/courses/1-124j-foundations-of-software-engineering-fall-2000/aa95256f9d163e59da6d6ae0f9e6d010_rec2b.jpg
+file: /courses/1-124j-foundations-of-software-engineering-fall-2000/aa95256f9d163e59da6d6ae0f9e6d010_rec2b.jpg
 file_size: 30704
 file_type: image/jpeg
 image_metadata:
