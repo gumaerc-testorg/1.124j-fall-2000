@@ -39,9 +39,9 @@ The latest version of CVS can be obtained by anonymous ftp:
 _CVS references on the Web_
 ---------------------------
 
-[Concurrent Versions System](http://www.cvshome.org/)
+{{% resource_link "fa92a25b-1dcd-4c2a-80b5-a9451797722e" "Concurrent Versions System" %}}
 
-[CVS Index](http://www.catb.org/~esr/writings/version-control/cederqvist-1.11.22.html#SEC193)
+{{% resource_link "117c5874-cbd2-4d30-819a-b97f8d540ab3" "CVS Index" %}}
 
 {{< anchor "2" >}}{{< /anchor >}}2\. Introduction
 -------------------------------------------------

@@ -79,7 +79,7 @@ Recommended References
 ### Algorithms
 
 *   Weiss, M. _Algorithms, Data Structures and Problem Solving with C++_. Reading, MA: Addison Wesley, November 1999. ISBN: 9780201612509.
-*   [![Buy at MIT Press](/images/mp_logo.gif)](https://mitpress.mit.edu/9780262032933) Cormen, T., C. Leiserson, and R. Rivest. [_Introduction to Algorithms_](https://mitpress.mit.edu/9780262032933). Cambridge, MA: MIT Press. September 2001. ISBN: 9780262032933.
+*   {{% resource_link "cba3d7d2-54f7-4df8-9145-ec1cff80f6be" "![Buy at MIT Press](/images/mp_logo.gif)" %}} Cormen, T., C. Leiserson, and R. Rivest. {{% resource_link "cba3d7d2-54f7-4df8-9145-ec1cff80f6be" "_Introduction to Algorithms_" %}}. Cambridge, MA: MIT Press. September 2001. ISBN: 9780262032933.
 
 ### Java®
 

@@ -19,10 +19,10 @@ video_metadata:
 
 ## Topics
 
-1. [The JComponent class](https://ocw-studio.odl.mit.edu/sites/1-124j-foundations-of-software-engineering-fall-2000/type/page/edit/6fafcc10-1009-861d-bf37-c770639a665f/#1)
-2. [Top-Level Containers](https://ocw-studio.odl.mit.edu/sites/1-124j-foundations-of-software-engineering-fall-2000/type/page/edit/6fafcc10-1009-861d-bf37-c770639a665f/#2)
-3. [Intermediate Swing Containers](https://ocw-studio.odl.mit.edu/sites/1-124j-foundations-of-software-engineering-fall-2000/type/page/edit/6fafcc10-1009-861d-bf37-c770639a665f/#3)
-4. [Atomic Components](https://ocw-studio.odl.mit.edu/sites/1-124j-foundations-of-software-engineering-fall-2000/type/page/edit/6fafcc10-1009-861d-bf37-c770639a665f/#4)
+1. {{% resource_link "ff6b71fc-29d9-433f-aaf4-fe6416c690ff" "The JComponent class" %}}
+2. {{% resource_link "8dd3de1c-68f5-4065-85f1-30d3dbb746cf" "Top-Level Containers" %}}
+3. {{% resource_link "d04a356f-3d42-4bf4-9f99-afab9d4aa64e" "Intermediate Swing Containers" %}}
+4. {{% resource_link "3dcb2096-4f23-4bc2-a599-9afbe84b5272" "Atomic Components" %}}
 
 In this last recitation more information is provided for Swing components.
 
@@ -30,12 +30,12 @@ In this last recitation more information is provided for Swing components.
 
 Most Swing components that begin with J, except the top-level containers, are subclasses of the JComponent class. The letter J is used to differentiate the actual extra user interface classes provided by Swing from the support classes that it provides. Swing components inherit many features from the JComponent class, such as a configurable look and feel, borders, and tool tips, as well as many methods. In addition, some Swing components can display images on them. The JComponent class is the base class for almost all lightweight Jcomponents. The JComponent class extends the Container class (provides support for adding and laying out components), which in turn extends the Component class (provides support for painting, events, layout etc.). Therefore, all Swing J-components are AWT *containers* and inherit all methods from the Container and Component classes. Any instance of a JComponent subclass can contain both AWT and Swing components, since JComponent extends the java.awt.Container class.
 
-The [on-line JFC/Swing tutorial](http://java.sun.com/docs/books/tutorial/uiswing) provides a summary of the following methods of the *JComponent* class:
+The {{% resource_link "f751fba2-d30f-4ddb-961f-82b694aee741" "on-line JFC/Swing tutorial" %}} provides a summary of the following methods of the *JComponent* class:
 
-- [Customizing Component Appearance Methods](http://java.sun.com/docs/books/tutorial/uiswing/components/jcomponent.html#complookapi) [Setting Component State Methods](http://java.sun.com/docs/books/tutorial/uiswing/components/jcomponent.html#stateapi)
-- [Handling Events Methods](http://java.sun.com/docs/books/tutorial/uiswing/components/jcomponent.html#eventapi) [Painting Components Methods](http://java.sun.com/docs/books/tutorial/uiswing/components/jcomponent.html#custompaintingapi)
-- [Dealing with the Containment Hierarchy Methods](http://java.sun.com/docs/books/tutorial/uiswing/components/jcomponent.html#containmentapi) [Laying Out Components Methods](http://java.sun.com/docs/books/tutorial/uiswing/components/jcomponent.html#layoutapi)
-- [Getting Size and Position Information Methods](http://java.sun.com/docs/books/tutorial/uiswing/components/jcomponent.html#sizeapi) [Specifying Absolute Size and Position Methods](http://java.sun.com/docs/books/tutorial/uiswing/components/jcomponent.html#absoluteapi)
+- {{% resource_link "4c645cac-f74e-41b4-9704-b53da56eba66" "Customizing Component Appearance Methods" %}} {{% resource_link "148c7fc0-7f8a-4be0-9e2b-44c709da4ed9" "Setting Component State Methods" %}}
+- {{% resource_link "410bc28f-5cf9-40fd-8ef8-950271b9048f" "Handling Events Methods" %}} {{% resource_link "c966a086-4568-42a5-b520-6b36cf60f353" "Painting Components Methods" %}}
+- {{% resource_link "8f3eda11-1cdc-4277-881d-ec1d24ef4ee5" "Dealing with the Containment Hierarchy Methods" %}} {{% resource_link "ad5b0b4d-ccc9-4424-86c2-5353f61bae7b" "Laying Out Components Methods" %}}
+- {{% resource_link "8fe5b57f-5c23-49e4-a0ab-e9647c025a32" "Getting Size and Position Information Methods" %}} {{% resource_link "ded0ba91-3249-4636-bcaf-fcb41efd3f1e" "Specifying Absolute Size and Position Methods" %}}
 
 The JComponent class provides to its subclasses the following functionalities:
 
@@ -301,10 +301,10 @@ The Java® application with the following source code uses the showMessageDialog
 
 {{< resource uuid="8672770e-6ddf-47fe-c635-a6493d83d2f5" >}}
 
-The [JFC/Swing Tutorial](http://java.sun.com/docs/books/tutorial/uiswing/TOC.html) provided by Sun has a series of tables with details on the:
+The {{% resource_link "87eaf3b0-2389-48d5-9fdc-65d1e3690a29" "JFC/Swing Tutorial" %}} provided by Sun has a series of tables with details on the:
 
-- [*"Showing" Standard Modal Dialogs Methods*](http://java.sun.com/docs/books/tutorial/uiswing/components/dialog.html#showapi) *(using JOptionPane Class)* [Methods for Using JOptionPanes Directly](http://java.sun.com/docs/books/tutorial/uiswing/components/dialog.html#joptionpaneapi)
-- [*Other JOptionPane Constructors and Methods*](http://java.sun.com/docs/books/tutorial/uiswing/components/dialog.html#joptionpaneapi2) [Frequently Used JDialog Constructors and Methods](http://java.sun.com/docs/books/tutorial/uiswing/components/dialog.html#jdialogapi)
+- {{% resource_link "ccfaf0b9-3f3a-4054-9ae5-458c90cf5a6c" "*\"Showing\" Standard Modal Dialogs Methods*" %}} *(using JOptionPane Class)* {{% resource_link "4722b483-7a70-4b67-b988-e4365bcb2042" "Methods for Using JOptionPanes Directly" %}}
+- {{% resource_link "cd582138-dc04-4899-a8ac-c7dcb578f3ab" "*Other JOptionPane Constructors and Methods*" %}} {{% resource_link "f4759f11-651d-485a-b3a9-38eb89676e3e" "Frequently Used JDialog Constructors and Methods" %}}
 
 ## Windows: JWindow
 
@@ -431,7 +431,7 @@ Internal frames can be used in combination with the JDesktopPane to implement Mu
 
 A JRootPane is contained in all Swing top-level containers. It is a fundamental component in the container hierarchy, providing to the top-level (heavyweight) containers (JFrame, JDialog, JWindow, and JApplet) the JComponent's capabilities. Not only these heavyweight, but also the lightweight container JInternalFrame, delegate their operations to a JRootPane instance, which is automatically created as soon as any of these containers is instantiated. Therefore, almost all Swing components reside in a JRootPane instance. The interface RootPaneContainer is implemented by components that have a single JRootPane child: JFrame, JDialog, JWindow, JApplet and JInternalFrame.
 
-A *root pane* consists of the following components, as shown in the following figure (adapted from the [Sun's Java® Tutorial](http://java.sun.com/docs/books/tutorial/uiswing/TOC.html)):
+A *root pane* consists of the following components, as shown in the following figure (adapted from the {{% resource_link "87eaf3b0-2389-48d5-9fdc-65d1e3690a29" "Sun's Java® Tutorial" %}}):
 
 {{< resource uuid="98532ffd-8b29-3d08-6c5d-b88595cfc417" >}}
 
@@ -678,4 +678,4 @@ The following figure, (adapted from the Sun's Java® Tutorial) shows the hierarc
 - *JTextArea* is a multi-line area that displays plain text.
 - *JEditorPane* enables the editing of various kinds of content.
 - *JTextPane* is a lightweight text component that can be marked up with attributes that are represented graphically.
-- [*JPasswordField*](http://java.sun.com/j2se/1.5.0/docs/api/javax/swing/JPasswordField.AccessibleJPasswordField.html) allows the editing of a single line of text while not showing the original characters.
+- {{% resource_link "18a603cd-67fe-447a-a1e5-371ac1a3a688" "*JPasswordField*" %}} allows the editing of a single line of text while not showing the original characters.

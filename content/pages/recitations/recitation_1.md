@@ -185,7 +185,7 @@ The debugger allows you to examine in detail what is happening during a program 
 
          _% gdb   ps0\_1_
 
-You can find more information about GDB at [Debugging with GDB - The GNU Source-Level Debugger](http://web.mit.edu/afs/athena.mit.edu/project/gnu/doc/html/gdb_toc.html).  
+You can find more information about GDB at {{% resource_link "0d9aa350-33cf-43bf-a006-f7a2a3815aeb" "Debugging with GDB - The GNU Source-Level Debugger" %}}.  
  
 
 *   **ddd debugger:  
@@ -265,10 +265,10 @@ You can continuously see the values stored in a variable, by displaying it inste
     ----------
     
       
-    You can learn more about ddd from the [DataDisplayDebugger](http://www.gnu.org/software/ddd/ddd.html) web-page.  
+    You can learn more about ddd from the {{% resource_link "0de5b90f-be5e-4351-bada-3925283a03a8" "DataDisplayDebugger" %}} web-page.  
       
       
-    You can look at the [ddd manual](http://www.gnu.org/software/ddd/manual/html_mono/ddd.html) as well.
+    You can look at the {{% resource_link "da604486-2353-4456-a11c-bf8a2899b6d3" "ddd manual" %}} as well.
 
 {{< anchor "4__Use_of_makefiles" >}}{{< /anchor >}}
 
@@ -290,10 +290,10 @@ Executing the above command creates the target filename _ps0\_1_, according to t
 
 For the development of large software packages and programs it is useful to use a control system for modifications and revisions. Although it may not seem very useful for the development of small simple programs (like your first homework problems) it would be very useful for your project, and you will benefit from getting used to using it. Therefore, it would be beneficiary for you to get used to using such a revision control system as CVS (Concurrent Versions System). You may obtain more information on CVS from the man command (_% man cvs_) and from the following URLs:
 
-*   [cvs - Concurrent Versions System](http://www.nongnu.org/cvs/)
-*   [Concurrent Versions System - Tutorials](http://www.yolinux.com/TUTORIALS/LinuxTutorialCVSintro.html)
-*   [CVS Index](http://www.catb.org/~esr/writings/version-control/cederqvist-1.11.22.html#SEC193)
-*   [Concurrent Versions System - The Open Standard for Version Control](http://www.cvshome.org/)
+*   {{% resource_link "58a4b49f-1a4b-42eb-8dfa-cd826962bd7d" "cvs - Concurrent Versions System" %}}
+*   {{% resource_link "26c79704-8545-484d-ad1d-b530d8cb315e" "Concurrent Versions System - Tutorials" %}}
+*   {{% resource_link "117c5874-cbd2-4d30-819a-b97f8d540ab3" "CVS Index" %}}
+*   {{% resource_link "fa92a25b-1dcd-4c2a-80b5-a9451797722e" "Concurrent Versions System - The Open Standard for Version Control" %}}
 
 The provided source code files are in the directory _/mit/1.124/Problems/\<Problem set number>_ from where you can copy them using CVS to your directory, and, make the necessary additions and/or modifications. To use CVS to check out the problem sets for the 1.124 you should first set the environment variable CVSROOT as below: (you can also put it in your _.environment_ dotfile)  
  _% setenv CVSROOT /afs/athena.mit.edu/course/1/1.124/src_  
