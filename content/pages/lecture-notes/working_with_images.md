@@ -26,7 +26,7 @@ Topics
 {{< anchor "1" >}}{{< /anchor >}}1\. Loading and Displaying Images
 ------------------------------------------------------------------
 
-_(Ref. [Java® Tutorial](http://java.sun.com/docs/books/tutorial/uiswing/painting/index.html)__)_
+_(Ref. {{% resource_link "2d684539-af55-492f-9610-ec38dc84ca3b" "Java® Tutorial" %}}__)_
 
 Images provide a way to augment the aethetic appeal of a Java program. Java® provides support for two common image formats: GIF and JPEG. An image that is in one of these formats can be loaded by using either a URL or a filename.
 
@@ -127,7 +127,7 @@ The most frequent reason to track image loading is to find out when an image or 
 Media Trackers
 --------------
 
-_(Ref. [Java® Tutorial](http://java.sun.com/docs/books/tutorial/uiswing/painting/index.html))_
+_(Ref. {{% resource_link "2d684539-af55-492f-9610-ec38dc84ca3b" "Java® Tutorial" %}})_
 
 The _MediaTracker_ class provides a relatively simple way to delay drawing until the image loading process is complete. We can modify the _ImageDisplayer_ applet to perform the following steps:
 
@@ -291,7 +291,7 @@ This is a good example of why a _MediaTracker_  should be used to delay drawin
 
 Here are some more examples of image animation:
 
-*   [Bouncing heads](http://java.sun.com/applets/other/BouncingHeads/index.html) 
-*   [Tumbing duke](http://java.sun.com/applets/other/TumblingDuke/index.html) 
+*   {{% resource_link "285b8285-2912-41e5-8202-663f390b1e80" "Bouncing heads" %}} 
+*   {{% resource_link "9cb80450-c039-4c74-9156-e3994535c313" "Tumbing duke" %}} 
 
-Check out [Code Samples and Applets](http://java.sun.com/applets/index.html) for other interesting applets.
+Check out {{% resource_link "2be4e6c2-bc56-4329-b3d2-635f726db4bc" "Code Samples and Applets" %}} for other interesting applets.

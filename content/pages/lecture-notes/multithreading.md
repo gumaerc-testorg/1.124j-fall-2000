@@ -39,7 +39,7 @@ What then is the difference then between a _process_ and a _thread_? The answer 
 {{< anchor "2" >}}{{< /anchor >}}2\. How to Create Threads
 ----------------------------------------------------------
 
-_(Ref. [Java® Tutorial](http://java.sun.com/developer/codesamples/thrds.html))_
+_(Ref. {{% resource_link "947bbd9b-edf7-4096-a993-ca3108b02cd3" "Java® Tutorial" %}})_
 
 We can create a new thread using the _Thread_ class provided in the _java.lang_ package. There are two ways to use the _Thread_ class.
 
@@ -90,7 +90,7 @@ _t.start();_
 {{< anchor "3" >}}{{< /anchor >}}3\. The LifeCycle of a Thread
 --------------------------------------------------------------
 
-_(Ref. [Java® Tutorial](http://java.sun.com/developer/codesamples/thrds.html))_
+_(Ref. {{% resource_link "947bbd9b-edf7-4096-a993-ca3108b02cd3" "Java® Tutorial" %}})_
 
 A thread can be in one of four states during its lifetime:
 

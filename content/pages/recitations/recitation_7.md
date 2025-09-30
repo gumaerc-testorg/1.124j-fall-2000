@@ -33,7 +33,7 @@ Topics
 {{< anchor "1" >}}{{< /anchor >}}1\. Sun Java Studio Standard 5
 ---------------------------------------------------------------
 
-Sun Java® Studio Standard 5 is an integrated Java® development environment (IDE) that provides visual design, editing, compilation, debugging, and deployment of Java® software. It is itself written entirely in Java® and is from the Sun's Java® web site: [Sun Java® Studio Standard 5 update 1](https://docs.oracle.com/cd/E19786-01/index.html). If you prefer to use a free IDE and only require J2SE and web application development capabilities then use the open source IDE [NetBeans](http://www.netbeans.org).
+Sun Java® Studio Standard 5 is an integrated Java® development environment (IDE) that provides visual design, editing, compilation, debugging, and deployment of Java® software. It is itself written entirely in Java® and is from the Sun's Java® web site: {{% resource_link "a322485c-5670-42a5-8ab3-0b76ecacedac" "Sun Java® Studio Standard 5 update 1" %}}. If you prefer to use a free IDE and only require J2SE and web application development capabilities then use the open source IDE {{% resource_link "0f944d87-ded3-42c4-9dc2-ffd18ff6ddc1" "NetBeans" %}}.
 
 {{< anchor "2" >}}{{< /anchor >}}2\. Inheritance
 ------------------------------------------------
