@@ -62,7 +62,7 @@ In C++, the programmer must often explicitly write an event loop similar to the 
 {{< anchor "2" >}}{{< /anchor >}}2\. The Java® Event Model (JDK 1.1 and above)
 ------------------------------------------------------------------------------
 
-_(Ref. [Java® Tutorial](http://java.sun.com/docs/books/tutorial/uiswing/learn/index.html))_
+_(Ref. {{% resource_link "166b9a04-d9b0-4ce9-a91f-3219fad12c66" "Java® Tutorial" %}})_
 
 The Java® event model is based on the notion of _event sources_ and _event listeners_.
 
@@ -332,7 +332,7 @@ _}_
 Containers
 ----------
 
-_(Ref. [Java® Tutorial](http://java.sun.com/docs/books/tutorial/uiswing/learn/index.html))_
+_(Ref. {{% resource_link "166b9a04-d9b0-4ce9-a91f-3219fad12c66" "Java® Tutorial" %}})_
 
 A _Container_ is a GUI component that can hold other GUI components. Three commonly used container classes are
 
@@ -383,7 +383,7 @@ _}_
 Layout Managers
 ---------------
 
-_(Ref. [Java® Tutorial](http://java.sun.com/docs/books/tutorial/uiswing/layout/using.html))_
+_(Ref. {{% resource_link "3ec0320f-e7ac-4fee-831f-bf3a102cf82a" "Java® Tutorial" %}})_
 
 Our previous example has only one interesting GUI component: a _JButton_ . What if we wanted to add a second _JButton_ and perhaps a _JTextArea_, so that we can display the message through the GUI? We can control the layout of these components within the container by using a _layout manager_. Java® comes with six layout managers (five in _java.awt_ and one in _javax.swing_)
 
@@ -573,5 +573,5 @@ _}_
 
 The components that we have seen so far are _JFrame_, _JPanel_, _JButton_, _JTextArea_ and _JScrollPane_ . The links below provide a good overview of the Swing components and how to use them.
 
-*   [Visual index to Swing components](https://web.mit.edu/6.005/www/sp14/psets/ps4/java-6-tutorial/components.html)
-*   [Examples that use Swing](http://java.sun.com/docs/books/tutorial/uiswing/examples/components/index.html)
+*   {{% resource_link "0bf30f6a-f753-444e-913f-62d0cd812c1e" "Visual index to Swing components" %}}
+*   {{% resource_link "7a3c4942-9f2b-444b-ad6f-720c0908bab2" "Examples that use Swing" %}}

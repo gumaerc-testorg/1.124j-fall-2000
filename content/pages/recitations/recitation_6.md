@@ -35,32 +35,32 @@ Topics
 12.  [Member data and functions](#12) 
 13.  [Function overloading](#13)
 
-{{< anchor "1" >}}{{< /anchor >}}1\. Introduction to [Java®](http://java.sun.com/)
+{{< anchor "1" >}}{{< /anchor >}}1\. Introduction to {{% resource_link "04836b1b-af70-4cad-b316-ac8bff6a3ff5" "Java®" %}}
 ----------------------------------------------------------------------------------
 
-Java® is an Object-Oriented Programming (OOP) language, which is similar to C++ but with certain characteristics that allow the simple development of portable programs with graphics and graphical user interfaces. The provided classes allow very simple and efficient development of complicated programs that can be executed in any machine irrespectively of the operating system, as long as it supports Java®. You can read more about ["what is Java®"](http://java.sun.com/docs/books/tutorial/getStarted/intro/definition.html) in the relevant paragraph of the [Java® Tutorial,](http://java.sun.com/docs/books/tutorial/) provided by Sun.
+Java® is an Object-Oriented Programming (OOP) language, which is similar to C++ but with certain characteristics that allow the simple development of portable programs with graphics and graphical user interfaces. The provided classes allow very simple and efficient development of complicated programs that can be executed in any machine irrespectively of the operating system, as long as it supports Java®. You can read more about {{% resource_link "2d5a675d-de0f-43d5-bbde-9c9ab94d1a36" "\"what is Java®\"" %}} in the relevant paragraph of the {{% resource_link "750b0253-d8b9-4fac-9af8-698a3c9505a2" "Java® Tutorial," %}} provided by Sun.
 
 The _portability_ of Java® programs is based on the Java® Virtual Machine (Java® VM) and the intermediate compilation into bytecode. The bytecode can, then, be interpreted by the Java® VM, which translates the bytecode instructions into machine instructions that your computer can understand and execute.
 
-The Java® platform consists essentially by the Java® VM, which takes care of the compilation and interpretation issues (e.g. portability), and by the Java® API, which provides a large collection of software components that can be directly used by a Java® programmer. You can read more about it in the on-line paper ["The Java® Platform",](http://java.sun.com/docs/white/platform/javaplatformTOC.doc.html) by Douglas Kramer.
+The Java® platform consists essentially by the Java® VM, which takes care of the compilation and interpretation issues (e.g. portability), and by the Java® API, which provides a large collection of software components that can be directly used by a Java® programmer. You can read more about it in the on-line paper {{% resource_link "c97d1f2a-a3cc-4849-9e45-bd8ca0614953" "\"The Java® Platform\"," %}} by Douglas Kramer.
 
-The [Application Programming Interface (API)](http://java.sun.com/j2se/1.3/docs/api/index.html)provides several classes that can be used to efficiently write programs with graphics content and graphical user interfaces. The latter can be achieved with C++ only by combining it with graphic libraries such as Open Inventor or OpenGL, and with toolkit libraries such as TCL and TK.
+The {{% resource_link "466f5daa-5b38-4e54-9d8d-bc8aa46e6ca2" "Application Programming Interface (API)" %}}provides several classes that can be used to efficiently write programs with graphics content and graphical user interfaces. The latter can be achieved with C++ only by combining it with graphic libraries such as Open Inventor or OpenGL, and with toolkit libraries such as TCL and TK.
 
 In addition, Java® facilitates the development of programs that deal with networking, security issues, databases, 3D graphics, and many other issues that a typical high level language, such as C++,  does not provide.
 
 The following are good references to learn Java®:
 
-*   [The Java® Tutorial](http://java.sun.com/docs/books/tutorial/). Mary Campione and Kathy Walrath. 2nd edition.
+*   {{% resource_link "750b0253-d8b9-4fac-9af8-698a3c9505a2" "The Java® Tutorial" %}}. Mary Campione and Kathy Walrath. 2nd edition.
 *   _Core Java®._ Gary Cornell and Cay Horstmann. 2nd edition.
 *   _The Java® programming language._ Ken Arnold and James Gosling. 2nd edition.
 *   _Java®: How to program._ Deitel & Deitel. 2nd edition.
-*   [Java_®_ 2 Platform API, v 1.3](http://java.sun.com/j2se/1.3/docs/api/index.html)
+*   {{% resource_link "466f5daa-5b38-4e54-9d8d-bc8aa46e6ca2" "Java_®_ 2 Platform API, v 1.3" %}}
 
 If you are interested to read more about Java® you can find more information in the following on-line paper by James Gosling and Henry McGilton:
 
-*   "[The Java® Language Environment - A White Paper](http://java.sun.com/docs/white/langenv/)." May 1996.
+*   "{{% resource_link "8cb44438-513d-498b-83c8-cfe8f9ec9086" "The Java® Language Environment - A White Paper" %}}." May 1996.
 
-You can find more information about Java® in the [Sun's Java® page](http://java.sun.com/).
+You can find more information about Java® in the {{% resource_link "04836b1b-af70-4cad-b316-ac8bff6a3ff5" "Sun's Java® page" %}}.
 
 {{< anchor "2" >}}{{< /anchor >}}2\. Compiling/Running a Java® Application/Applet
 ---------------------------------------------------------------------------------
@@ -82,15 +82,15 @@ _welcome.java_
 > _}_
 
   
-Because global functions are not allowable in Java® we need to provide the _main()_ function in a class. In addition, we need to make it _public_ so as to be accessible, and _static_ so as to be a class function rather than being a function associated with a certain instance of the class. The _main_ function must have a single parameter of type [String](http://java.sun.com/products/jdk/1.1/docs/api/java.lang.String.html#_top_)\[\] and must return nothing (i.e. being _void_). Any class can have its own _main_ function.
+Because global functions are not allowable in Java® we need to provide the _main()_ function in a class. In addition, we need to make it _public_ so as to be accessible, and _static_ so as to be a class function rather than being a function associated with a certain instance of the class. The _main_ function must have a single parameter of type {{% resource_link "f1d9f9b5-6904-4e26-bcc5-f7c8831ac7f4" "String" %}}\[\] and must return nothing (i.e. being _void_). Any class can have its own _main_ function.
 
-To compile a java program the java compiler [javac](http://java.sun.com/j2se/1.5.0/docs/tooldocs/solaris/javac.html) is used as follows:
+To compile a java program the java compiler {{% resource_link "db392040-4de3-4753-a203-5b9a0ef6f62e" "javac" %}} is used as follows:
 
 _javac welcome.java_
 
 This command generates the bytecode for the classes that are defined in the Java® program. In this case, it generates the file _Welcome.class_ which contains the bytecode for the class _Welcome_. The name of the file with the bytecode is constructed from the name of the class plus the extension _class_. The bytecode is instructions for the _Java_® _Virtual Machine_. These instructions are the same for any type of machine or operating system. To run the program, the Java® interpreter needs to be used to interpret the Java® bytecode into instructions of the specific machine on which the program is running.  
   
-The command to run a Java® program is as follows, using the [java](http://java.sun.com/developer/onlineTraining/new2java/overview.html) interpreter:
+The command to run a Java® program is as follows, using the {{% resource_link "cf72b68e-14c6-4226-8683-3738c806efcd" "java" %}} interpreter:
 
 _java Welcome_
 
@@ -104,13 +104,13 @@ Many other programming languages, such as C/C++, are using a compiler, which tra
 
 Java® combines both a compiler and an interpreter. The compiler (_javac_) compiles the Java® source code files into bytecode, and the interpreter (_java_) is used every time the program is executed to translate the bytecode (i.e. the Virtual Machine instructions) to the specific machine instructions and execute them. This way Java® programs can run on any type of computer and under any operating system assuming that the Java® interpreter is available and can be used on that machine. However, Java® programs are, in general, slower than compiled programs (e.g. C++ executable programs) since interpretation takes place before execution.
 
-[Java® Development Kit (JDK)](http://java.sun.com/docs/books/tutorial/overview/index.html)also provides an [appletviewer](http://java.sun.com/products/jdk/1.1/docs/tooldocs/solaris/appletviewer.html) to check and run applets, a debugger named [jdb](http://java.sun.com/products/jdk/1.2/docs/tooldocs/solaris/jdb.html) to debug Java® programs, and several other tools that help in the development and documentation of Java® programs.
+{{% resource_link "40052c38-315d-4a90-a991-9045f1c4646c" "Java® Development Kit (JDK)" %}}also provides an {{% resource_link "a243672b-6dc8-4ed8-9934-0ef139b6c724" "appletviewer" %}} to check and run applets, a debugger named {{% resource_link "d3af03e0-e453-46e2-a023-2def580027fc" "jdb" %}} to debug Java® programs, and several other tools that help in the development and documentation of Java® programs.
 
 _Java_® _applications_ are stand alone Java® programs that can be executed without the need of a browser, while the _Java_® _applets_ run within a Java® compatible browser. The execution of any Java® application begins with the main method of the corresponding class, i.e.. the class with which the Java® interpreter was invoked. The above example is a Java® application, while the following is a simple Java® applet.
 
 A _Java_® _applet_ is based on a set of conventions and functionalities that are inherited that allows it to be executed in an appletviewer or any Java® enabled browser. The source code for the applet is provided below, followed by the _html_ file that needs to be used so as to load the class from a Java® enabled browser, or using the appletviewer provided with the Java® Development Kit (JDK).
 
-An [applet](http://java.sun.com/applets/index.html) inherits (extending) the [Applet](http://java.sun.com/products/jdk/1.1/docs/api/java.applet.Applet.html#_top_) class provided by the [java.applet](http://java.sun.com/products/jdk/1.1/docs/api/java.applet.Applet.html#_top_) package of the Java® Core API. Here, the AWT Applet is used, mostly for historical reasons. Today, the Swing JApplet is preffered in most cases. In the following example the function _paint()_, which is inherited, is overridden by the new definition. This function is used to draw the applet in the browser, or the appletviewer.
+An {{% resource_link "2be4e6c2-bc56-4329-b3d2-635f726db4bc" "applet" %}} inherits (extending) the {{% resource_link "e348c21d-70e3-4a5a-b493-e6ef973aa24d" "Applet" %}} class provided by the {{% resource_link "e348c21d-70e3-4a5a-b493-e6ef973aa24d" "java.applet" %}} package of the Java® Core API. Here, the AWT Applet is used, mostly for historical reasons. Today, the Swing JApplet is preffered in most cases. In the following example the function _paint()_, which is inherited, is overridden by the new definition. This function is used to draw the applet in the browser, or the appletviewer.
 
 myApplet.java:
 
@@ -126,7 +126,7 @@ myApplet.java:
 > _}_  
 >  
 
-The above program is compiled using the [javac](http://java.sun.com/docs/books/tutorial/getStarted/application/) compiler, i.e. executing the command:
+The above program is compiled using the {{% resource_link "c2330348-0b9a-48eb-9968-0c5e1b5ffa23" "javac" %}} compiler, i.e. executing the command:
 
 >         _javac myapplet.java_
 
@@ -153,7 +153,7 @@ myApplet.html:
   
 It is possible to write a Java® program that can work both as an applet and as an application.
 
-You can, also, find detailed instructions on how to write your first Java® program at the [Lesson: "Your First Cup of Java®"](http://java.sun.com/docs/books/tutorial/getStarted/cupojava/index.html) of the on line [Java® Tutorial](http://java.sun.com/docs/books/tutorial/), which is provided by SUN.
+You can, also, find detailed instructions on how to write your first Java® program at the {{% resource_link "ea5b6a51-8570-4882-bd44-b71258ab21b5" "Lesson: \"Your First Cup of Java®\"" %}} of the on line {{% resource_link "750b0253-d8b9-4fac-9af8-698a3c9505a2" "Java® Tutorial" %}}, which is provided by SUN.
 
 {{< anchor "3" >}}{{< /anchor >}}3\. Data Types
 -----------------------------------------------
@@ -259,7 +259,7 @@ short, int, long, float, double
 
 An assignment from a "higher" order to a "lower" is allowed only when an explicit casting is used, because information may be lost from the conversion, e.g.: _int x = (int) 4.75;_
 
-Each of  the primitive data types has a corresponding class, called _wrapper_ class, defined in the [java.lang](http://java.sun.com/products/jdk/1.1/docs/api/Package-java.lang.html) package. e.g. a _double_ primitive data type has the corresponding class [Double](http://java.sun.com/products/jdk/1.1/docs/api/java.lang.Double.html#_top_).
+Each of  the primitive data types has a corresponding class, called _wrapper_ class, defined in the {{% resource_link "3bb2b199-a987-4be2-ab9e-72b1d0f4c6ff" "java.lang" %}} package. e.g. a _double_ primitive data type has the corresponding class {{% resource_link "a306016f-3d3d-484a-bc3f-686d196a08f0" "Double" %}}.
 
 4\. {{< anchor "4" >}}{{< /anchor >}}Variables, Declarations, Definitions, Initializations, and Assignments
 -----------------------------------------------------------------------------------------------------------
@@ -500,7 +500,7 @@ Java® provides the _break_ and _continue_ as branching statements. The former c
 
 Java® supports 3 kinds of comments. The familiar C++ kinds of comments, the pair /\* \*/ which encloses a comment and the // which indicates that the remaining of the line is a comment are supported.
 
-In addition, Java® supports the documentation comment which is enclosed between /\*\* and \*/. Comments of this kind are used for automatically generated documentation using the _[javadoc](http://java.sun.com/products/jdk/javadoc/index.html)_ tool of the Java® Development Kid (JDK).
+In addition, Java® supports the documentation comment which is enclosed between /\*\* and \*/. Comments of this kind are used for automatically generated documentation using the _{{% resource_link "1918f27d-08b3-4be0-9a7c-c420e412aca5" "javadoc" %}}_ tool of the Java® Development Kid (JDK).
 
 Having wrote a java file, such as the file Welcome1.java below, using javadoc someone can automatically create an html file corresponding to that java source code.  
   
@@ -553,11 +553,11 @@ An array is a set of values of the same data type stored together as an entity, 
 
 The declaration of an array in Java does not make any memory allocation, but simply defines a reference to an array. A _new_ statement is required to make the proper allocation of memory. Then, an element of the array is accessed using an index within square brackets. An array in Java® has a _length_ field which stores the number of its elements.
 
-The class [System](http://java.sun.com/products/jdk/1.1/docs/api/java.lang.System.html#_top_) has a function called [arraycopy()](http://java.sun.com/products/jdk/1.1/docs/api/java.lang.System.html#arraycopy_java_lang_Object__int__java_lang_Object__int__int_) that can be used to copy part or the whole array to another array.
+The class {{% resource_link "ecdc7bc8-7bf1-4760-a1af-bb76b501b0b2" "System" %}} has a function called {{% resource_link "0a9f4b05-a52f-4af4-a768-05472888516f" "arraycopy()" %}} that can be used to copy part or the whole array to another array.
 
 A function in which an array is passed as an argument can change it, since the reference to that array is what is passed by value. An array can be returned from a function, i.e. the return data type of a function can be an array.
 
-The length of an array is fixed upon its definition and cannot be modified. A class named [Vector](http://java.sun.com/products/jdk/1.1/docs/api/java.util.Vector.html#_top_) can be used to represent an array whose size can be modified.
+The length of an array is fixed upon its definition and cannot be modified. A class named {{% resource_link "bade6ea8-ff35-481a-ba22-a6853090e1e2" "Vector" %}} can be used to represent an array whose size can be modified.
 
 An array can contain references to other arrays or objects, in which case memory for the individual members of the array must also be explicitly allocated using a new statement.
 
@@ -664,7 +664,7 @@ _**Output:**_
 
 In Java® every member function and data belongs to a _class_ and must be defined into a class declaration, i.e. it is not allowable to have global functions and variables. A class may contain data (fields) and functions (methods), which can be class or non-class members of the class.
 
-An object is an instance of a class. It is created using a _new_ operator which instantiates the class, allocating memory for a new object, and initializes the objects data members, usually through constructors rather than directly. The _new_ operator returns a reference to the new instance of the class that has been created, i.e. to the new object. The new object is referenced typically by the variable at the left side of the _new statement_. The declaration of an object, e.g. _Point p_, does not allocate any memory for an instance of the class Point. It simply declares that _p_ can be used as a reference to an instance of the class _Point_. In Java® memory for objects is allocated from the heap using the keyword _new_. If there is not enough memory to be allocated the garbage collector may run to reclaim some memory and if there is still not enough memory an [_OutOfMemoryError_](http://java.sun.com/products/jdk/1.1/docs/api/java.lang.OutOfMemoryError.html#_top_) exception is thrown. The variable that is associated with an object, in contrast to a variable of primitive data type, is actually a reference to that object.
+An object is an instance of a class. It is created using a _new_ operator which instantiates the class, allocating memory for a new object, and initializes the objects data members, usually through constructors rather than directly. The _new_ operator returns a reference to the new instance of the class that has been created, i.e. to the new object. The new object is referenced typically by the variable at the left side of the _new statement_. The declaration of an object, e.g. _Point p_, does not allocate any memory for an instance of the class Point. It simply declares that _p_ can be used as a reference to an instance of the class _Point_. In Java® memory for objects is allocated from the heap using the keyword _new_. If there is not enough memory to be allocated the garbage collector may run to reclaim some memory and if there is still not enough memory an {{% resource_link "dac393ed-6e50-4aff-b993-93c830ca59b3" "_OutOfMemoryError_" %}} exception is thrown. The variable that is associated with an object, in contrast to a variable of primitive data type, is actually a reference to that object.
 
 A _class member data, or stat_ic field, is a field that is shared among all objects of that class, as in C++. Similarly, _static (or class) functions_ are methods, that can operate on class member data (static fields), or perform operations on the entire class and not on a certain instance of the class (i.e. object). A static function can access only static members, variables or functions, of the class, since it is not invoked on a specific object. Static fields and methods are declared using the keyword _static_ at its declaration. Class variables and methods are accessible from the class itself. There is no need to create an object, i.e. to instantiate the class in order to access its class (i.e. static) members. The static variables of a class are initialized before any use of any static variable and before the use of any of the member functions of the class.
 
@@ -679,7 +679,7 @@ A _final_ class is a class that cannot be subclassed. Specifying a class as _fin
 The _extends \<superclass>_ specifies that the class that is declared is a subclass of the provided \<superclass>.  
 Finally, the _implements\<interface1>, \<interface2>,....,_ specifies that the class implements one or more interfaces, whose names are provided after the keyword _implements_ in a comma separated list.
 
-Note that assigning a reference data type variable, i.e. a variable that refers to an instance of a class, to another reference variable then both variables refer to the same object. The function [clone()](http://java.sun.com/products/jdk/1.1/docs/api/java.lang.Object.html#clone__) may be used to actually make an actual complete copy of one object to another, i.e. copy the object state into a new identical object but in a different memory location.
+Note that assigning a reference data type variable, i.e. a variable that refers to an instance of a class, to another reference variable then both variables refer to the same object. The function {{% resource_link "7c1b7d44-ac82-43df-a28a-7fe9b65d6389" "clone()" %}} may be used to actually make an actual complete copy of one object to another, i.e. copy the object state into a new identical object but in a different memory location.
 
 The following is an example of a simple class. The class has two member data, x and y, and a class (or static) data and has no functions.
 
@@ -882,7 +882,7 @@ A function declaration may also provide more information about it using any of t
 
 An implicit reference to the object with which a function is invoked, called _this_, is available in every non-class (i.e. non-static) function. It is used to explicitly refer to members of the object that have invoked the function, or when an object reference is required.
 
-A function of a class with the name [toString](http://java.sun.com/products/jdk/1.1/docs/api/java.lang.Object.html#toString__)() that takes no arguments and returns a [String](http://java.sun.com/products/jdk/1.1/docs/api/java.lang.String.html#_top_) is a special function. It allows the object to be used in a string concatenation using the + operator, e.g. in a _println_ statement. Note that all the primitive data type variables are implicitly converted to _String_ objects whenever they are used in _String_ expressions.
+A function of a class with the name {{% resource_link "cc8ebebd-62f9-430c-a0da-111cfdfd61b4" "toString" %}}() that takes no arguments and returns a {{% resource_link "f1d9f9b5-6904-4e26-bcc5-f7c8831ac7f4" "String" %}} is a special function. It allows the object to be used in a string concatenation using the + operator, e.g. in a _println_ statement. Note that all the primitive data type variables are implicitly converted to _String_ objects whenever they are used in _String_ expressions.
 
 In Java® there is no need to worry about explicitly destroying objects that are not needed anymore. Java® provides a garbage collector that periodically frees memory of objects that are no more being referenced. When a variable that is used to reference to an object goes out of scope or it is set to null, that object, if not referenced by any other variable becomes eligible for _garbage collection_.  
  
